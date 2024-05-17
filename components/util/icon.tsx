@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ColorPickerInput } from "../../tina/fields/color";
+import  ColorPickerInput  from "../../tina/fields/color";
 import { IconPickerInput } from "../../tina/fields/icon";
 import { useTheme } from "../layout";
 import * as BoxIcons from "react-icons/bi";
@@ -99,7 +99,7 @@ export const Icon = ({
 
   const iconColor = color
     ? color === "primary"
-      ? theme.color
+      ? theme.color : color === "orange" ? theme.color
       : color
     : theme.color;
 
@@ -117,7 +117,7 @@ export const Icon = ({
       iconColorClass[
         parentColor === "primary" &&
         (iconColor === theme.color || iconColor === "primary")
-          ? "white"
+          ? "white" :  parentColor === "orange" && (iconColor === theme.color || iconColor === "orange") ? "white"
           : iconColor
       ].regular;
     return (

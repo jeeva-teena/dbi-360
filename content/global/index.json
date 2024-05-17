@@ -1,15 +1,17 @@
 {
   "header": {
     "icon": {
-      "name": "Tina",
       "color": "orange",
       "style": "float"
     },
-    "name": "Tina Starter",
+    "logo": {
+      "src": "/uploads/DBI 360_LOGO 2.png"
+    },
+    "name": "",
     "color": "default",
     "nav": [
       {
-        "href": "",
+        "href": "home",
         "label": "Home"
       },
       {
@@ -17,13 +19,60 @@
         "label": "About"
       },
       {
-        "href": "posts",
-        "label": "Blog"
+        "href": "products",
+        "label": "Products"
+      },
+      {
+        "href": "resources",
+        "label": "Resources"
+      },
+      {
+        "href": "compliance",
+        "label": "Compliance"
+      },
+      {
+        "href": "contact",
+        "label": "Contact"
       }
     ]
   },
   "footer": {
-    "color": "default",
+    "footerLogo": {
+      "logoSrc": "/uploads/footer-logo-2.png"
+    },
+    "quickLinks": [
+      {
+        "href": "home",
+        "label": "Home"
+      },
+      {
+        "href": "",
+        "label": "About Us"
+      },
+      {
+        "href": "",
+        "label": "Compliance"
+      },
+      {
+        "href": "",
+        "label": "Contact Us"
+      }
+    ],
+    "importantLinks": [
+      {
+        "href": "",
+        "label": "Blog"
+      },
+      {
+        "href": "",
+        "label": "Career"
+      },
+      {
+        "href": "",
+        "label": "Terms & Conditions"
+      }
+    ],
+    "color": "primary",
     "social": {
       "facebook": "/",
       "twitter": "/",
@@ -32,7 +81,7 @@
   },
   "theme": {
     "color": "blue",
-    "font": "sans",
+    "font": "inter",
     "darkMode": "system"
   }
 }

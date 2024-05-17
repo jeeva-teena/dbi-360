@@ -30,6 +30,16 @@ export const Layout = ({
             />
           </>
         )}
+        {data.theme.font === "inter" && (
+          <>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+              rel="stylesheet"
+            />
+          </>
+        )}
         {data.theme.font === "lato" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,7 +55,8 @@ export const Layout = ({
         <div
           className={`min-h-screen flex flex-col ${
             data.theme.font === "nunito" && "font-nunito"
-          } ${data.theme.font === "lato" && "font-lato"} ${
+          } ${data.theme.font === "lato" && "font-lato"}
+          ${data.theme.font === "inter" && "font-inter"} ${
             data.theme.font === "sans" && "font-sans"
           }`}
         >

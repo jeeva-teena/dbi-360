@@ -38,7 +38,7 @@ export const RawRenderer = ({ rawData, parentColor }) => {
         <span
           className={`absolute w-full h-full left-0 top-0 rounded -z-1 ${
             parentColor === "primary"
-              ? `bg-white opacity-80`
+              ? `bg-white opacity-80` : parentColor === "orange" ? `bg-white opacity-80`
               : `bg-current opacity-15`
           }`}
         ></span>

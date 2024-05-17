@@ -20,14 +20,18 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     orange: "from-orange-300 to-orange-600",
     yellow: "from-yellow-400 to-yellow-600",
   };
-
+  const isImageLeft = data.layout === "image-left";
+  const containerClass = `grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center`;
+  const contentClass = isImageLeft ? "md:col-start-3" : "md:col-start-1 row-start-2 md-row-start-1";
+  const imageClass = isImageLeft ? "md:col-start-1 row-start-1" : "md:col-start-4 md:row-start-2 row-start-1";
+  const backgroundImageSrc = data.bgimg?.src || ''; 
   return (
-    <Section color={data.color}>
+    <Section color={data.color} bgimg={backgroundImageSrc}>
       <Container
         size="large"
-        className="grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center"
+        className={containerClass}
       >
-        <div className="row-start-2 md:row-start-1 md:col-span-3 text-center md:text-left">
+        <div className={`md:col-span-3 ${contentClass} text-center md:text-left`}>
           {data.tagline && (
             <h2
               data-tina-field={tinaField(data, "tagline")}
@@ -45,7 +49,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
                   data.color === "primary"
-                    ? `from-white to-gray-100`
+                    ? `from-white to-gray-100` : data.color === "orange" ? `from-white to-gray-100`
                     : headlineColorClasses[theme.color]
                 }`}
               >
@@ -57,7 +61,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             <div
               data-tina-field={tinaField(data, "text")}
               className={`prose prose-lg mx-auto md:mx-0 mb-10 ${
-                data.color === "primary" ? `prose-primary` : `dark:prose-dark`
+                data.color === "primary" ? `prose-primary` : data.color === "orange" ? `prose-orange` : `dark:prose-dark`
               }`}
             >
               <TinaMarkdown content={data.text} />
@@ -74,7 +78,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         {data.image && (
           <div
             data-tina-field={tinaField(data.image, "src")}
-            className="relative row-start-1 md:col-span-2 flex justify-center"
+            className={`relative flex md:col-span-2 justify-center ${imageClass}`}
           >
             <img
               className="absolute w-full rounded-lg max-w-xs md:max-w-none h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
@@ -180,12 +184,39 @@ export const heroBlockSchema: TinaTemplate = {
     },
     {
       type: "string",
+      label: "Layout",
+      name: "layout",
+      options: [
+        { label: "Image Left", value: "image-left" },
+        { label: "Image Right", value: "image-right" },
+      ],
+    },
+    {
+      type: "string",
       label: "Color",
       name: "color",
       options: [
         { label: "Default", value: "default" },
         { label: "Tint", value: "tint" },
+        { label: "Orange", value: "orange" },
         { label: "Primary", value: "primary" },
+      ],
+    },
+    {
+      type: "object",
+      label: "Background Image",
+      name: "bgimg",
+      fields: [
+        {
+          name: "src",
+          label: "Image Source",
+          type: "image",
+        },
+        {
+          name: "alt",
+          label: "Alt Text",
+          type: "string",
+        },
       ],
     },
   ],

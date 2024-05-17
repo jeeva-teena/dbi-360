@@ -4,12 +4,19 @@ import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "../../util/container";
 import { RawRenderer } from "./rawRenderer";
+import { tinaField } from "tinacms/dist/react";
+import { useRouter } from "next/router";
 import { useTheme } from "..";
 import { Icon } from "../../util/icon";
 
 export const Footer = ({ data, icon, rawData }) => {
   const theme = useTheme();
-  const socialIconClasses = "h-7 w-auto";
+  const router = useRouter();
+  const [isClient, setIsClient] = React.useState(false);
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+  const socialIconClasses = "h-4 w-auto";
   const socialIconColorClasses = {
     blue: "text-blue-500 dark:text-blue-400 hover:text-blue-300",
     teal: "text-teal-500 dark:text-teal-400 hover:text-teal-300",
@@ -32,103 +39,144 @@ export const Footer = ({ data, icon, rawData }) => {
       red: "text-white from-red-500 to-red-600",
       pink: "text-white from-pink-500 to-pink-600",
       purple: "text-white from-purple-500 to-purple-600",
-      orange: "text-white from-orange-500 to-orange-600",
       yellow: "text-white from-yellow-500 to-yellow-600",
     },
+    orange: "text-white from-orange-500 to-orange-600",
   };
 
   const footerColorCss =
     data.color === "primary"
-      ? footerColor.primary[theme.color]
+      ? footerColor.primary[theme.color] : data.color === "orange" ? footerColor.orange[theme.color]
       : footerColor.default;
 
   return (
-    <footer className={`bg-gradient-to-br ${footerColorCss}`}>
-      <Container className="relative" size="small">
-        <div className="flex justify-between items-center gap-6 flex-wrap">
-          <Link
-            href="/"
-            className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-50 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap"
-          >
-            <Icon
-              parentColor={data.color}
-              data={{
-                name: icon.name,
-                color: data.color === "primary" ? "primary" : icon.color,
-                style: icon.style,
-              }}
-              className="inline-block h-10 w-auto group-hover:text-orange-500"
-            />
-          </Link>
-          <div className="flex gap-4">
-            {data.social && data.social.facebook && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={data.social.facebook}
-                target="_blank"
-              >
-                <FaFacebookF
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      data.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {data.social && data.social.twitter && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={data.social.twitter}
-                target="_blank"
-              >
-                <FaTwitter
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      data.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {data.social && data.social.instagram && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={data.social.instagram}
-                target="_blank"
-              >
-                <AiFillInstagram
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      data.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {data.social && data.social.github && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={data.social.github}
-                target="_blank"
-              >
-                <FaGithub
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      data.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
+    <footer className={`bg-gradient-to-br ${footerColorCss} py-12`}>
+      <Container size="large">
+        <div className="grid grid-cols-12 justify-between gap-y-6">
+          <div className="col-start-1 col-span-6">
+            <Link
+              data-tina-field={tinaField(data.footerLogo, "logoSrc")}
+              href="/"
+              className=""
+            >
+              <img
+                src={data.footerLogo?.logoSrc}
+                alt={data.footerLogo?.logoAlt}
+                className="w-72"
+              />
+            </Link>
+            <p className="my-5">
+              As a software solution company, we are here to deliver intelligent
+              systems that can help businesses in streamlining their work
+              processes and scale up production
+            </p>
+            <div className="flex gap-4">
+              {data.social && data.social.facebook && (
+                <a
+                  className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                  href={data.social.facebook}
+                  target="_blank"
+                >
+                  <FaFacebookF
+                    className={`${socialIconClasses} ${
+                      socialIconColorClasses[
+                        data.color === "primary" ? "primary" : data.color ===  "orange" ? "orange" : theme.color
+                      ]
+                    }`}
+                  />
+                </a>
+              )}
+              {data.social && data.social.twitter && (
+                <a
+                  className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                  href={data.social.twitter}
+                  target="_blank"
+                >
+                  <FaTwitter
+                    className={`${socialIconClasses} ${
+                      socialIconColorClasses[
+                        data.color === "primary" ? "primary" : data.color ===  "orange" ? "orange" : theme.color
+                      ]
+                    }`}
+                  />
+                </a>
+              )}
+              {data.social && data.social.instagram && (
+                <a
+                  className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                  href={data.social.instagram}
+                  target="_blank"
+                >
+                  <AiFillInstagram
+                    className={`${socialIconClasses} ${
+                      socialIconColorClasses[
+                        data.color === "primary" ? "primary" : data.color === "orange" ? "orange" : theme.color
+                      ]
+                    }`}
+                  />
+                </a>
+              )}
+              {data.social && data.social.github && (
+                <a
+                  className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                  href={data.social.github}
+                  target="_blank"
+                >
+                  <FaGithub
+                    className={`${socialIconClasses} ${
+                      socialIconColorClasses[
+                        data.color === "primary" ? "primary" : data.color === "orange" ? "orange" : theme.color
+                      ]
+                    }`}
+                  />
+                </a>
+              )}
+            </div>
           </div>
-          <RawRenderer parentColor={data.color} rawData={rawData} />
+
+          <div className="col-start-8 col-span-2">
+            <p className="text-base mb-3 font-bold">Quick Links</p>
+            <ul>
+              {data.quickLinks &&
+                data.quickLinks.map((item, i) => {
+                  return (
+                    <li key={`${item.label}-${i}`}>
+                      <Link
+                        data-tina-field={tinaField(item, "label")}
+                        href={`/${item.href}`}
+                        className={`block transition duration-150 ease-out hover:opacity-100 py-1`}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+          <div className="col-start-10 col-span-3">
+            <p className="text-base mb-3 font-bold">Important Links</p>
+            <ul>
+              {data.importantLinks &&
+                data.importantLinks.map((item, i) => {
+                  return (
+                    <li key={`${item.label}-${i}`}>
+                      <Link
+                        data-tina-field={tinaField(item, "label")}
+                        href={`/${item.href}`}
+                        className={`block transition duration-150 ease-out hover:opacity-100 py-1`}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
         </div>
-        <div
-          className={`absolute h-1 bg-gradient-to-r from-transparent ${
-            data.color === "primary" ? `via-white` : `via-black dark:via-white`
-          } to-transparent top-0 left-4 right-4 opacity-5`}
-        ></div>
+        <p className="mt-12">
+          © Copyright 2024 Dietary Business Intelligence LLC. All Rights
+          Reserved.
+        </p>
       </Container>
     </footer>
   );

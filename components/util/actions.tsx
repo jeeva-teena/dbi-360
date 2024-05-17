@@ -72,7 +72,7 @@ export const Actions = ({
                   data-tina-field={tinaField(action)}
                   className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
                     parentColor === "primary"
-                      ? invertedButtonColorClasses[theme.color]
+                      ? invertedButtonColorClasses[theme.color] : parentColor === "orange" ? invertedButtonColorClasses[theme.color]
                       : buttonColorClasses[theme.color]
                   }`}
                 >
@@ -94,7 +94,7 @@ export const Actions = ({
                 data-tina-field={tinaField(action)}
                 className={`group inline-flex items-center font-semibold text-lg transition duration-150 ease-out ${
                   parentColor === "primary"
-                    ? `text-white  hover:text-gray-50`
+                    ? `text-white  hover:text-gray-50` : parentColor === "orange" ?  `text-white hover:text-gray-50`
                     : linkButtonColorClasses[theme.color]
                 }`}
                 style={{

@@ -1,6 +1,6 @@
 import type { Collection } from "tinacms";
 import { iconSchema } from "../../components/util/icon";
-import { ColorPickerInput } from "../fields/color";
+import ColorPickerInput from "../fields/color";
 
 const Global: Collection = {
   label: "Global",
@@ -18,6 +18,28 @@ const Global: Collection = {
       fields: [
         iconSchema as any,
         {
+          type: "object",
+          label: "Logo",
+          name: "logo",
+          fields: [
+            {
+              name: "src",
+              label: "Image Source",
+              type: "image",
+            },
+            {
+              name: "alt",
+              label: "Alt Text",
+              type: "string",
+            },
+            {
+              name: 'imageWidth',
+              label: 'Image Size',
+              type: 'number',
+            },
+          ],
+         },
+        {
           type: "string",
           label: "Name",
           name: "name",
@@ -29,6 +51,7 @@ const Global: Collection = {
           options: [
             { label: "Default", value: "default" },
             { label: "Primary", value: "primary" },
+            { label: "Orange", value: "orange" },
           ],
         },
         {
@@ -66,11 +89,83 @@ const Global: Collection = {
       name: "footer",
       fields: [
         {
+          type: "object",
+          label: "Logo",
+          name: "footerLogo",
+          fields: [
+            {
+              name: "logoSrc",
+              label: "Image Source",
+              type: "image",
+            },
+            {
+              name: "logoAlt",
+              label: "Alt Text",
+              type: "string",
+            },
+          ],
+         },
+        {
+          type: "object",
+          label: "Quick Links",
+          name: "quickLinks",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.label };
+            },
+            defaultItem: {
+              href: "home",
+              label: "Home",
+            },
+          },
+          fields: [
+            {
+              type: "string",
+              label: "Link",
+              name: "href",
+            },
+            {
+              type: "string",
+              label: "Label",
+              name: "label",
+            },
+          ],
+        },
+        {
+          type: "object",
+          label: "Important Links",
+          name: "importantLinks",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.label };
+            },
+            defaultItem: {
+              href: "home",
+              label: "Home",
+            },
+          },
+          fields: [
+            {
+              type: "string",
+              label: "Link",
+              name: "href",
+            },
+            {
+              type: "string",
+              label: "Label",
+              name: "label",
+            },
+          ],
+        },
+        {
           type: "string",
           label: "Color",
           name: "color",
           options: [
             { label: "Default", value: "default" },
+            { label: "Orange", value: "orange" },
             { label: "Primary", value: "primary" },
           ],
         },
@@ -130,6 +225,10 @@ const Global: Collection = {
             {
               label: "Nunito",
               value: "nunito",
+            },
+            {
+              label: "Inter",
+              value: "inter",
             },
             {
               label: "Lato",

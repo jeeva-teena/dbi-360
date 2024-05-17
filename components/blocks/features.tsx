@@ -124,6 +124,7 @@ export const featureBlockSchema = {
         { label: "Default", value: "default" },
         { label: "Tint", value: "tint" },
         { label: "Primary", value: "primary" },
+        { label: "Orange", value: "orange" },
       ],
     },
   ],
