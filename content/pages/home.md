@@ -202,12 +202,7 @@ blocks:
     color: default
     width: small
     _template: content
-  - body: |
-
-
-      hgyfygy
-
-      hygg
+  - body: ''
     color: orange
     _template: content
 ---
