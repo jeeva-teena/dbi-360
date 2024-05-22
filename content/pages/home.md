@@ -183,6 +183,13 @@ blocks:
       src: /uploads/conflux-hr.png
     color: tint
     _template: hero
+  - tabsImage1:
+      src: /uploads/download.png
+    tabsImage2:
+      src: /uploads/download (2).png
+    tabsImage3:
+      src: /uploads/download (3).png
+    _template: tabs
   - tagline: ''
     headline: 'Why 16,93,321 People Trust On DBI360?'
     text: |

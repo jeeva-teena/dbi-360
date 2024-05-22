@@ -29,7 +29,7 @@ export const Section: React.FC<SectionProps> = ({
   if (bgimg) {
     sectionStyle.backgroundImage = `url(${bgimg})`;
     sectionStyle.backgroundSize = "cover";
-    sectionStyle.backgroundPosition = "center center";
+    sectionStyle.backgroundPosition = "center";
     sectionStyle.backgroundRepeat = "no-repeat";
   }
 

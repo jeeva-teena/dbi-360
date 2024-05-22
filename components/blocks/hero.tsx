@@ -22,16 +22,19 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
   };
   const isImageLeft = data.layout === "image-left";
   const containerClass = `grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center`;
-  const contentClass = isImageLeft ? "md:col-start-3" : "md:col-start-1 row-start-2 md-row-start-1";
-  const imageClass = isImageLeft ? "md:col-start-1 row-start-1" : "md:col-start-4 md:row-start-2 row-start-1";
-  const backgroundImageSrc = data.bgimg?.src || ''; 
+  const contentClass = isImageLeft
+    ? "md:col-start-3"
+    : "md:col-start-1 row-start-2 md-row-start-1";
+  const imageClass = isImageLeft
+    ? "md:col-start-1 row-start-1"
+    : "md:col-start-4 md:row-start-2 row-start-1";
+  const backgroundImageSrc = data.bgimg?.src || "";
   return (
     <Section color={data.color} bgimg={backgroundImageSrc}>
-      <Container
-        size="large"
-        className={containerClass}
-      >
-        <div className={`md:col-span-3 ${contentClass} text-center md:text-left`}>
+      <Container size="large" className={containerClass}>
+        <div
+          className={`md:col-span-3 ${contentClass} text-center md:text-left`}
+        >
           {data.tagline && (
             <h2
               data-tina-field={tinaField(data, "tagline")}
@@ -49,7 +52,9 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
                   data.color === "primary"
-                    ? `from-white to-gray-100` : data.color === "orange" ? `from-white to-gray-100`
+                    ? `from-white to-gray-100`
+                    : data.color === "orange"
+                    ? `from-white to-gray-100`
                     : headlineColorClasses[theme.color]
                 }`}
               >
@@ -60,8 +65,12 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.text && (
             <div
               data-tina-field={tinaField(data, "text")}
-              className={`prose prose-lg mx-auto md:mx-0 mb-10 ${
-                data.color === "primary" ? `prose-primary` : data.color === "orange" ? `prose-orange` : `dark:prose-dark`
+              className={`prose mx-auto md:mx-0 mb-10 ${
+                data.color === "primary"
+                  ? `prose-primary`
+                  : data.color === "orange"
+                  ? `prose-orange`
+                  : `dark:prose-dark`
               }`}
             >
               <TinaMarkdown content={data.text} />
@@ -78,18 +87,30 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         {data.image && (
           <div
             data-tina-field={tinaField(data.image, "src")}
-            className={`relative flex md:col-span-2 justify-center ${imageClass}`}
+            className={`relative md:col-span-2  ${imageClass}`}
           >
-            <img
-              className="absolute w-full rounded-lg max-w-xs md:max-w-none h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
-              src={data.image.src}
-              aria-hidden="true"
-            />
-            <img
-              className="relative z-10 w-full max-w-xs rounded-lg md:max-w-none h-auto"
-              alt={data.image.alt}
-              src={data.image.src}
-            />
+            <h3
+              data-tina-field={tinaField(data.image, "titleHeading")}
+              className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
+            >
+              <span
+                className={`bg-clip-text text-black `}
+              >
+                {data.image.titleHeading}
+              </span>
+            </h3>
+            <div className={`flex justify-center`}>
+              <img
+                className="absolute w-full rounded-lg max-w-xs md:max-w-none h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
+                src={data.image.src}
+                aria-hidden="true"
+              />
+              <img
+                className="relative z-10 w-full max-w-xs rounded-lg md:max-w-none h-auto"
+                alt={data.image.alt}
+                src={data.image.src}
+              />
+            </div>
           </div>
         )}
       </Container>
@@ -170,6 +191,11 @@ export const heroBlockSchema: TinaTemplate = {
       label: "Image",
       name: "image",
       fields: [
+        {
+          name: "titleHeading",
+          label: "Title Heading",
+          type: "string",
+        },
         {
           name: "src",
           label: "Image Source",

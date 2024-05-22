@@ -27,9 +27,7 @@ const components: Components<{
         </div>
         <div className="mt-8">
           <form className="sm:flex">
-            <label className="sr-only">
-              Email address
-            </label>
+            <label className="sr-only">Email address</label>
             <input
               id="email-address"
               name="email-address"
@@ -70,7 +68,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
     backgroundRepeat: `no-repeat`,
     height: `300px`,
   };
-
+  
   return (
     <Section
       color={data.color}
@@ -87,13 +85,15 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
             <Container
               width={data.width}
               bgimg={backgroundImageSrc}
-              className={`prose prose-lg py-24 my-12 rounded-lg ${
+              className={`prose py-24 my-12 rounded-lg 
+              ${
                 data.color === "primary"
                   ? `prose-primary`
                   : data.color === "orange"
                   ? `prose-orange`
                   : `dark:prose-dark`
-              }`}
+              }
+             `}
               data-tina-field={tinaField(data, "body")}
               size="medium"
               style={{
@@ -106,7 +106,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
           ) : (
             <Container
               width={data.width}
-              className={`prose prose-lg ${
+              className={`prose ${
                 data.color === "primary"
                   ? `prose-primary`
                   : data.color === "orange"

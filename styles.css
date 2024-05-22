@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.tab {
+  transition: background-color 0.2s;
+}
+
+.tab.active {
+  background: #302875;
+  color: #fff;
+}
+.content-container > div {
+  display: none;
+}
+
+.content-container > div.active {
+  display: block;
+}
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  display: none;
+}
+
+.image-container img.active {
+  display: block;
+}

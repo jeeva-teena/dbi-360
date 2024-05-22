@@ -7,6 +7,7 @@ import {
   PageBlocksFeaturesItems,
 } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const Feature = ({
   featuresColor,
@@ -18,8 +19,8 @@ export const Feature = ({
   return (
     <div
       data-tina-field={tinaField(data)}
-      className="flex-1 flex flex-col gap-6 text-center items-center lg:items-start lg:text-left max-w-xl mx-auto"
-      style={{ flexBasis: "16rem" }}
+      className="flex-1 flex flex-col gap-6 text-center p-4 rounded-xl items-center lg:items-start lg:text-left max-w-xl mx-auto"
+      style={{ flexBasis: "16rem", border: "1px solid #ccc" }}
     >
       {data.icon && (
         <Icon
@@ -27,6 +28,12 @@ export const Feature = ({
           parentColor={featuresColor}
           data={{ size: "large", ...data.icon }}
         />
+      )}
+      {data.imgSrc && (
+        <div data-tina-field={tinaField(data.imgSrc, "src")}>
+          <img src={data.imgSrc.src} aria-hidden="true" />
+          <hr className="mt-6" />
+        </div>
       )}
       {data.title && (
         <h3
@@ -52,13 +59,20 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
   return (
     <Section color={data.color}>
       <Container
-        className={`flex flex-wrap gap-x-10 gap-y-8 text-left`}
+        className={` py-24 my-12`}
         size="large"
       >
-        {data.items &&
-          data.items.map(function (block, i) {
-            return <Feature featuresColor={data.color} key={i} data={block} />;
-          })}
+        <div className="prose text-center max-w-full">
+          <TinaMarkdown content={data.body} />
+        </div>
+        <div className="flex flex-wrap gap-4 text-left mt-12">
+          {data.items &&
+            data.items.map(function (block, i) {
+              return (
+                <Feature featuresColor={data.color} key={i} data={block} />
+              );
+            })}
+        </div>
       </Container>
     </Section>
   );
@@ -102,6 +116,23 @@ export const featureBlockSchema = {
       fields: [
         iconSchema,
         {
+          type: "object",
+          label: "Upload Image",
+          name: "imgSrc",
+          fields: [
+            {
+              name: "src",
+              label: "Image Source",
+              type: "image",
+            },
+            {
+              name: "alt",
+              label: "Alt Text",
+              type: "string",
+            },
+          ],
+        },
+        {
           type: "string",
           label: "Title",
           name: "title",
@@ -115,6 +146,11 @@ export const featureBlockSchema = {
           },
         },
       ],
+    },
+    {
+      type: "rich-text",
+      label: "Body",
+      name: "body",
     },
     {
       type: "string",
