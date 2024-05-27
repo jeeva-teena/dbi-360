@@ -146,7 +146,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                             key={submenu.title}
                             className="cursor-pointer py-2.5"
                           >
-                            <a href={submenu.link}>{submenu.title}</a>
+                            <Link data-tina-field={tinaField(submenu, "title")} href={`/${submenu.link}`}>{submenu.title}</Link>
                           </li>
                         ))}
                       </ul>

@@ -23,6 +23,18 @@ const Page: Collection = {
       if (document._sys.filename === "aster") {
         return `/aster`;
       }
+      if (document._sys.filename === "nexus") {
+        return `/nexus`;
+      }
+      if (document._sys.filename === "buyersflow") {
+        return `/buyersflow`;
+      }
+      if (document._sys.filename === "zyler") {
+        return `/zyler`;
+      }
+      if (document._sys.filename === "confluxHR") {
+        return `/confluxHR`;
+      }
       return undefined;
     },
   },

@@ -1,12 +1,65 @@
 import React from "react";
 import { Container } from "../util/container";
+import { useTheme } from "../layout";
+import { useCMS } from "tinacms";
 import { Section } from "../util/section";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import {
+  TinaMarkdown,
+  TinaMarkdownContent,
+  Components,
+} from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksContent } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
-
+const components: Components<{
+  NewsletterSignup: {
+    placeholder: string;
+    buttonText: string;
+    children: TinaMarkdownContent;
+    disclaimer?: TinaMarkdownContent;
+  };
+}> = {
+  NewsletterSignup: (props) => (
+    <div className="bg-white">
+      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div>
+          <TinaMarkdown content={props.children} />
+        </div>
+        <div className="mt-8">
+          <form className="sm:flex">
+            <label className="sr-only">Email address</label>
+            <input
+              id="email-address"
+              name="email-address"
+              type="email"
+              autoComplete="email"
+              required
+              className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:border-teal-500 sm:max-w-xs rounded-md"
+              placeholder={props.placeholder}
+            />
+            <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+              <button
+                type="submit"
+                className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+              >
+                {props.buttonText}
+              </button>
+            </div>
+          </form>
+          {props.disclaimer && (
+            <div className="mt-3 text-sm text-gray-500">
+              <TinaMarkdown content={props.disclaimer} />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  ),
+};
 export const Content = ({ data }: { data: PageBlocksContent }) => {
+  const theme = useTheme();
+  const cms = useCMS();
+
   const backgroundImageSrc = data.bgimg?.src || "";
   const bgContainerStyle = {
     backgroundImage: `url(${backgroundImageSrc})`,
@@ -15,7 +68,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
     backgroundRepeat: `no-repeat`,
     height: `300px`,
   };
-
+  
   return (
     <Section
       color={data.color}
@@ -48,7 +101,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
                 ...bgContainerStyle,
               }}
             >
-              <TinaMarkdown content={data.body} />
+              <TinaMarkdown components={components} content={data.body} />
             </Container>
           ) : (
             <Container
@@ -64,7 +117,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
               size="large"
               style={{ textAlign: data.alignment || "left" }}
             >
-              <TinaMarkdown content={data.body} />
+              <TinaMarkdown components={components} content={data.body} />
             </Container>
           )}
         </>
@@ -79,7 +132,7 @@ export const contentBlockSchema: TinaTemplate = {
   ui: {
     previewSrc: "/blocks/content.png",
     defaultItem: {
-      body: "Lorum ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
+      body: "",
     },
   },
   fields: [
@@ -87,6 +140,41 @@ export const contentBlockSchema: TinaTemplate = {
       type: "rich-text",
       label: "Body",
       name: "body",
+      templates: [
+        {
+          name: "NewsletterSignup",
+          label: "Newsletter Sign Up",
+          fields: [
+            {
+              name: "children",
+              label: "CTA",
+              type: "rich-text",
+            },
+            {
+              name: "placeholder",
+              label: "Placeholder",
+              type: "string",
+            },
+            {
+              name: "buttonText",
+              label: "Button Text",
+              type: "string",
+            },
+            {
+              name: "disclaimer",
+              label: "Disclaimer",
+              type: "rich-text",
+            },
+          ],
+          ui: {
+            defaultItem: {
+              placeholder: "Enter your email",
+              buttonText: "Notify Me",
+            },
+          },
+        },
+      ],
+      isBody: true,
     },
     {
       type: "string",

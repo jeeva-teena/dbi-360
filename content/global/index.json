@@ -27,16 +27,20 @@
             "link": "aster"
           },
           {
-            "title": "Nexus"
+            "title": "Nexus",
+            "link": "nexus"
           },
           {
-            "title": "Buyersflow"
+            "title": "Buyersflow",
+            "link": "buyersflow"
           },
           {
-            "title": "Zyler"
+            "title": "Zyler",
+            "link": "zyler"
           },
           {
-            "title": "ConfluxHR"
+            "title": "ConfluxHR",
+            "link": "confluxHR"
           }
         ]
       },
