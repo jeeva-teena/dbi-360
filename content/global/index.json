@@ -20,7 +20,24 @@
       },
       {
         "href": "products",
-        "label": "Products"
+        "label": "Products",
+        "submenu": [
+          {
+            "title": "Aster"
+          },
+          {
+            "title": "Nexus"
+          },
+          {
+            "title": "Buyersflow"
+          },
+          {
+            "title": "Zyler"
+          },
+          {
+            "title": "ConfluxHR"
+          }
+        ]
       },
       {
         "href": "resources",

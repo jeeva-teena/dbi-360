@@ -79,6 +79,24 @@ const Global: Collection = {
               label: "Label",
               name: "label",
             },
+            {
+              type: 'object',
+              name: 'submenu',
+              label: 'Submenu',
+              list: true,
+              fields: [
+                {
+                  type: 'string',
+                  name: 'title',
+                  label: 'Submenu Title',
+                },
+                {
+                  type: 'string',
+                  name: 'link',
+                  label: 'Submenu Link',
+                },
+              ],
+            },
           ],
         },
       ],
