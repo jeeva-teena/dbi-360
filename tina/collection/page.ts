@@ -20,6 +20,9 @@ const Page: Collection = {
       if (document._sys.filename === "compliance") {
         return `/compliance`;
       }
+      if (document._sys.filename === "aster") {
+        return `/aster`;
+      }
       return undefined;
     },
   },

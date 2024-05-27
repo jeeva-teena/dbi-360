@@ -23,7 +23,8 @@
         "label": "Products",
         "submenu": [
           {
-            "title": "Aster"
+            "title": "Aster",
+            "link": "aster"
           },
           {
             "title": "Nexus"
