@@ -41,12 +41,39 @@
           {
             "title": "ConfluxHR",
             "link": "confluxHR"
+          },
+          {
+            "title": "Utility",
+            "submenu2": [
+              {
+                "title": "Cashflow Calculator",
+                "link": "cashflow"
+              },
+              {
+                "title": "Business Feasibility Calculator",
+                "link": "business-feasibility"
+              },
+              {
+                "title": "Profit Improvement Calculator",
+                "link": "profit-improvement"
+              },
+              {
+                "title": "Sales Prospect Calculator",
+                "link": "sales-prospect"
+              }
+            ]
           }
         ]
       },
       {
         "href": "resources",
-        "label": "Resources"
+        "label": "Resources",
+        "submenu": [
+          {
+            "title": "Blog",
+            "link": "blog"
+          }
+        ]
       },
       {
         "href": "compliance",
@@ -68,37 +95,37 @@
         "label": "Home"
       },
       {
-        "href": "",
+        "href": "about",
         "label": "About Us"
       },
       {
-        "href": "",
+        "href": "compliance",
         "label": "Compliance"
       },
       {
-        "href": "",
+        "href": "contact",
         "label": "Contact Us"
       }
     ],
     "importantLinks": [
       {
-        "href": "",
+        "href": "blog",
         "label": "Blog"
       },
       {
-        "href": "",
+        "href": "career",
         "label": "Career"
       },
       {
-        "href": "",
+        "href": "terms-conditions",
         "label": "Terms & Conditions"
       }
     ],
     "color": "primary",
     "social": {
-      "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
+      "facebook": "",
+      "twitter": "",
+      "instagram": ""
     }
   },
   "theme": {

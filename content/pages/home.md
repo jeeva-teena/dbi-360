@@ -58,7 +58,7 @@ blocks:
       - label: View More
         type: button
         icon: true
-        link: ''
+        link: 'https://nexus-data.io/'
     image:
       src: /uploads/nexus.png
       alt: Nexus
@@ -84,7 +84,7 @@ blocks:
       - label: View More
         type: button
         icon: true
-        link: /
+        link: 'https://zylererp.com/'
     image:
       src: /uploads/zyler.png
     layout: image-left
@@ -112,7 +112,7 @@ blocks:
       - label: View More
         type: button
         icon: true
-        link: /
+        link: 'https://asterdocs.com/'
     image:
       src: /uploads/aster.png
     color: tint
@@ -146,7 +146,7 @@ blocks:
       - label: View More
         type: button
         icon: true
-        link: /
+        link: 'https://buyersflow.com/'
     image:
       src: /uploads/Personalization.png
     layout: image-left
@@ -178,7 +178,7 @@ blocks:
       - label: View More
         type: button
         icon: true
-        link: /
+        link: 'https://confluxhr.com/'
     image:
       src: /uploads/conflux-hr.png
     color: tint

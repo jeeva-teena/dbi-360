@@ -8,10 +8,11 @@ blocks:
       - label: Explore Now
         type: button
         icon: true
-        link: /
+        link: 'https://asterdocs.com/'
     image:
       src: /uploads/aster-banner-1.png
     layout: image-right
+    color: tint
     bgimg:
       src: ''
     _template: hero
@@ -45,7 +46,7 @@ blocks:
       - label: Know More
         type: button
         icon: true
-        link: /
+        link: 'https://asterdocs.com/'
     image:
       src: /uploads/automated-workflows.png
     layout: image-left
@@ -63,7 +64,7 @@ blocks:
       - label: Know More
         type: button
         icon: true
-        link: /
+        link: 'https://asterdocs.com/'
     image:
       src: /uploads/streamlined-communications-1.png
     _template: hero
@@ -78,7 +79,7 @@ blocks:
       - label: Know More
         type: button
         icon: true
-        link: /
+        link: 'https://asterdocs.com/'
     image:
       src: /uploads/fast-approval.png
     layout: image-left
@@ -95,7 +96,7 @@ blocks:
       - label: Know More
         type: button
         icon: true
-        link: /
+        link: 'https://asterdocs.com/'
     image:
       src: /uploads/Improved-Clarity.png
     _template: hero

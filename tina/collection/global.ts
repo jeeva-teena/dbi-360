@@ -95,6 +95,24 @@ const Global: Collection = {
                   name: 'link',
                   label: 'Submenu Link',
                 },
+                {
+                  type: 'object',
+                  name: 'submenu2',
+                  label: 'Submenu 2',
+                  list: true,
+                  fields: [
+                    {
+                      type: 'string',
+                      name: 'title',
+                      label: 'Submenu Title',
+                    },
+                    {
+                      type: 'string',
+                      name: 'link',
+                      label: 'Submenu Link',
+                    },
+                  ],
+                },
               ],
             },
           ],

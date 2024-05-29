@@ -55,7 +55,7 @@ export const Tabs = ({ data }: { data: PageBlocksTabs }) => {
             )}
           </div>
           <div className="ps-24 col-span-2">
-            <div className="bg-gray-200 flex rounded-lg cursor-pointer text-xs text-black text-center">
+            <div className="bg-gray-200 flex rounded-lg cursor-pointer text-sm text-black text-center">
               <div
                 className={`tab px-5 py-4 w-1/3 rounded-lg ${
                   activeTab === 1 ? "active" : ""
