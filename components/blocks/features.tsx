@@ -1,6 +1,8 @@
 import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { Icon } from "../util/icon";
+import { Actions } from "../util/actions";
+import { ActionButton } from "tinacms";
 import { iconSchema } from "../util/icon";
 import {
   PageBlocksFeatures,
@@ -9,7 +11,11 @@ import {
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export const Feature = ({
+interface FeatureProps {
+  featuresColor: string;
+  data: PageBlocksFeaturesItems;
+}
+export const Feature: React.FC<FeatureProps> = ({
   featuresColor,
   data,
 }: {
@@ -38,7 +44,7 @@ export const Feature = ({
       {data.title && (
         <h3
           data-tina-field={tinaField(data, "title")}
-          className="text-2xl font-semibold title-font"
+          className={`font-semibold title-font ${data.hFontSize}`}
         >
           {data.title}
         </h3>
@@ -46,7 +52,7 @@ export const Feature = ({
       {data.text && (
         <p
           data-tina-field={tinaField(data, "text")}
-          className="text-base opacity-80 leading-relaxed"
+          className={`opacity-80  leading-relaxed ${data.dFontSize}`}
         >
           {data.text}
         </p>
@@ -54,24 +60,40 @@ export const Feature = ({
     </div>
   );
 };
-
-export const Features = ({ data }: { data: PageBlocksFeatures }) => {
+interface FeaturesProps {
+  data: PageBlocksFeatures;
+}
+export const Features: React.FC<FeaturesProps> = ({
+  data,
+}: {
+  data: PageBlocksFeatures & { gridColumns?: number };
+}) => {
   return (
     <Section color={data.color}>
-      <Container
-        className={` py-24 my-12`}
-        size="large"
-      >
+      <Container className={` py-24 my-12`} size="large">
         <div className="prose text-center max-w-full">
           <TinaMarkdown content={data.body} />
         </div>
-        <div className="flex flex-wrap gap-4 text-left mt-12">
+        <div
+          className={`grid gap-4 text-left mt-12 grid-cols-${
+            data.gridColumns || "1"
+          }`}
+        >
           {data.items &&
             data.items.map(function (block, i) {
               return (
                 <Feature featuresColor={data.color} key={i} data={block} />
               );
             })}
+        </div>
+        <div>
+          {data.actions && (
+            <Actions
+              className="justify-center py-2 mt-14"
+              parentColor={data.color}
+              actions={data.actions}
+            />
+          )}
         </div>
       </Container>
     </Section>
@@ -109,9 +131,6 @@ export const featureBlockSchema = {
             label: item?.title,
           };
         },
-        defaultItem: {
-          ...defaultFeature,
-        },
       },
       fields: [
         iconSchema,
@@ -145,6 +164,32 @@ export const featureBlockSchema = {
             component: "textarea",
           },
         },
+        {
+          type: "string",
+          label: "Heading Font Size",
+          name: "hFontSize",
+          options: [
+            { label: "Small", value: "text-sm" },
+            { label: "Base", value: "text-base" },
+            { label: "Large", value: "text-lg" },
+            { label: "Extra Large", value: "text-xl" },
+            { label: "2XL", value: "text-2xl" },
+            { label: "3XL", value: "text-3xl" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Description Font Size",
+          name: "dFontSize",
+          options: [
+            { label: "Small", value: "text-sm" },
+            { label: "Base", value: "text-base" },
+            { label: "Large", value: "text-lg" },
+            { label: "Extra Large", value: "text-xl" },
+            { label: "2XL", value: "text-2xl" },
+            { label: "3XL", value: "text-3xl" },
+          ],
+        },
       ],
     },
     {
@@ -161,6 +206,70 @@ export const featureBlockSchema = {
         { label: "Tint", value: "tint" },
         { label: "Primary", value: "primary" },
         { label: "Orange", value: "orange" },
+      ],
+    },
+    {
+      type: "number",
+      label: "Grid Columns",
+      name: "gridColumns",
+      ui: {
+        component: "select",
+      },
+      options: [
+        { label: "1 Column", value: "1" },
+        { label: "2 Columns", value: "2" },
+        { label: "3 Columns", value: "3" },
+        { label: "4 Columns", value: "4" },
+        { label: "5 Columns", value: "5" },
+        { label: "6 Columns", value: "6" },
+        { label: "7 Columns", value: "7" },
+        { label: "8 Columns", value: "8" },
+        { label: "9 Columns", value: "9" },
+        { label: "10 Columns", value: "10" },
+        { label: "11 Columns", value: "11" },
+        { label: "12 Columns", value: "12" },
+      ],
+      defaultItem: undefined,
+    },
+    {
+      label: "Actions",
+      name: "actions",
+      type: "object",
+      list: true,
+      ui: {
+        defaultItem: {
+          label: "Action Label",
+          type: "button",
+          icon: true,
+          link: "/",
+        },
+        itemProps: (item) => ({ label: item.label }),
+      },
+      fields: [
+        {
+          label: "Label",
+          name: "label",
+          type: "string",
+        },
+        {
+          label: "Type",
+          name: "type",
+          type: "string",
+          options: [
+            { label: "Button", value: "button" },
+            { label: "Link", value: "link" },
+          ],
+        },
+        {
+          label: "Icon",
+          name: "icon",
+          type: "boolean",
+        },
+        {
+          label: "Link",
+          name: "link",
+          type: "string",
+        },
       ],
     },
   ],

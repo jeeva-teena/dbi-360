@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+import { Actions } from "../util/actions";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksContent } from "../../tina/__generated__/types";
@@ -49,6 +50,15 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
               }}
             >
               <TinaMarkdown content={data.body} />
+              <div>
+                {data.actions && (
+                  <Actions
+                    className="justify-center py-2 mt-5"
+                    parentColor={data.color}
+                    actions={data.actions}
+                  />
+                )}
+              </div>
             </Container>
           ) : (
             <Container
@@ -65,6 +75,15 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
               style={{ textAlign: data.alignment || "left" }}
             >
               <TinaMarkdown content={data.body} />
+              <div>
+                {data.actions && (
+                  <Actions
+                    className="justify-center py-2 mt-5"
+                    parentColor={data.color}
+                    actions={data.actions}
+                  />
+                )}
+              </div>
             </Container>
           )}
         </>
@@ -168,6 +187,47 @@ export const contentBlockSchema: TinaTemplate = {
         {
           name: "alt",
           label: "Alt Text",
+          type: "string",
+        },
+      ],
+    },
+    {
+      label: "Actions",
+      name: "actions",
+      type: "object",
+      list: true,
+      ui: {
+        defaultItem: {
+          label: "Action Label",
+          type: "button",
+          icon: true,
+          link: "/",
+        },
+        itemProps: (item) => ({ label: item.label }),
+      },
+      fields: [
+        {
+          label: "Label",
+          name: "label",
+          type: "string",
+        },
+        {
+          label: "Type",
+          name: "type",
+          type: "string",
+          options: [
+            { label: "Button", value: "button" },
+            { label: "Link", value: "link" },
+          ],
+        },
+        {
+          label: "Icon",
+          name: "icon",
+          type: "boolean",
+        },
+        {
+          label: "Link",
+          name: "link",
           type: "string",
         },
       ],

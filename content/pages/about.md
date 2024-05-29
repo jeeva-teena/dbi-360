@@ -115,6 +115,7 @@ blocks:
       # Our Proposal
 
       Here is what we offer to meet our business ideologies:
+    gridColumns: '4'
     _template: features
 ---
 

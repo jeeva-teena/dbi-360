@@ -93,9 +93,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               data-tina-field={tinaField(data.image, "titleHeading")}
               className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
-              <span
-                className={`bg-clip-text text-black `}
-              >
+              <span className={`bg-clip-text text-black `}>
                 {data.image.titleHeading}
               </span>
             </h3>

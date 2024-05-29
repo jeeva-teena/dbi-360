@@ -72,6 +72,12 @@ blocks:
         text: ''
     body: |
       # Why Choose BuyersFlow?
+    gridColumns: '4'
+    actions:
+      - label: Start for Free Today
+        type: button
+        icon: true
+        link: 'https://portal.buyersflow.com/login'
     _template: features
   - body: |
       # Set It and Forget It!
@@ -82,6 +88,11 @@ blocks:
     width: large
     bgimg:
       src: /uploads/bg.png
+    actions:
+      - label: Start for Free
+        type: button
+        icon: true
+        link: 'https://portal.buyersflow.com/login'
     _template: content
 ---
 

@@ -2,7 +2,11 @@ import Link from "next/link";
 import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useTheme } from "../layout";
-import { PageBlocksHeroActions } from "../../tina/__generated__/types";
+import {
+  PageBlocksFeaturesActions,
+  PageBlocksContentActions,
+  PageBlocksHeroActions,
+} from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
 export const Actions = ({
@@ -12,7 +16,10 @@ export const Actions = ({
 }: {
   parentColor: string;
   className: string;
-  actions: PageBlocksHeroActions[];
+  actions:
+    | PageBlocksHeroActions[]
+    | PageBlocksFeaturesActions[]
+    | PageBlocksContentActions[];
 }) => {
   const theme = useTheme();
   const buttonColorClasses = {
@@ -67,12 +74,14 @@ export const Actions = ({
           let element = null;
           if (action.type === "button") {
             element = (
-              <Link key={index} href={action.link ? action.link : "/"}>
+              <Link key={index} className="no-underline" href={action.link ? action.link : "/"}>
                 <button
                   data-tina-field={tinaField(action)}
                   className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
                     parentColor === "primary"
-                      ? invertedButtonColorClasses[theme.color] : parentColor === "orange" ? invertedButtonColorClasses[theme.color]
+                      ? invertedButtonColorClasses[theme.color]
+                      : parentColor === "orange"
+                      ? invertedButtonColorClasses[theme.color]
                       : buttonColorClasses[theme.color]
                   }`}
                 >
@@ -94,7 +103,9 @@ export const Actions = ({
                 data-tina-field={tinaField(action)}
                 className={`group inline-flex items-center font-semibold text-lg transition duration-150 ease-out ${
                   parentColor === "primary"
-                    ? `text-white  hover:text-gray-50` : parentColor === "orange" ?  `text-white hover:text-gray-50`
+                    ? `text-white  hover:text-gray-50`
+                    : parentColor === "orange"
+                    ? `text-white hover:text-gray-50`
                     : linkButtonColorClasses[theme.color]
                 }`}
                 style={{

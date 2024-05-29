@@ -35,6 +35,12 @@ const Page: Collection = {
       if (document._sys.filename === "confluxHR") {
         return `/confluxHR`;
       }
+      if (document._sys.filename === "terms-conditions") {
+        return `/terms-conditions`;
+      }
+      if (document._sys.filename === "blog") {
+        return `/blog`;
+      }
       return undefined;
     },
   },
