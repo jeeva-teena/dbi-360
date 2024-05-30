@@ -2,7 +2,7 @@ import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { Icon } from "../util/icon";
 import { Actions } from "../util/actions";
-import { ActionButton } from "tinacms";
+import Link from "next/link";
 import { iconSchema } from "../util/icon";
 import {
   PageBlocksFeatures,
@@ -11,11 +11,7 @@ import {
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-interface FeatureProps {
-  featuresColor: string;
-  data: PageBlocksFeaturesItems;
-}
-export const Feature: React.FC<FeatureProps> = ({
+export const Feature = ({
   featuresColor,
   data,
 }: {
@@ -28,62 +24,59 @@ export const Feature: React.FC<FeatureProps> = ({
       className="flex-1 flex flex-col gap-6 text-center p-4 rounded-xl items-center lg:items-start lg:text-left max-w-xl mx-auto"
       style={{ flexBasis: "16rem", border: "1px solid #ccc" }}
     >
-      {data.icon && (
-        <Icon
-          tinaField={tinaField(data, "icon")}
-          parentColor={featuresColor}
-          data={{ size: "large", ...data.icon }}
-        />
-      )}
-      {data.imgSrc && (
-        <div data-tina-field={tinaField(data.imgSrc, "src")}>
-          <img src={data.imgSrc.src} aria-hidden="true" />
-          <hr className="mt-6" />
-        </div>
-      )}
-      {data.title && (
-        <h3
-          data-tina-field={tinaField(data, "title")}
-          className={`font-semibold title-font ${data.hFontSize}`}
-        >
-          {data.title}
-        </h3>
-      )}
-      {data.text && (
-        <p
-          data-tina-field={tinaField(data, "text")}
-          className={`opacity-80  leading-relaxed ${data.dFontSize}`}
-        >
-          {data.text}
-        </p>
-      )}
+      <a href={data.href}>
+        {data.icon && (
+          <Icon
+            tinaField={tinaField(data, "icon")}
+            parentColor={featuresColor}
+            data={{ size: "large", ...data.icon }}
+          />
+        )}
+        {data.imgSrc && (
+          <div data-tina-field={tinaField(data.imgSrc, "src")}>
+            <img src={data.imgSrc.src} aria-hidden="true" />
+            <hr className="mt-6" />
+          </div>
+        )}
+        {data.title && (
+          <h3
+            data-tina-field={tinaField(data, "title")}
+            className={`font-semibold title-font ${data.hFontSize}`}
+          >
+            {data.title}
+          </h3>
+        )}
+        {data.text && (
+          <p
+            data-tina-field={tinaField(data, "text")}
+            className={`opacity-80  leading-relaxed ${data.dFontSize}`}
+          >
+            {data.text}
+          </p>
+        )}
+      </a>
     </div>
   );
 };
-interface FeaturesProps {
-  data: PageBlocksFeatures;
-}
-export const Features: React.FC<FeaturesProps> = ({
-  data,
-}: {
-  data: PageBlocksFeatures & { gridColumns?: number };
-}) => {
+
+export const Features = ({ data }: { data: PageBlocksFeatures }) => {
+  const { color, body, items, gridColumns } = data;
+
+  const gridTemplateColumns = `repeat(${gridColumns}, minmax(0, 1fr))`;
+
   return (
-    <Section color={data.color}>
+    <Section color={color}>
       <Container className={` py-24 my-12`} size="large">
         <div className="prose text-center max-w-full">
-          <TinaMarkdown content={data.body} />
+          <TinaMarkdown content={body} />
         </div>
         <div
-          className={`grid gap-4 text-left mt-12 grid-cols-${
-            data.gridColumns || "1"
-          }`}
+          className={`grid gap-4 text-left mt-12`}
+          style={{ gridTemplateColumns }}
         >
-          {data.items &&
-            data.items.map(function (block, i) {
-              return (
-                <Feature featuresColor={data.color} key={i} data={block} />
-              );
+          {items &&
+            items.map(function (block, i) {
+              return <Feature featuresColor={color} key={i} data={block} />;
             })}
         </div>
         <div>
@@ -190,6 +183,11 @@ export const featureBlockSchema = {
             { label: "3XL", value: "text-3xl" },
           ],
         },
+        {
+          type: "string",
+          label: "Link",
+          name: "href",
+        },
       ],
     },
     {
@@ -209,7 +207,7 @@ export const featureBlockSchema = {
       ],
     },
     {
-      type: "number",
+      type: "string",
       label: "Grid Columns",
       name: "gridColumns",
       ui: {

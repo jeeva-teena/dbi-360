@@ -97,20 +97,46 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
           <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
             {data.nav &&
               data.nav.map((item, i) => {
-                const activeItem = (item.href === "" ? router.asPath === "/" : router.asPath.includes(item.href)) && isClient;
+                const activeItem =
+                  (item.href === ""
+                    ? router.asPath === "/"
+                    : router.asPath.includes(item.href)) && isClient;
                 const hasSubmenu = item.submenu && item.submenu.length > 0;
 
                 return (
-                  <li key={`${item.label}-${i}`} className={`relative ${activeItem ? activeItemClasses[theme.color] : ""}`}>
+                  <li
+                    key={`${item.label}-${i}`}
+                    className={`relative ${
+                      activeItem ? activeItemClasses[theme.color] : ""
+                    }`}
+                  >
                     {hasSubmenu ? (
-                      <div onClick={() => toggleSubmenu(item.label)} className={`select-none cursor-pointer text-base inline-block tracking-wide transition duration-150 ease-out hover:opacity-100 py-8 px-4 ${openSubmenu === item.label ? "" : "opacity-70"}`}>
+                      <div
+                        onClick={() => toggleSubmenu(item.label)}
+                        className={`select-none cursor-pointer text-base inline-block tracking-wide transition duration-150 ease-out hover:opacity-100 py-8 px-4 ${
+                          openSubmenu === item.label ? "" : "opacity-70"
+                        }`}
+                      >
                         {item.label}
-                        <svg xmlns="http://www.w3.org/2000/svg" className="inline align-sub ms-2" width={20} height={20} viewBox="0 0 320 512">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="inline align-sub ms-2"
+                          width={20}
+                          height={20}
+                          viewBox="0 0 320 512"
+                        >
                           <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" />
                         </svg>
                       </div>
                     ) : (
-                      <Link data-tina-field={tinaField(item, "label")} href={`/${item.href}`} className={`select-none text-base inline-block tracking-wide transition duration-150 ease-out hover:opacity-100 py-8 px-4 ${activeItem ? "" : "opacity-70"}`} onClick={() => handleLinkClick(`/${item.href}`)}>
+                      <Link
+                        data-tina-field={tinaField(item, "label")}
+                        href={`/${item.href}`}
+                        className={`select-none text-base inline-block tracking-wide transition duration-150 ease-out hover:opacity-100 py-8 px-4 ${
+                          activeItem ? "" : "opacity-70"
+                        }`}
+                        onClick={() => handleLinkClick(`/${item.href}`)}
+                      >
                         {item.label}
                       </Link>
                     )}
@@ -118,31 +144,61 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                     {openSubmenu === item.label && item.submenu && (
                       <ul className="absolute left-0 top-20 w-56 bg-white rounded-lg shadow-md z-10">
                         {item.submenu.map((submenu) => (
-                          <li key={submenu.title} className="cursor-pointer relative hover:bg-gray-100 py-4 px-6">
+                          <li
+                            key={submenu.title}
+                            className="cursor-pointer relative hover:bg-gray-100 py-4 px-6"
+                          >
                             {submenu.submenu2 && submenu.submenu2.length > 0 ? (
-                              <div onClick={() => toggleSubmenu2(submenu.title)}>
+                              <div
+                                onClick={() => toggleSubmenu2(submenu.title)}
+                              >
                                 {submenu.title}
-                                <svg xmlns="http://www.w3.org/2000/svg" className="inline align-sub ms-2" width={20} height={20} viewBox="0 0 320 512">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="inline align-sub ms-2"
+                                  width={20}
+                                  height={20}
+                                  viewBox="0 0 320 512"
+                                >
                                   <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" />
                                 </svg>
                               </div>
                             ) : (
-                              <Link data-tina-field={tinaField(submenu, "title")} href={`/${submenu.link}`} onClick={() => handleLinkClick(`/${submenu.link}`)}>
+                              <Link
+                                data-tina-field={tinaField(submenu, "title")}
+                                href={`/${submenu.link}`}
+                                onClick={() =>
+                                  handleLinkClick(`/${submenu.link}`)
+                                }
+                              >
                                 {submenu.title}
                               </Link>
                             )}
 
-                            {openSubmenu2 === submenu.title && submenu.submenu2 && (
-                              <ul className="absolute left-56 top-0 w-72 bg-white rounded-lg shadow-md z-10">
-                                {submenu.submenu2.map((submenu2) => (
-                                  <li key={submenu2.title} className="cursor-pointer py-2.5 hover:bg-gray-100 py-4 px-6">
-                                    <Link data-tina-field={tinaField(submenu2, "title")} href={`/${submenu2.link}`} onClick={() => handleLinkClick(`/${submenu2.link}`)}>
-                                      {submenu2.title}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
+                            {openSubmenu2 === submenu.title &&
+                              submenu.submenu2 && (
+                                <ul className="absolute left-56 top-0 w-72 bg-white rounded-lg shadow-md z-10">
+                                  {submenu.submenu2.map((submenu2) => (
+                                    <li
+                                      key={submenu2.title}
+                                      className="cursor-pointer py-2.5 hover:bg-gray-100 py-4 px-6"
+                                    >
+                                      <Link
+                                        data-tina-field={tinaField(
+                                          submenu2,
+                                          "title"
+                                        )}
+                                        href={`/${submenu2.link}`}
+                                        onClick={() =>
+                                          handleLinkClick(`/${submenu2.link}`)
+                                        }
+                                      >
+                                        {submenu2.title}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
                           </li>
                         ))}
                       </ul>
@@ -160,7 +216,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
               ? `via-white`
               : `via-black dark:via-white`
           } to-transparent bottom-0 left-4 right-4 -z-1 opacity-5`}
-        />
+        ></div>
       </Container>
     </div>
   );
