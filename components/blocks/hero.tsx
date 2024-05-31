@@ -29,8 +29,18 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     ? "md:col-start-1 row-start-1"
     : "md:col-start-4 md:row-start-2 row-start-1";
   const backgroundImageSrc = data.bgimg?.src || "";
+  const backgroundSize = data.bgimg?.backgroundSize || "cover";
+  const backgroundPosition = data.bgimg?.backgroundPosition || "center center";
+  const backgroundRepeat = data.bgimg?.backgroundRepeat || "no-repeat";
+
   return (
-    <Section color={data.color} bgimg={backgroundImageSrc}>
+    <Section
+      color={data.color}
+      bgimg={backgroundImageSrc}
+      backgroundSize={backgroundSize}
+      backgroundPosition={backgroundPosition}
+      backgroundRepeat={backgroundRepeat}
+    >
       <Container size="large" className={containerClass}>
         <div
           className={`md:col-span-3 ${contentClass} text-center md:text-left`}
@@ -104,7 +114,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                 aria-hidden="true"
               />
               <img
-                className="relative z-10 w-full max-w-xs rounded-lg md:max-w-none h-auto"
+                className="relative w-full max-w-xs rounded-lg md:max-w-none h-auto"
                 alt={data.image.alt}
                 src={data.image.src}
               />
@@ -240,6 +250,39 @@ export const heroBlockSchema: TinaTemplate = {
           name: "alt",
           label: "Alt Text",
           type: "string",
+        },
+        {
+          type: "string",
+          label: "Background Size",
+          name: "backgroundSize",
+          options: [
+            { label: "Cover", value: "cover" },
+            { label: "Contain", value: "contain" },
+            { label: "Auto", value: "auto" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Background Position",
+          name: "backgroundPosition",
+          options: [
+            { label: "Center Center", value: "center center" },
+            { label: "Top Center", value: "top center" },
+            { label: "Bottom Center", value: "bottom center" },
+            { label: "Left Center", value: "left center" },
+            { label: "Right Center", value: "right center" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Background Repeat",
+          name: "backgroundRepeat",
+          options: [
+            { label: "No-repeat", value: "no-repeat" },
+            { label: "Repeat", value: "repeat" },
+            { label: "Repeat-x", value: "repeat-x" },
+            { label: "Repeat-y", value: "repeat-y" },
+          ],
         },
       ],
     },

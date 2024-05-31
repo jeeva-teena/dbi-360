@@ -1,7 +1,7 @@
 ---
 title: Aster
 blocks:
-  - tagline: 'Aster Streamline Documentation,'
+  - tagline: Aster Streamline Documentation
     headline: With The Best Compliance Solution
     text: ''
     actions:
@@ -10,11 +10,14 @@ blocks:
         icon: true
         link: 'https://asterdocs.com/'
     image:
-      src: /uploads/aster-banner-1.png
+      src: ''
     layout: image-right
     color: tint
     bgimg:
-      src: ''
+      src: /uploads/aster-banner-1.png
+      backgroundSize: contain
+      backgroundPosition: right center
+      backgroundRepeat: no-repeat
     _template: hero
   - body: >
       # Your All-In-One Solution for Easy Documentation

@@ -10,7 +10,12 @@ blocks:
         icon: true
         link: 'https://confluxhr.com/'
     image:
+      src: ''
+    bgimg:
       src: /uploads/confluxhr.png
+      backgroundSize: contain
+      backgroundPosition: right center
+      backgroundRepeat: no-repeat
     _template: hero
   - body: |
       # Manage Your HR Processes All in One Place

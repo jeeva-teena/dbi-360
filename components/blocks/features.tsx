@@ -21,7 +21,7 @@ export const Feature = ({
   return (
     <div
       data-tina-field={tinaField(data)}
-      className="flex-1 flex flex-col gap-6 text-center p-4 rounded-xl items-center lg:items-start lg:text-left max-w-xl mx-auto"
+      className="w-full flex-1 flex flex-col gap-6 text-center p-4 rounded-xl items-center lg:items-start lg:text-left mx-auto"
       style={{ flexBasis: "16rem", border: "1px solid #ccc" }}
     >
       <a href={data.href}>
@@ -35,7 +35,7 @@ export const Feature = ({
         {data.imgSrc && (
           <div data-tina-field={tinaField(data.imgSrc, "src")}>
             <img src={data.imgSrc.src} aria-hidden="true" />
-            <hr className="mt-6" />
+            <hr className="my-6" />
           </div>
         )}
         {data.title && (

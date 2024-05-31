@@ -10,8 +10,13 @@ blocks:
         icon: true
         link: 'https://nexus-data.io/'
     image:
-      src: /uploads/nexus-banner-1.png
+      src: ''
     color: tint
+    bgimg:
+      src: /uploads/nexus-banner-1.png
+      backgroundSize: contain
+      backgroundPosition: right center
+      backgroundRepeat: no-repeat
     _template: hero
   - body: |
       # NEXUS FOR HUMAN RESOURCE

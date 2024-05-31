@@ -12,11 +12,14 @@ blocks:
       # Accurate, & Insight-Driven
     textColor: white
     alignment: center
-    bgOption: container
     color: ''
     width: large
     bgimg:
       src: /uploads/slider-background-1.jpg
+      bgOption: container
+      backgroundSize: cover
+      backgroundPosition: center center
+      backgroundRepeat: no-repeat
     _template: content
   - body: >
       # Start Using Our

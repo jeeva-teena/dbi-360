@@ -39,7 +39,7 @@ blocks:
         hFontSize: text-lg
         dFontSize: text-base
     body: ''
-    gridColumns: '2'
+    gridColumns: '3'
     _template: features
 ---
 

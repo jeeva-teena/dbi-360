@@ -14,6 +14,9 @@ blocks:
     color: tint
     bgimg:
       src: /uploads/erp-banner-1.png
+      backgroundSize: contain
+      backgroundPosition: right center
+      backgroundRepeat: no-repeat
     _template: hero
   - body: |
       Zyler is Born in the Cloud

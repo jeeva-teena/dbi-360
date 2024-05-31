@@ -146,10 +146,10 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                         {item.submenu.map((submenu) => (
                           <li
                             key={submenu.title}
-                            className="cursor-pointer relative hover:bg-gray-100 py-4 px-6"
+                            className="cursor-pointer relative hover:bg-gray-100"
                           >
                             {submenu.submenu2 && submenu.submenu2.length > 0 ? (
-                              <div
+                              <div className="py-4 px-6"
                                 onClick={() => toggleSubmenu2(submenu.title)}
                               >
                                 {submenu.title}
@@ -165,6 +165,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                               </div>
                             ) : (
                               <Link
+                              className="block py-4 px-6"
                                 data-tina-field={tinaField(submenu, "title")}
                                 href={`/${submenu.link}`}
                                 onClick={() =>
@@ -181,9 +182,9 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                                   {submenu.submenu2.map((submenu2) => (
                                     <li
                                       key={submenu2.title}
-                                      className="cursor-pointer py-2.5 hover:bg-gray-100 py-4 px-6"
+                                      className="cursor-pointer hover:bg-gray-100"
                                     >
-                                      <Link
+                                      <Link className="block py-4 px-6"
                                         data-tina-field={tinaField(
                                           submenu2,
                                           "title"
