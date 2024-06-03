@@ -28,7 +28,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
       backgroundRepeat={backgroundRepeat}
     >
       {data.imgSrc && (
-        <div data-tina-field={tinaField(data.imgSrc, "src")}>
+        <div data-tina-field={tinaField(data.imgSrc, "src")} className="mb-16">
           <img src={data.imgSrc.src} aria-hidden="true" />
         </div>
       )}
@@ -36,18 +36,16 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
         <>
           {data.bgimg?.bgOption === "container" ? (
             <Container
-              width={data.width}
-              className={`prose py-24 my-12 rounded-lg 
+              className={`prose pt-24 pb-24 rounded-lg text-${data.textColor} ${data.hFontSize}
               ${
                 data.color === "primary"
                   ? `prose-primary`
                   : data.color === "orange"
                   ? `prose-orange`
-                  : `dark:prose-dark`
+                  : ``
               }
              `}
               data-tina-field={tinaField(data, "body")}
-              size="medium"
               style={{
                 textAlign: data.alignment || "left",
                 ...bgContainerStyle,
@@ -67,7 +65,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
           ) : (
             <Container
               width={data.width}
-              className={`prose ${
+              className={`prose ${data.hFontSize} ${
                 data.color === "primary"
                   ? `prose-primary`
                   : data.color === "orange"
@@ -118,6 +116,21 @@ export const contentBlockSchema: TinaTemplate = {
       options: [
         { label: "Black", value: "black" },
         { label: "White", value: "white" },
+      ],
+    },
+    {
+      type: "string",
+      label: "Heading Font Size",
+      name: "hFontSize",
+      options: [
+        { label: "Small", value: "text-sm" },
+        { label: "Base", value: "text-base" },
+        { label: "Large", value: "text-lg" },
+        { label: "Extra Large", value: "text-xl" },
+        { label: "2XL", value: "text-2xl" },
+        { label: "3XL", value: "text-3xl" },
+        { label: "4XL", value: "text-4xl" },
+        { label: "5XL", value: "text-5xl" },
       ],
     },
     {

@@ -11,17 +11,17 @@ import { tinaField } from "tinacms/dist/react";
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const theme = useTheme();
   const headlineColorClasses = {
-    blue: "from-blue-400 to-blue-600",
-    teal: "from-teal-400 to-teal-600",
-    green: "from-green-400 to-green-600",
-    red: "from-red-400 to-red-600",
-    pink: "from-pink-400 to-pink-600",
-    purple: "from-purple-400 to-purple-600",
-    orange: "from-orange-300 to-orange-600",
-    yellow: "from-yellow-400 to-yellow-600",
+    blue: "from-blue-500 to-blue-500",
+    teal: "from-teal-500 to-teal-500",
+    green: "from-green-500 to-green-500",
+    red: "from-red-500 to-red-500",
+    pink: "from-pink-500 to-pink-500",
+    purple: "from-purple-500 to-purple-500",
+    orange: "from-orange-500 to-orange-500",
+    yellow: "from-yellow-500 to-yellow-500",
   };
   const isImageLeft = data.layout === "image-left";
-  const containerClass = `grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center`;
+  const containerClass = `grid grid-cols-1 md:grid-cols-5 gap-x-14 gap-y-0 items-top justify-center`;
   const contentClass = isImageLeft
     ? "md:col-start-3"
     : "md:col-start-1 row-start-2 md-row-start-1";

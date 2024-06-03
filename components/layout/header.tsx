@@ -33,15 +33,15 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
       "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
     tint: "text-gray-900 dark:text-gray-100 bg-gradient-to-br from-gray-100 dark:from-gray-1000 to-transparent",
     primary: {
-      blue: "text-white from-blue-300 to-blue-500",
-      teal: "text-white from-teal-400 to-teal-500",
-      green: "text-white from-green-400 to-green-500",
-      red: "text-white from-red-400 to-red-500",
-      pink: "text-white from-pink-400 to-pink-500",
-      purple: "text-white from-purple-400 to-purple-500",
-      yellow: "text-white from-yellow-400 to-yellow-500",
+      blue: "text-white from-blue-500 to-blue-500",
+      teal: "text-white from-teal-500 to-teal-500",
+      green: "text-white from-green-500 to-green-500",
+      red: "text-white from-red-500 to-red-500",
+      pink: "text-white from-pink-500 to-pink-500",
+      purple: "text-white from-purple-500 to-purple-500",
+      yellow: "text-white from-yellow-500 to-yellow-500",
     },
-    orange: "text-white from-orange-400 to-orange-500",
+    orange: "text-white from-orange-500 to-orange-500",
   };
 
   const headerColorCss =

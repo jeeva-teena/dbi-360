@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .tab {
   transition: background-color 0.2s;
 }
@@ -26,4 +25,8 @@
 
 .image-container img.active {
   display: block;
+}
+.prose :where(h1){
+  margin-bottom: 20px;
+  color: inherit;
 }

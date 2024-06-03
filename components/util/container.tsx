@@ -11,7 +11,7 @@ export const Container = ({
     custom: "",
     small: "py-2",
     medium: "py-6",
-    large: "py-12",
+    large: "py-20",
     default: "py-6",
   };
   const widthClass = {

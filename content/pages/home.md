@@ -9,7 +9,7 @@ blocks:
   - body: |
       # The World’s Most Intelligent,
 
-      # Accurate, & Insight-Driven
+      # Accurate, & Insight-Drive
     textColor: white
     alignment: center
     color: ''
@@ -22,16 +22,15 @@ blocks:
       backgroundRepeat: no-repeat
     _template: content
   - body: >
-      # Start Using Our
-
-
-      # Dynamic Business Solutions Today
+      # Start Using Our Dynamic Business Solutions Today
 
 
       ##### DBI360 offers you a multitude of effective business solutions that
       are aimed at streamlining your business purposes and triggering growth.
       These dynamic solutions cater to varied departments, ensuring complete
       organizational benefit.
+    textColor: black
+    hFontSize: text-lg
     alignment: center
     color: ''
     width: large
@@ -208,6 +207,7 @@ blocks:
     _template: hero
   - body: |
       # Our specialists are waiting to help you
+    hFontSize: text-2xl
     alignment: center
     color: default
     width: small
