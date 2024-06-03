@@ -20,8 +20,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Prism } from "tinacms/dist/rich-text/prism";
 import type { TinaMarkdownContent, Components } from "tinacms/dist/rich-text";
 import { PostType } from "../../pages/posts/[filename]";
-import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
 import { tinaField } from "tinacms/dist/react";
 
 const components: Components<{
@@ -72,42 +70,40 @@ const components: Components<{
   NewsletterSignup: (props) => {
     return (
       <>
-        <div className="bg-white">
-          <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-            <div className="">
-              <TinaMarkdown content={props.children} />
-            </div>
-            <div className="mt-8 ">
-              <form className="sm:flex">
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="email-address"
-                  name="email-address"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:border-teal-500 sm:max-w-xs rounded-md"
-                  placeholder={props.placeholder}
-                />
-                <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
-                  >
-                    {props.buttonText}
-                  </button>
-                </div>
-              </form>
-              <div className="mt-3 text-sm text-gray-500">
-                {props.disclaimer && (
-                  <TinaMarkdown content={props.disclaimer} />
-                )}
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+          <div className="">
+            <TinaMarkdown content={props.children} />
+          </div>
+          <div className="mt-8 ">
+            <form className="sm:flex">
+              <label htmlFor="email-address" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="email-address"
+                name="email-address"
+                type="email"
+                autoComplete="email"
+                required
+                className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:border-teal-500 sm:max-w-xs rounded-md"
+                placeholder={props.placeholder}
+              />
+              <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                <button
+                  type="submit"
+                  className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                >
+                  {props.buttonText}
+                </button>
               </div>
+            </form>
+            <div className="mt-3 text-sm text-gray-500">
+              {props.disclaimer && <TinaMarkdown content={props.disclaimer} />}
             </div>
           </div>
         </div>
+      </div>
       </>
     );
   },
@@ -120,19 +116,6 @@ const components: Components<{
 
 export const Post = (props: PostType) => {
   const theme = useTheme();
-  const socialIconClasses = "h-4 w-auto";
-  const socialIconColorClasses = {
-    blue: "text-blue-500 dark:text-blue-400 hover:text-blue-300",
-    teal: "text-teal-500 dark:text-teal-400 hover:text-teal-300",
-    green: "text-green-500 dark:text-green-400 hover:text-green-300",
-    red: "text-red-500 dark:text-red-400 hover:text-red-300",
-    pink: "text-pink-500 dark:text-pink-400 hover:text-pink-300",
-    purple: "text-purple-500 dark:text-purple-400 hover:text-purple-300",
-    orange: "text-orange-500 dark:text-orange-400 hover:text-orange-300",
-    yellow: "text-yellow-500 dark:text-yellow-400 hover:text-yellow-300",
-    primary: "text-white opacity-80 hover:opacity-100",
-  };
-
   const titleColorClasses = {
     blue: "from-blue-500 to-blue-500 dark:from-blue-300 dark:to-blue-500",
     teal: "from-teal-500 to-teal-500 dark:from-teal-300 dark:to-teal-500",
@@ -226,84 +209,6 @@ export const Post = (props: PostType) => {
           className="prose dark:prose-dark w-full max-w-none"
         >
           <TinaMarkdown components={components} content={props._body} />
-          <div className="flex gap-4">
-            {props.social && props.social.facebook && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={props.social.facebook}
-                target="_blank"
-              >
-                <FaFacebookF
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      props.social.color === "primary"
-                        ? "primary"
-                        : props.social.color === "orange"
-                        ? "orange"
-                        : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {props.social && props.social.twitter && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={props.social.twitter}
-                target="_blank"
-              >
-                <FaTwitter
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      props.social.color === "primary"
-                        ? "primary"
-                        : props.social.color === "orange"
-                        ? "orange"
-                        : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {props.social && props.social.instagram && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={props.social.instagram}
-                target="_blank"
-              >
-                <AiFillInstagram
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      props.social.color === "primary"
-                        ? "primary"
-                        : props.social.color === "orange"
-                        ? "orange"
-                        : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {props.social && props.social.github && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={props.social.github}
-                target="_blank"
-              >
-                <FaGithub
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      props.social.color === "primary"
-                        ? "primary"
-                        : props.social.color === "orange"
-                        ? "orange"
-                        : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-          </div>
         </div>
       </Container>
     </Section>
