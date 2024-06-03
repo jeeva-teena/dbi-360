@@ -44,6 +44,33 @@ const Post: Collection = {
       },
     },
     {
+      type: "object",
+      label: "Social Links",
+      name: "social",
+      fields: [
+        {
+          type: "string",
+          label: "Facebook",
+          name: "facebook",
+        },
+        {
+          type: "string",
+          label: "Twitter",
+          name: "twitter",
+        },
+        {
+          type: "string",
+          label: "Instagram",
+          name: "instagram",
+        },
+        {
+          type: "string",
+          label: "Github",
+          name: "github",
+        },
+      ],
+    },
+    {
       type: "rich-text",
       label: "Body",
       name: "_body",

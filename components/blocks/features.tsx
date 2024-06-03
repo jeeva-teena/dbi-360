@@ -24,7 +24,7 @@ export const Feature = ({
       className="w-full flex-1 flex flex-col gap-6 text-center p-4 rounded-xl items-center lg:items-start lg:text-left mx-auto"
       style={{ flexBasis: "16rem", border: "1px solid #ccc" }}
     >
-      <a href={data.href}>
+      <a href={data.href} target="_blank">
         {data.icon && (
           <Icon
             tinaField={tinaField(data, "icon")}

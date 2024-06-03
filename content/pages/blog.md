@@ -22,7 +22,7 @@ blocks:
         hFontSize: text-lg
         dFontSize: text-base
         href: >-
-          https://dbi360.com/future-proof-your-business-top-7-business-intelligence-trends-to-watch/
+          posts/Future-Proof-Your-Business-Top-7-Business-Intelligence-Trends-to-Watch
       - icon:
           name: ''
           color: ''
@@ -38,6 +38,8 @@ blocks:
           departmental…
         hFontSize: text-lg
         dFontSize: text-base
+        href: >-
+          posts/Boost-Collaboration--Efficiency-Your-B2B-SaaS-Partner-for-Cross-Functional-Success
     body: ''
     gridColumns: '3'
     _template: features
