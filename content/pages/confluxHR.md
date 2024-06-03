@@ -17,13 +17,8 @@ blocks:
       backgroundPosition: right center
       backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      # Manage Your HR Processes All in One Place
-    textColor: black
-    alignment: center
-    _template: content
-  - tagline: ''
-    headline: Human Resource Management
+  - tagline: Human Resource Management
+    headline: Manage Your HR Processes All in One Place
     text: >
       ConfluxHR lets you connect and manage your workforce seamlessly, like
       never before. This all-in-one human resource management suite comes with a
@@ -38,6 +33,11 @@ blocks:
         link: 'https://confluxhr.com/'
     image:
       src: /uploads/HR-Processes.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - tagline: ''
     headline: Smart Solutions
@@ -54,14 +54,14 @@ blocks:
     image:
       src: /uploads/Smart-Solutions.png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      # Recruitment
-    textColor: ''
-    alignment: center
-    _template: content
-  - tagline: ''
-    headline: Hire With The Maximum Ease
+  - tagline: Hire With The Maximum Ease
+    headline: Recruitment
     text: >
       Automate and streamline the entire recruitment cycle in no time. From
       scheduling interviews and accessing feedbacks to sending offer letters and
@@ -74,13 +74,14 @@ blocks:
         link: 'https://confluxhr.com/'
     image:
       src: /uploads/recruitment.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      # Payroll Management
-    alignment: center
-    _template: content
-  - tagline: ''
-    headline: Run Payroll in Just a few Simple Steps
+  - tagline: Run Payroll in Just a few Simple Steps
+    headline: Payroll Management
     text: >
       Ditch the long, traditional method of payroll processing. With all the key
       information available right at your fingertips, run payroll with the
@@ -93,14 +94,14 @@ blocks:
     image:
       src: /uploads/Payroll-Banner.png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      # Attendance Management
-    textColor: ''
-    alignment: center
-    _template: content
-  - tagline: ''
-    headline: Manage Employee Attendance Fawlessly
+  - tagline: Manage Employee Attendance Fawlessly
+    headline: Attendance Management
     text: >
       Keep leave and attendance in track with this automated attendance
       software, which minimizes manual, error-prone data entry and enhances
@@ -112,13 +113,14 @@ blocks:
         link: 'https://confluxhr.com/'
     image:
       src: /uploads/attendance.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      # Performance Management
-    alignment: center
-    _template: content
-  - tagline: ''
-    headline: Drive Performance Throughout Employee Cycle
+  - tagline: Drive Performance Throughout Employee Cycle
+    headline: Performance Management
     text: >
       With this comprehensive, state-of-the-art solution, run your organization
       effectively, by efficient talent management. Align business, department,
@@ -133,13 +135,14 @@ blocks:
     image:
       src: /uploads/performance.png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      # Training & Development
-    alignment: center
-    _template: content
-  - tagline: ''
-    headline: Emphasize on Employee Development & Satisfaction
+  - tagline: Emphasize on Employee Development & Satisfaction
+    headline: Training & Development
     text: >
       Schedule training sessions and notify trainees at the blink of an eye.
       Conduct assessments to determine the effectiveness of the training
@@ -156,13 +159,14 @@ blocks:
         link: 'https://confluxhr.com/'
     image:
       src: /uploads/training-development.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      # Self-Service
-    alignment: center
-    _template: content
-  - tagline: ''
-    headline: Motivate Employees to Take The Advantage of self-service
+  - tagline: Motivate Employees to Take The Advantage of self-service
+    headline: Self-Service
     text: "ConfluxHR\_ not only assists the HR department in their goals and objectives, but it also makes the employees self-sufficient. They can easily access their benefits, pay, leaves, and much more via mobile or desktop application.\n\nFree your team from the endless manual tasks; Run your HR processes on ConfluxHR!\n"
     actions:
       - label: Know More

@@ -36,6 +36,11 @@ blocks:
     image:
       src: /uploads/about-2-1.png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - items:
       - icon:
@@ -78,16 +83,27 @@ blocks:
         type: button
         icon: true
         link: 'https://portal.buyersflow.com/login'
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: features
   - body: |
       # Set It and Forget It!
 
-      ## Automate 99% Of Your Way To Email Marketing Success
+      # Automate 99% Of Your Way To Email Marketing Success
+    marginTop: mt-28
+    textColor: white
+    hFontSize: text-base
     alignment: center
-    bgOption: container
     width: large
     bgimg:
       src: /uploads/bg.png
+      bgOption: section
+      backgroundSize: cover
+      backgroundPosition: top center
+      backgroundRepeat: no-repeat
     actions:
       - label: Start for Free
         type: button

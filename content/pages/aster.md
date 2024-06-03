@@ -23,6 +23,15 @@ blocks:
       # Your All-In-One Solution for Easy Documentation
 
 
+      ##
+
+
+      ##
+
+
+      ##
+
+
       # All in One Services
 
 
@@ -32,11 +41,13 @@ blocks:
       ever!
 
 
-      #
+      ##
 
 
       # Take Control of Your Supply Chain on Aster Network
+    hFontSize: text-lg
     alignment: center
+    width: medium
     _template: content
   - tagline: ''
     headline: Automated Workflows
@@ -53,6 +64,11 @@ blocks:
     image:
       src: /uploads/automated-workflows.png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - tagline: ''
     headline: Streamlined Communications
@@ -70,6 +86,11 @@ blocks:
         link: 'https://asterdocs.com/'
     image:
       src: /uploads/streamlined-communications-1.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - tagline: ''
     headline: Fast Approval
@@ -86,6 +107,11 @@ blocks:
     image:
       src: /uploads/fast-approval.png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - tagline: ''
     headline: Improved Clarity

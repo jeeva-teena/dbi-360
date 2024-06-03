@@ -25,9 +25,9 @@ blocks:
       # Start Using Our Dynamic Business Solutions Today
 
 
-      ##### DBI360 offers you a multitude of effective business solutions that
-      are aimed at streamlining your business purposes and triggering growth.
-      These dynamic solutions cater to varied departments, ensuring complete
+      DBI360 offers you a multitude of effective business solutions that are
+      aimed at streamlining your business purposes and triggering growth. These
+      dynamic solutions cater to varied departments, ensuring complete
       organizational benefit.
     textColor: black
     hFontSize: text-lg

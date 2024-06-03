@@ -26,7 +26,13 @@
 .image-container img.active {
   display: block;
 }
-.prose :where(h1){
+.prose :where(h1),
+.prose :where(h2),
+.prose :where(h3),
+.prose :where(h4),
+.prose :where(h5),
+.prose :where(h6),
+.prose :where(p) {
   margin-bottom: 20px;
   color: inherit;
 }

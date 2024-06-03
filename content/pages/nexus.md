@@ -18,15 +18,17 @@ blocks:
       backgroundPosition: right center
       backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      # NEXUS FOR HUMAN RESOURCE
-
-      Close Vacancies Faster Than Ever Before!!
+  - body: ''
+    hFontSize: text-lg
     alignment: center
+    width: medium
     _template: content
-  - tagline: ''
-    headline: How NEXUS Works For Human Resource?
+  - tagline: How NEXUS Works For Human Resource?
+    headline: 'NEXUS FOR HUMAN RESOURCE '
     text: >
+      ### Close Vacancies Faster Than Ever Before!!
+
+
       ### Experience a Streamlined Recruitment Process
 
 
@@ -54,17 +56,24 @@ blocks:
     image:
       src: /uploads/sds-human-resource (1).png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      # NEXUS FOR SALES
-
-      ##### Close the most profitable deals in just seconds!
+  - body: ''
+    hFontSize: text-lg
     alignment: center
+    width: medium
     _template: content
-  - tagline: ''
-    headline: How NEXUS Works For Sales?
+  - tagline: How NEXUS Works For Sales?
+    headline: NEXUS FOR SALES
     text: >
-      ##### Ditch all boundaries & sell globally in seconds
+      ### Close the most profitable deals in just seconds!
+
+
+      ### Ditch all boundaries & sell globally in seconds
 
 
       Go global and connect with your target audience in just few clicks.
@@ -72,7 +81,7 @@ blocks:
       resource-efficient way!
 
 
-      Try NEXUS For SALES Today!!
+      ### Try NEXUS For SALES Today!!
 
 
       * Get targeted customers with relevant filters
@@ -93,16 +102,22 @@ blocks:
         link: 'https://nexus-data.io/'
     image:
       src: /uploads/sds-sales.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - body: |
-      # NEXUS FOR MARKETING
-
-      Go Instantly Global with Your Brand!
+      #
     alignment: center
     _template: content
-  - tagline: ''
-    headline: How NEXUS Works For Marketing?
+  - tagline: How NEXUS Works For Marketing?
+    headline: NEXUS FOR MARKETING
     text: >
+      ### Go Instantly Global with Your Brand!
+
+
       ### Take advantage of a streamlined global branding experience
 
 
@@ -127,16 +142,24 @@ blocks:
     image:
       src: /uploads/sds-human-resource (1).png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - body: |
-      # NEXUS FOR LOGISTICS
+      #
 
-      ##### Access 100% trusted freight forwarders to ship effortlessly!
+      #####
     alignment: center
     _template: content
-  - tagline: ''
-    headline: How NEXUS Works For Logistics?
+  - tagline: How NEXUS Works For Logistics?
+    headline: NEXUS FOR LOGISTICS
     text: >
+      ### Access 100% trusted freight forwarders to ship effortlessly!
+
+
       ### Find the right freight forwarder for your business instantly!
 
 
@@ -158,18 +181,23 @@ blocks:
         link: 'https://nexus-data.io/'
     image:
       src: /uploads/sds-Logistics-1.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
-  - body: >
-      # NEXUS FOR FINANCE
-
-
-      Collect extensive knowledge from the financial reports of your
-      competitors!
+  - body: |
+      #
     alignment: center
     _template: content
-  - tagline: ''
-    headline: How NEXUS Works For Finance?
+  - tagline: How NEXUS Works For Finance?
+    headline: NEXUS FOR FINANCE
     text: >
+      ### Collect extensive knowledge from the financial reports of your
+      competitors!
+
+
       ### Maximize your profit by learning the financial strategies of your
       rivals!
 

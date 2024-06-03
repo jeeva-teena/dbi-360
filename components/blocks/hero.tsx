@@ -21,7 +21,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     yellow: "from-yellow-500 to-yellow-500",
   };
   const isImageLeft = data.layout === "image-left";
-  const containerClass = `grid grid-cols-1 md:grid-cols-5 gap-x-14 gap-y-0 items-top justify-center`;
+  const containerClass = `grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center`;
   const contentClass = isImageLeft
     ? "md:col-start-3"
     : "md:col-start-1 row-start-2 md-row-start-1";

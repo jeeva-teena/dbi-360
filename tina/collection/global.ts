@@ -50,6 +50,7 @@ const Global: Collection = {
           name: "color",
           options: [
             { label: "Default", value: "default" },
+            { label: "Blue", value: "blue" },
             { label: "Primary", value: "primary" },
             { label: "Orange", value: "orange" },
           ],
@@ -203,6 +204,7 @@ const Global: Collection = {
             { label: "Default", value: "default" },
             { label: "Orange", value: "orange" },
             { label: "Primary", value: "primary" },
+            { label: "Blue", value: "blue" },
           ],
         },
         {

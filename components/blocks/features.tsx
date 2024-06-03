@@ -64,9 +64,20 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
 
   const gridTemplateColumns = `repeat(${gridColumns}, minmax(0, 1fr))`;
 
+  const backgroundImageSrc = data.bgimg?.src || "";
+  const backgroundSize = data.bgimg?.backgroundSize || "cover";
+  const backgroundPosition = data.bgimg?.backgroundPosition || "center center";
+  const backgroundRepeat = data.bgimg?.backgroundRepeat || "no-repeat";
+
   return (
-    <Section color={color}>
-      <Container className={` py-24 my-12`} size="large">
+    <Section
+      color={color}
+      bgimg={backgroundImageSrc}
+      backgroundSize={backgroundSize}
+      backgroundPosition={backgroundPosition}
+      backgroundRepeat={backgroundRepeat}
+    >
+      <Container size="large">
         <div className="prose text-center max-w-full">
           <TinaMarkdown content={body} />
         </div>
@@ -267,6 +278,56 @@ export const featureBlockSchema = {
           label: "Link",
           name: "link",
           type: "string",
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Background Image",
+      name: "bgimg",
+      fields: [
+        {
+          name: "src",
+          label: "Image Source",
+          type: "image",
+        },
+        {
+          name: "alt",
+          label: "Alt Text",
+          type: "string",
+        },
+        {
+          type: "string",
+          label: "Background Size",
+          name: "backgroundSize",
+          options: [
+            { label: "Cover", value: "cover" },
+            { label: "Contain", value: "contain" },
+            { label: "Auto", value: "auto" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Background Position",
+          name: "backgroundPosition",
+          options: [
+            { label: "Center Center", value: "center center" },
+            { label: "Top Center", value: "top center" },
+            { label: "Bottom Center", value: "bottom center" },
+            { label: "Left Center", value: "left center" },
+            { label: "Right Center", value: "right center" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Background Repeat",
+          name: "backgroundRepeat",
+          options: [
+            { label: "No-repeat", value: "no-repeat" },
+            { label: "Repeat", value: "repeat" },
+            { label: "Repeat-x", value: "repeat-x" },
+            { label: "Repeat-y", value: "repeat-y" },
+          ],
         },
       ],
     },

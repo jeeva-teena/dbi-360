@@ -19,17 +19,18 @@ blocks:
       backgroundRepeat: no-repeat
     _template: hero
   - body: |
-      Zyler is Born in the Cloud
-      to Make Change Easy!
-      ====================
+      #
 
-      ##### Close Vacancies Faster Than Ever Before!!
+      #####
     alignment: center
     width: ''
     _template: content
-  - tagline: ''
+  - tagline: Zyler is Born in the Cloud to Make Change Easy!
     headline: Cloud-based Enterprise Software
     text: >
+      ### Close Vacancies Faster Than Ever Before!!
+
+
       Zyler is a smart Cloud-based enterprise software that transforms
       businesses into intelligently driven enterprises. An effective business
       software, it meets the present needs of your business, while allowing
@@ -43,6 +44,11 @@ blocks:
         link: 'https://zylererp.com/'
     image:
       src: /uploads/cloud-software.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - tagline: ''
     headline: 'Become More Agile, Collaborative and Innovative with Zyler!'
@@ -72,6 +78,11 @@ blocks:
     image:
       src: /uploads/inventory-management.png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - tagline: ''
     headline: Sales
@@ -90,6 +101,11 @@ blocks:
         link: 'https://zylererp.com/'
     image:
       src: /uploads/sales.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - tagline: ''
     headline: Financial Management
@@ -109,6 +125,11 @@ blocks:
     image:
       src: /uploads/financial-management.png
     layout: image-left
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - tagline: ''
     headline: Order Management
@@ -127,6 +148,11 @@ blocks:
         link: 'https://zylererp.com/'
     image:
       src: /uploads/order-management.png
+    bgimg:
+      src: /uploads/shopassistant-sep4.svg
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
   - tagline: ''
     headline: Why Zyler ERP Suite?

@@ -65,12 +65,12 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
           ) : (
             <Container
               width={data.width}
-              className={`prose ${data.hFontSize} ${
+              className={`prose ${data.hFontSize} ${data.marginTop} text-${data.textColor} ${
                 data.color === "primary"
                   ? `prose-primary`
                   : data.color === "orange"
                   ? `prose-orange`
-                  : `dark:prose-dark`
+                  : ``
               }`}
               data-tina-field={tinaField(data, "body")}
               size="large"
@@ -108,6 +108,16 @@ export const contentBlockSchema: TinaTemplate = {
       type: "rich-text",
       label: "Body",
       name: "body",
+    },
+    {
+      type: "string",
+      label: "Margin Top",
+      name: "marginTop",
+      options: [
+        { label: "mt-24", value: "mt-24" },
+        { label: "mt-28", value: "mt-28" },
+        { label: "mt-32", value: "mt-32" },
+      ],
     },
     {
       type: "string",
