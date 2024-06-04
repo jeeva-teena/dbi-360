@@ -20,16 +20,13 @@ blocks:
       backgroundRepeat: no-repeat
     _template: hero
   - body: >
+      ![](/uploads/icon2-1.png)
+
+
       # Your All-In-One Solution for Easy Documentation
 
 
-      ##
-
-
-      ##
-
-
-      ##
+      ## ![](/uploads/icone-down-1.png)
 
 
       # All in One Services
@@ -38,16 +35,16 @@ blocks:
       Aster is developed leveraging the best technologies to help you manage all
       your regulatory affairs and documentation at one place. It streamlines
       your workflows and empowers your documentation team to perform better than
-      ever!
-
-
-      ##
+      ever!![](/uploads/icon2-1.png)
 
 
       # Take Control of Your Supply Chain on Aster Network
+
+
+      ![](/uploads/icone-down-1.png)
     hFontSize: text-lg
     alignment: center
-    width: medium
+    width: small
     _template: content
   - tagline: ''
     headline: Automated Workflows

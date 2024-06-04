@@ -1,9 +1,133 @@
 ---
 title: Sales Prospect Calculator
 blocks:
-  - tagline: Here's some text above the other text
-    headline: This Big Text is Totally Awesome
-    text: ''
+  - tagline: ''
+    headline: Does Your Sales Cycle Feel Like A Maze?
+    text: |+
+      Stop Guessing, Start Winning with Target Driven Sales Strategies!
+
+
+    actions:
+      - label: Try for Free
+        type: button
+        icon: true
+        link: /
+    image:
+      src: /uploads/banner-img (1).png
+    bgimg:
+      src: /uploads/banner-footer-bg.png
+      backgroundSize: contain
+      backgroundPosition: bottom center
+      backgroundRepeat: no-repeat
     _template: hero
+  - tagline: Predict Your Sales Performance
+    headline: With Advanced Algorithms & Real-Time Data
+    text: |
+      Identify and address prospecting gaps before they impact your targets.
+
+      * Increase Conversion Rates By 80%
+      * Reduce Prospecting Time By 30 Hours/Week
+      * Surpass Annual Sales Targets By 33%
+    image:
+      src: /uploads/Data extraction-pana.png
+    _template: hero
+  - tagline: Stuck With Outdated Sales Targets?
+    headline: It's Time To Adapt And Conquer!
+    text: >
+      Stop Paying for Insights & Unleash Powerful Sales Intelligence - At No
+      Cost. Our sales prospect calculator enables you with the following
+      features:
+
+
+      * Hyper-Accurate Forecasting
+
+      * Dynamic Goal & Target Optimization
+
+      * Collaborative Strategy Building
+    actions:
+      - label: Try For Free
+        type: button
+        icon: true
+        link: /
+    image:
+      titleHeading: ''
+      src: /uploads/stuck-with.png
+    _template: hero
+  - items:
+      - imgSrc:
+          src: /uploads/aster-logo.png
+        text: |+
+          AsterDocs revolutionizes supplier/vendor document management.
+
+        dFontSize: text-sm
+      - imgSrc:
+          src: /uploads/nexus-1.png
+        text: >+
+          Nexus is your gateway to obtain B2B business leads data (People,
+          product, and company data).
+
+        dFontSize: text-sm
+      - imgSrc:
+          src: /uploads/conflux.png
+        text: >+
+          ConfluxHR is a cutting-edge HR management solution that empowers you
+          to streamline your HR processes.
+
+        dFontSize: text-sm
+      - imgSrc:
+          src: /uploads/zyler-1.png
+        text: >+
+          ZylerERP is a dynamic business management solution designed to
+          revolutionize operations.
+
+        dFontSize: text-sm
+      - imgSrc:
+          src: /uploads/buyersflow.png
+        text: >+
+          BuyersFlow is a bulk email sending platform designed for B2B marketers
+          and sales professionals.
+
+        dFontSize: text-sm
+      - imgSrc:
+          src: /uploads/cashflow-Calculator.png
+        text: |+
+          Evaluate your business's cash movements over a specific period.
+
+        dFontSize: text-sm
+      - imgSrc:
+          src: /uploads/Sales-Prospect-Calculator.png
+        text: >+
+          Analyze lead conversion rates, acquisition costs, etc to forecast
+          revenue from sales prospects.
+
+        dFontSize: text-sm
+      - imgSrc:
+          src: /uploads/Profit-Improvement-Calculator.png
+        text: >+
+          Evaluate cost reduction, pricing adjustments, and efficiency
+          improvements to make informed decisions.
+
+        dFontSize: text-sm
+      - imgSrc:
+          src: /uploads/Business-Feasibility-Calculator.png
+        text: >+
+          Consider market demand, projected costs, and revenue forecasts to make
+          data-driven decisions.
+
+        dFontSize: text-sm
+    body: >
+      # Other DBI360 Products
+
+
+      DBI360 offers cutting-edge business intelligence solutions for accessing
+      business leads data, ERP needs, document management, and much more.
+    gridColumns: '5'
+    _template: features
+  - body: |
+      ### Build a Winning Sales Strategy for Your New Business
+    hFontSize: text-2xl
+    alignment: center
+    color: orange
+    _template: content
 ---
 

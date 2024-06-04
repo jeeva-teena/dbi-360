@@ -18,13 +18,6 @@ blocks:
       backgroundPosition: right center
       backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      #
-
-      #####
-    alignment: center
-    width: ''
-    _template: content
   - tagline: Zyler is Born in the Cloud to Make Change Easy!
     headline: Cloud-based Enterprise Software
     text: >

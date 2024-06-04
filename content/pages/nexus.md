@@ -18,11 +18,6 @@ blocks:
       backgroundPosition: right center
       backgroundRepeat: no-repeat
     _template: hero
-  - body: ''
-    hFontSize: text-lg
-    alignment: center
-    width: medium
-    _template: content
   - tagline: How NEXUS Works For Human Resource?
     headline: 'NEXUS FOR HUMAN RESOURCE '
     text: >
@@ -62,11 +57,6 @@ blocks:
       backgroundPosition: bottom center
       backgroundRepeat: no-repeat
     _template: hero
-  - body: ''
-    hFontSize: text-lg
-    alignment: center
-    width: medium
-    _template: content
   - tagline: How NEXUS Works For Sales?
     headline: NEXUS FOR SALES
     text: >
@@ -108,10 +98,6 @@ blocks:
       backgroundPosition: bottom center
       backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      #
-    alignment: center
-    _template: content
   - tagline: How NEXUS Works For Marketing?
     headline: NEXUS FOR MARKETING
     text: >
@@ -148,12 +134,6 @@ blocks:
       backgroundPosition: bottom center
       backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      #
-
-      #####
-    alignment: center
-    _template: content
   - tagline: How NEXUS Works For Logistics?
     headline: NEXUS FOR LOGISTICS
     text: >
@@ -187,10 +167,6 @@ blocks:
       backgroundPosition: bottom center
       backgroundRepeat: no-repeat
     _template: hero
-  - body: |
-      #
-    alignment: center
-    _template: content
   - tagline: How NEXUS Works For Finance?
     headline: NEXUS FOR FINANCE
     text: >

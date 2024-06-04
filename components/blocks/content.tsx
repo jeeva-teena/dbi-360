@@ -36,7 +36,9 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
         <>
           {data.bgimg?.bgOption === "container" ? (
             <Container
-              className={`prose pt-24 pb-24 rounded-lg text-${data.textColor} ${data.hFontSize}
+              className={`prose pt-24 pb-24 rounded-lg text-${data.alignment} text-${
+                data.textColor
+              } ${data.hFontSize}
               ${
                 data.color === "primary"
                   ? `prose-primary`
@@ -47,7 +49,6 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
              `}
               data-tina-field={tinaField(data, "body")}
               style={{
-                textAlign: data.alignment || "left",
                 ...bgContainerStyle,
               }}
             >
@@ -65,7 +66,9 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
           ) : (
             <Container
               width={data.width}
-              className={`prose ${data.hFontSize} ${data.marginTop} text-${data.textColor} ${
+              className={`prose ${data.hFontSize} text-${data.alignment} ${
+                data.marginTop
+              } text-${data.textColor} ${
                 data.color === "primary"
                   ? `prose-primary`
                   : data.color === "orange"
@@ -74,7 +77,6 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
               }`}
               data-tina-field={tinaField(data, "body")}
               size="large"
-              style={{ textAlign: data.alignment || "left" }}
             >
               <TinaMarkdown content={data.body} />
               <div>
@@ -125,6 +127,8 @@ export const contentBlockSchema: TinaTemplate = {
       name: "textColor",
       options: [
         { label: "Black", value: "black" },
+        { label: "Blue", value: "blue-500" },
+        { label: "Orange", value: "orange-500" },
         { label: "White", value: "white" },
       ],
     },

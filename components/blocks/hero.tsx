@@ -154,6 +154,17 @@ export const heroBlockSchema: TinaTemplate = {
       type: "rich-text",
     },
     {
+      type: "string",
+      label: "Text Alignment",
+      name: "alignment",
+      options: [
+        { label: "Left", value: "left" },
+        { label: "Center", value: "center" },
+        { label: "Right", value: "right" },
+        { label: "Justify", value: "justify" },
+      ],
+    },
+    {
       label: "Actions",
       name: "actions",
       type: "object",
