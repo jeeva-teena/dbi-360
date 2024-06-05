@@ -13,18 +13,20 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const Feature = ({
   featuresColor,
+  className,
   data,
 }: {
   featuresColor: string;
+  className: string;
   data: PageBlocksFeaturesItems;
 }) => {
   return (
     <div
       data-tina-field={tinaField(data)}
-      className="w-full flex-1 flex flex-col gap-6 text-center p-4 rounded-xl items-center lg:items-start lg:text-left mx-auto"
-      style={{ flexBasis: "16rem", border: "1px solid #ccc" }}
+      className={`w-full flex-1 flex flex-col gap-6 p-4 rounded-xl items-center lg:items-start ${className}`}
+      style={{ border: "1px solid #ccc" }}
     >
-      <a href={data.href} target="_blank">
+      <a href={data.href} className="block w-full" target="_blank">
         {data.icon && (
           <Icon
             tinaField={tinaField(data, "icon")}
@@ -34,14 +36,18 @@ export const Feature = ({
         )}
         {data.imgSrc && (
           <div data-tina-field={tinaField(data.imgSrc, "src")}>
-            <img src={data.imgSrc.src} aria-hidden="true" />
+            <img
+              src={data.imgSrc.src}
+              aria-hidden="true"
+              className={`${data.imgSrc.imgSize} ${data.imgSrc.imgWidth} ${data.imgSrc.imgHeight} ${data.imgSrc.imgPosition}`}
+            />
             <hr className="my-6" />
           </div>
         )}
         {data.title && (
           <h3
             data-tina-field={tinaField(data, "title")}
-            className={`font-semibold title-font ${data.hFontSize}`}
+            className={`font-semibold title-font  ${data.featureTextColor} ${data.itemAlignment} ${data.hFontSize}`}
           >
             {data.title}
           </h3>
@@ -49,7 +55,7 @@ export const Feature = ({
         {data.text && (
           <p
             data-tina-field={tinaField(data, "text")}
-            className={`opacity-80  leading-relaxed ${data.dFontSize}`}
+            className={`opacity-80 leading-relaxed  ${data.featureTextColor} ${data.itemAlignment} ${data.dFontSize}`}
           >
             {data.text}
           </p>
@@ -65,20 +71,19 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
   const gridTemplateColumns = `repeat(${gridColumns}, minmax(0, 1fr))`;
 
   const backgroundImageSrc = data.bgimg?.src || "";
-  const backgroundSize = data.bgimg?.backgroundSize || "cover";
-  const backgroundPosition = data.bgimg?.backgroundPosition || "center center";
-  const backgroundRepeat = data.bgimg?.backgroundRepeat || "no-repeat";
 
   return (
     <Section
       color={color}
-      bgimg={backgroundImageSrc}
-      backgroundSize={backgroundSize}
-      backgroundPosition={backgroundPosition}
-      backgroundRepeat={backgroundRepeat}
+      bgimg={data.bgimg?.bgOption === "section" ? backgroundImageSrc : ""}
+      className={`${data.bgimg?.backgroundSize} ${data.sPadding} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundRepeat}`}
     >
-      <Container size="large">
-        <div className="prose text-center max-w-full">
+      <Container
+        size={data.size}
+        className={`${data.cPadding} ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize}`}
+        bgimg={data.bgimg?.bgOption === "container" ? backgroundImageSrc : ""}
+      >
+        <div className={`prose w-full mx-auto ${data.alignment} ${data.textColor}`}>
           <TinaMarkdown content={body} />
         </div>
         <div
@@ -87,7 +92,14 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
         >
           {items &&
             items.map(function (block, i) {
-              return <Feature featuresColor={color} key={i} data={block} />;
+              return (
+                <Feature
+                  featuresColor={color}
+                  key={i}
+                  data={block}
+                  className={`${data.bgColor}`}
+                />
+              );
             })}
         </div>
         <div>
@@ -153,6 +165,58 @@ export const featureBlockSchema = {
               label: "Alt Text",
               type: "string",
             },
+            {
+              type: "string",
+              label: "Image Width",
+              name: "imgWidth",
+              options: [
+                { label: "w-full", value: "w-full" },
+                { label: "w-screen", value: "w-screen" },
+                { label: "w-24", value: "w-24" },
+                { label: "w-32", value: "w-32" },
+                { label: "w-40", value: "w-40" },
+                { label: "w-48", value: "w-48" },
+                { label: "w-64", value: "w-64" },
+                { label: "w-80", value: "w-80" },
+                { label: "w-96", value: "w-96" },
+              ],
+            },
+            {
+              type: "string",
+              label: "Image Height",
+              name: "imgHeight",
+              options: [
+                { label: "h-full", value: "h-full" },
+                { label: "h-screen", value: "h-screen" },
+                { label: "h-24", value: "h-24" },
+                { label: "h-32", value: "h-32" },
+                { label: "h-40", value: "h-40" },
+                { label: "h-48", value: "h-48" },
+                { label: "h-64", value: "h-64" },
+                { label: "h-80", value: "h-80" },
+                { label: "h-96", value: "h-96" },
+              ],
+            },
+            {
+              type: "string",
+              label: "Image Size",
+              name: "imgSize",
+              options: [
+                { label: "Cover", value: "object-cover" },
+                { label: "Contain", value: "object-contain" },
+                { label: "Fill", value: "object-fill" },
+              ],
+            },
+            {
+              type: "string",
+              label: "Image position",
+              name: "imgPosition",
+              options: [
+                { label: "Center", value: "mx-auto" },
+                { label: "Left", value: "ml-0 mr-auto" },
+                { label: "Right", value: "mr-0 ml-auto" },
+              ],
+            },
           ],
         },
         {
@@ -196,15 +260,69 @@ export const featureBlockSchema = {
         },
         {
           type: "string",
+          label: "Text Color",
+          name: "featureTextColor",
+          options: [
+            { label: "Black", value: "text-black" },
+            { label: "Blue", value: "text-blue-500" },
+            { label: "Orange", value: "text-orange-500" },
+            { label: "White", value: "text-white" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Text Alignment",
+          name: "itemAlignment",
+          options: [
+            { label: "Left", value: "text-left" },
+            { label: "Center", value: "text-center" },
+            { label: "Right", value: "text-right" },
+            { label: "Justify", value: "text-justify" },
+          ],
+        },
+        {
+          type: "string",
           label: "Link",
           name: "href",
         },
       ],
     },
     {
+      type: "string",
+      label: "Background Color",
+      name: "bgColor",
+      options: [
+        { label: "White", value: "bg-white" },
+        { label: "Transparent", value: "bg-transparent" },
+        { label: "Black", value: "bg-black" },
+      ],
+    },
+    {
       type: "rich-text",
       label: "Body",
       name: "body",
+    },
+    {
+      type: "string",
+      label: "Text Color",
+      name: "textColor",
+      options: [
+        { label: "Black", value: "text-black" },
+        { label: "Blue", value: "text-blue-500" },
+        { label: "Orange", value: "text-orange-500" },
+        { label: "White", value: "text-white" },
+      ],
+    },
+    {
+      type: "string",
+      label: "Text Alignment",
+      name: "alignment",
+      options: [
+        { label: "Left", value: "text-left" },
+        { label: "Center", value: "text-center" },
+        { label: "Right", value: "text-right" },
+        { label: "Justify", value: "text-justify" },
+      ],
     },
     {
       type: "string",
@@ -239,6 +357,42 @@ export const featureBlockSchema = {
         { label: "12 Columns", value: "12" },
       ],
       defaultItem: undefined,
+    },
+    {
+      type: "string",
+      label: "Container Size",
+      name: "size",
+      options: [
+        { label: "Small", value: "small" },
+        { label: "Medium", value: "medium" },
+        { label: "Large", value: "large" },
+      ],
+    },
+    {
+      type: "string",
+      label: "Container Padding",
+      name: "cPadding",
+      options: [
+        { label: "py-10", value: "py-10" },
+        { label: "py-14", value: "py-14" },
+        { label: "py-16", value: "py-16" },
+        { label: "py-20", value: "py-20" },
+        { label: "py-24", value: "py-24" },
+        { label: "py-28", value: "py-28" },
+      ],
+    },
+    {
+      type: "string",
+      label: "Section Padding",
+      name: "sPadding",
+      options: [
+        { label: "py-10", value: "py-10" },
+        { label: "py-14", value: "py-14" },
+        { label: "py-16", value: "py-16" },
+        { label: "py-20", value: "py-20" },
+        { label: "py-24", value: "py-24" },
+        { label: "py-28", value: "py-28" },
+      ],
     },
     {
       label: "Actions",
@@ -298,12 +452,21 @@ export const featureBlockSchema = {
         },
         {
           type: "string",
+          label: "Background Image Option",
+          name: "bgOption",
+          options: [
+            { label: "Container", value: "container" },
+            { label: "Section", value: "section" },
+          ],
+        },
+        {
+          type: "string",
           label: "Background Size",
           name: "backgroundSize",
           options: [
-            { label: "Cover", value: "cover" },
-            { label: "Contain", value: "contain" },
-            { label: "Auto", value: "auto" },
+            { label: "Cover", value: "bg-cover" },
+            { label: "Contain", value: "bg-contain" },
+            { label: "Auto", value: "bg-auto" },
           ],
         },
         {
@@ -311,11 +474,15 @@ export const featureBlockSchema = {
           label: "Background Position",
           name: "backgroundPosition",
           options: [
-            { label: "Center Center", value: "center center" },
-            { label: "Top Center", value: "top center" },
-            { label: "Bottom Center", value: "bottom center" },
-            { label: "Left Center", value: "left center" },
-            { label: "Right Center", value: "right center" },
+            { label: "Center", value: "bg-center" },
+            { label: "Top", value: "bg-top" },
+            { label: "Bottom", value: "bg-bottom" },
+            { label: "Left", value: "bg-left" },
+            { label: "Left Top", value: "bg-left-top" },
+            { label: "Left Bottom", value: "bg-left-bottom" },
+            { label: "Right", value: "bg-right" },
+            { label: "Right Top", value: "bg-right-top" },
+            { label: "Right Bottom", value: "bg-right-bottom" },
           ],
         },
         {
@@ -323,10 +490,10 @@ export const featureBlockSchema = {
           label: "Background Repeat",
           name: "backgroundRepeat",
           options: [
-            { label: "No-repeat", value: "no-repeat" },
-            { label: "Repeat", value: "repeat" },
-            { label: "Repeat-x", value: "repeat-x" },
-            { label: "Repeat-y", value: "repeat-y" },
+            { label: "No-repeat", value: "bg-no-repeat" },
+            { label: "Repeat", value: "bg-repeat" },
+            { label: "Repeat-x", value: "bg-repeat-x" },
+            { label: "Repeat-y", value: "bg-repeat-y" },
           ],
         },
       ],

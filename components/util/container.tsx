@@ -2,8 +2,9 @@ import React from "react";
 
 export const Container = ({
   children,
-  size = "medium",
+  size = "large",
   width = "large",
+  bgimg = "",
   className = "",
   ...props
 }) => {
@@ -18,13 +19,15 @@ export const Container = ({
     small: "max-w-4xl",
     medium: "max-w-5xl",
     large: "max-w-7xl",
+    default: "max-w-7xl",
     custom: "",
   };
-
+  const style = bgimg ? { backgroundImage: `url(${bgimg})` } : {};
   return (
     <div
-      className={`${widthClass[width]} mx-auto ${verticalPadding[size]} ${className}`}
+      className={`${widthClass[size]} mx-auto ${verticalPadding[size]} ${className}`}
       {...props}
+      style={style}
     >
       {children}
     </div>

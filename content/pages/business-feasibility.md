@@ -11,6 +11,7 @@ blocks:
         link: /
     image:
       src: /uploads/banner-img.png
+    size: large
     _template: hero
   - tagline: 'From Vision To Revenue,'
     headline: One Click Away.
@@ -24,40 +25,47 @@ blocks:
     image:
       src: /uploads/one-click-img.png
     color: tint
+    size: large
     _template: hero
   - items:
       - imgSrc:
           src: /uploads/aster-logo.png
         text: AsterDocs revolutionizes supplier/vendor document management.
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/nexus-1.png
         text: >-
           Nexus is your gateway to obtain B2B business leads data (People,
           product, and company data).
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/conflux.png
         text: >-
           ConfluxHR is a cutting-edge HR management solution that empowers you
           to streamline your HR processes.
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/zyler-1.png
         text: >-
           ZylerERP is a dynamic business management solution designed to
           revolutionize operations.
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/buyersflow.png
         text: >-
           BuyersFlow is a bulk email sending platform designed for B2B marketers
           and sales professionals.
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/cashflow-Calculator.png
         text: Evaluate your business's cash movements over a specific period.
         dFontSize: text-sm
+        itemAlignment: text-center
       - icon:
           name: ''
           color: ''
@@ -69,6 +77,7 @@ blocks:
           Analyze lead conversion rates, acquisition costs, etc to forecast
           revenue from sales prospects.
         dFontSize: text-sm
+        itemAlignment: text-center
       - icon:
           name: ''
           color: ''
@@ -80,6 +89,7 @@ blocks:
           Evaluate cost reduction, pricing adjustments, and efficiency
           improvements to make informed decisions.
         dFontSize: text-sm
+        itemAlignment: text-center
       - icon:
           name: ''
           color: ''
@@ -91,6 +101,7 @@ blocks:
           Consider market demand, projected costs, and revenue forecasts to make
           data-driven decisions.
         dFontSize: text-sm
+        itemAlignment: text-center
     body: >
       # Other DBI360 Products
 
@@ -98,6 +109,7 @@ blocks:
       DBI360 offers cutting-edge business intelligence solutions for accessing
       business leads data, ERP needs, document management, and much more.
     gridColumns: '5'
+    size: large
     _template: features
 ---
 

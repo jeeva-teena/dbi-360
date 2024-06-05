@@ -21,30 +21,28 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     yellow: "from-yellow-500 to-yellow-500",
   };
   const isImageLeft = data.layout === "image-left";
-  const containerClass = `grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center`;
+  const containerClass = `grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center ${data.cPadding} ${data.alignment} ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize}`;
   const contentClass = isImageLeft
     ? "md:col-start-3"
     : "md:col-start-1 row-start-2 md-row-start-1";
   const imageClass = isImageLeft
     ? "md:col-start-1 row-start-1"
     : "md:col-start-4 md:row-start-2 row-start-1";
+
   const backgroundImageSrc = data.bgimg?.src || "";
-  const backgroundSize = data.bgimg?.backgroundSize || "cover";
-  const backgroundPosition = data.bgimg?.backgroundPosition || "center center";
-  const backgroundRepeat = data.bgimg?.backgroundRepeat || "no-repeat";
 
   return (
     <Section
       color={data.color}
-      bgimg={backgroundImageSrc}
-      backgroundSize={backgroundSize}
-      backgroundPosition={backgroundPosition}
-      backgroundRepeat={backgroundRepeat}
+      bgimg={data.bgimg?.bgOption === "section" ? backgroundImageSrc : ""}
+      className={`${data.bgimg?.backgroundSize} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundRepeat} ${data.sPadding}`}
     >
-      <Container size="large" className={containerClass}>
-        <div
-          className={`md:col-span-3 ${contentClass} text-center md:text-left`}
-        >
+      <Container
+        size={data.size}
+        className={containerClass}
+        bgimg={data.bgimg?.bgOption === "container" ? backgroundImageSrc : ""}
+      >
+        <div className={`md:col-span-3 ${contentClass} `}>
           {data.tagline && (
             <h2
               data-tina-field={tinaField(data, "tagline")}
@@ -109,12 +107,12 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             </h3>
             <div className={`flex justify-center`}>
               <img
-                className="absolute w-full rounded-lg max-w-xs md:max-w-none h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
+                className={`absolute rounded-lg blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light ${data.image.imgSize} ${data.image.imgWidth} ${data.image.imgHeight} ${data.image.imgPosition}`}
                 src={data.image.src}
                 aria-hidden="true"
               />
               <img
-                className="relative w-full max-w-xs rounded-lg md:max-w-none h-auto"
+                className={`${data.image.imgSize} ${data.image.imgWidth} ${data.image.imgHeight} ${data.image.imgPosition} relative rounded-lg`}
                 alt={data.image.alt}
                 src={data.image.src}
               />
@@ -158,10 +156,10 @@ export const heroBlockSchema: TinaTemplate = {
       label: "Text Alignment",
       name: "alignment",
       options: [
-        { label: "Left", value: "left" },
-        { label: "Center", value: "center" },
-        { label: "Right", value: "right" },
-        { label: "Justify", value: "justify" },
+        { label: "Left", value: "text-left" },
+        { label: "Center", value: "text-center" },
+        { label: "Right", value: "text-right" },
+        { label: "Justify", value: "text-justify" },
       ],
     },
     {
@@ -225,6 +223,58 @@ export const heroBlockSchema: TinaTemplate = {
           label: "Alt Text",
           type: "string",
         },
+        {
+          type: "string",
+          label: "Image Width",
+          name: "imgWidth",
+          options: [
+            { label: "w-full", value: "w-full" },
+            { label: "w-screen", value: "w-screen" },
+            { label: "w-24", value: "w-24" },
+            { label: "w-32", value: "w-32" },
+            { label: "w-40", value: "w-40" },
+            { label: "w-48", value: "w-48" },
+            { label: "w-64", value: "w-64" },
+            { label: "w-80", value: "w-80" },
+            { label: "w-96", value: "w-96" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Image Height",
+          name: "imgHeight",
+          options: [
+            { label: "h-full", value: "h-full" },
+            { label: "h-screen", value: "h-screen" },
+            { label: "h-24", value: "h-24" },
+            { label: "h-32", value: "h-32" },
+            { label: "h-40", value: "h-40" },
+            { label: "h-48", value: "h-48" },
+            { label: "h-64", value: "h-64" },
+            { label: "h-80", value: "h-80" },
+            { label: "h-96", value: "h-96" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Image Size",
+          name: "imgSize",
+          options: [
+            { label: "Cover", value: "object-cover" },
+            { label: "Contain", value: "object-contain" },
+            { label: "Fill", value: "object-fill" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Image position",
+          name: "imgPosition",
+          options: [
+            { label: "Center", value: "mx-auto" },
+            { label: "Left", value: "ml-0 mr-auto" },
+            { label: "Right", value: "mr-0 ml-auto" },
+          ],
+        },
       ],
     },
     {
@@ -248,6 +298,42 @@ export const heroBlockSchema: TinaTemplate = {
       ],
     },
     {
+      type: "string",
+      label: "Container Size",
+      name: "size",
+      options: [
+        { label: "Small", value: "small" },
+        { label: "Medium", value: "medium" },
+        { label: "Large", value: "large" },
+      ],
+    },
+    {
+      type: "string",
+      label: "Container Padding",
+      name: "cPadding",
+      options: [
+        { label: "py-10", value: "py-10" },
+        { label: "py-14", value: "py-14" },
+        { label: "py-16", value: "py-16" },
+        { label: "py-20", value: "py-20" },
+        { label: "py-24", value: "py-24" },
+        { label: "py-28", value: "py-28" },
+      ],
+    },
+    {
+      type: "string",
+      label: "Section Padding",
+      name: "sPadding",
+      options: [
+        { label: "py-10", value: "py-10" },
+        { label: "py-14", value: "py-14" },
+        { label: "py-16", value: "py-16" },
+        { label: "py-20", value: "py-20" },
+        { label: "py-24", value: "py-24" },
+        { label: "py-28", value: "py-28" },
+      ],
+    },
+    {
       type: "object",
       label: "Background Image",
       name: "bgimg",
@@ -264,12 +350,21 @@ export const heroBlockSchema: TinaTemplate = {
         },
         {
           type: "string",
+          label: "Background Image Option",
+          name: "bgOption",
+          options: [
+            { label: "Container", value: "container" },
+            { label: "Section", value: "section" },
+          ],
+        },
+        {
+          type: "string",
           label: "Background Size",
           name: "backgroundSize",
           options: [
-            { label: "Cover", value: "cover" },
-            { label: "Contain", value: "contain" },
-            { label: "Auto", value: "auto" },
+            { label: "Cover", value: "bg-cover" },
+            { label: "Contain", value: "bg-contain" },
+            { label: "Auto", value: "bg-auto" },
           ],
         },
         {
@@ -277,11 +372,15 @@ export const heroBlockSchema: TinaTemplate = {
           label: "Background Position",
           name: "backgroundPosition",
           options: [
-            { label: "Center Center", value: "center center" },
-            { label: "Top Center", value: "top center" },
-            { label: "Bottom Center", value: "bottom center" },
-            { label: "Left Center", value: "left center" },
-            { label: "Right Center", value: "right center" },
+            { label: "Center", value: "bg-center" },
+            { label: "Top", value: "bg-top" },
+            { label: "Bottom", value: "bg-bottom" },
+            { label: "Left", value: "bg-left" },
+            { label: "Left Top", value: "bg-left-top" },
+            { label: "Left Bottom", value: "bg-left-bottom" },
+            { label: "Right", value: "bg-right" },
+            { label: "Right Top", value: "bg-right-top" },
+            { label: "Right Bottom", value: "bg-right-bottom" },
           ],
         },
         {
@@ -289,10 +388,10 @@ export const heroBlockSchema: TinaTemplate = {
           label: "Background Repeat",
           name: "backgroundRepeat",
           options: [
-            { label: "No-repeat", value: "no-repeat" },
-            { label: "Repeat", value: "repeat" },
-            { label: "Repeat-x", value: "repeat-x" },
-            { label: "Repeat-y", value: "repeat-y" },
+            { label: "No-repeat", value: "bg-no-repeat" },
+            { label: "Repeat", value: "bg-repeat" },
+            { label: "Repeat-x", value: "bg-repeat-x" },
+            { label: "Repeat-y", value: "bg-repeat-y" },
           ],
         },
       ],

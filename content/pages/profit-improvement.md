@@ -1,14 +1,16 @@
 ---
 title: Profit Improvement Calculator
 blocks:
-  - body: "## Stuck In A\_Profit Plateu?\n\nIdentify Your Hidden\nEarning Potential With Our Free Tool\n====================================\n\n#### What would you like to calculate using our profit improvement calculator?\n\n* Increase Net Profit\n* Improve Lead Performance\_\n* Total Turnover\n"
-    alignment: center
+  - body: "## Stuck In A\_Profit Plateu?\n\nIdentify Your Hidden\nEarning Potential With Our Free Tool\n====================================\n\n##\n\n#### What would you like to calculate using our profit improvement calculator?\n\n* Increase Net Profit\n* Improve Lead Performance\_\n* Total Turnover\n"
+    textColor: ''
+    alignment: text-center
+    size: large
     bgimg:
       src: /uploads/top-bg.png
       bgOption: section
-      backgroundSize: cover
-      backgroundPosition: top center
-      backgroundRepeat: no-repeat
+      backgroundSize: bg-cover
+      backgroundPosition: bg-top
+      backgroundRepeat: bg-no-repeat
     actions:
       - label: Calculate Now
         type: button
@@ -36,14 +38,17 @@ blocks:
         Discover the easiest and most impactful changes you can make to see profit improvements in days, not months.
       * Craft a Data-Driven Roadmap to Success:
         Get personalized recommendations on optimizing your sales, marketing, and pricing strategies for sustained growth.
+    alignment: ''
     image:
       src: /uploads/one-click-img.png
     color: tint
+    size: large
     bgimg:
       src: /uploads/one-click-bg.png
-      backgroundSize: contain
-      backgroundPosition: top center
-      backgroundRepeat: no-repeat
+      bgOption: section
+      backgroundSize: bg-contain
+      backgroundPosition: bg-top
+      backgroundRepeat: bg-no-repeat
     _template: hero
   - tagline: Identify The Change You Need To
     headline: Become Profitable
@@ -72,6 +77,7 @@ blocks:
     image:
       src: /uploads/become-profite.png
     layout: image-left
+    size: large
     _template: hero
   - items:
       - imgSrc:
@@ -80,6 +86,7 @@ blocks:
           AsterDocs revolutionizes supplier/vendor document management.
 
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/nexus-1.png
         text: >+
@@ -87,6 +94,7 @@ blocks:
           product, and company data).
 
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/conflux.png
         text: >+
@@ -94,6 +102,7 @@ blocks:
           to streamline your HR processes.
 
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/zyler-1.png
         text: >+
@@ -101,6 +110,7 @@ blocks:
           revolutionize operations.
 
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/buyersflow.png
         text: >+
@@ -108,12 +118,14 @@ blocks:
           and sales professionals.
 
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/cashflow-Calculator.png
         text: |+
           Evaluate your business's cash movements over a specific period.
 
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/Sales-Prospect-Calculator.png
         text: >+
@@ -121,6 +133,7 @@ blocks:
           revenue from sales prospects.
 
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/Profit-Improvement-Calculator.png
         text: >+
@@ -128,6 +141,7 @@ blocks:
           improvements to make informed decisions.
 
         dFontSize: text-sm
+        itemAlignment: text-center
       - imgSrc:
           src: /uploads/Business-Feasibility-Calculator.png
         text: >+
@@ -135,6 +149,7 @@ blocks:
           data-driven decisions.
 
         dFontSize: text-sm
+        itemAlignment: text-center
     body: >
       # Other DBI360 Products
 
@@ -143,6 +158,7 @@ blocks:
       business leads data, ERP needs, document management, and much more.
     color: ''
     gridColumns: '5'
+    size: large
     _template: features
 ---
 

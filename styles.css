@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+a {
+  text-decoration: none !important;
+}
 .tab {
   transition: background-color 0.2s;
 }
@@ -26,27 +29,17 @@
 .image-container img.active {
   display: block;
 }
-.prose :where(h1),
-.prose :where(h2),
-.prose :where(h3),
-.prose :where(h4),
-.prose :where(h5),
-.prose :where(h6),
-.prose :where(p) {
+
+.prose :where(*):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   margin-bottom: inherit;
   color: inherit;
+  line-height: inherit;
 }
 .prose :where(h1) {
   font-weight: 600;
 }
 
-h1 > img,
-h2 > img,
-h3 > img,
-h4 > img,
-h5 > img,
-h6 > img,
-p > img {
+* > img {
   margin-left: auto;
   margin-right: auto;
 }

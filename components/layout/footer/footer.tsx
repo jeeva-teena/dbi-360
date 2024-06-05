@@ -50,8 +50,8 @@ export const Footer = ({ data, icon, rawData }) => {
       : footerColor.default;
 
   return (
-    <footer className={`bg-gradient-to-br ${footerColorCss} py-12`}>
-      <Container size="large">
+    <footer className={`bg-gradient-to-br ${data.sPadding} ${footerColorCss}`}>
+      <Container size={data.size} className={`${data.cPadding}`}>
         <div className="grid grid-cols-12 justify-between gap-y-6">
           <div className="col-start-1 col-span-6">
             <Link

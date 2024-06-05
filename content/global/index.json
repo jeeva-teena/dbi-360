@@ -86,6 +86,7 @@
     ]
   },
   "footer": {
+    "size": "large",
     "footerLogo": {
       "logoSrc": "/uploads/footer-logo-2.png"
     },

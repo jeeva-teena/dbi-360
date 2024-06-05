@@ -13,16 +13,16 @@ export const Tabs = ({ data }: { data: PageBlocksTabs }) => {
   };
 
   return (
-    <Section color={data.color}>
+    <Section color={data.color} className={`${data.sPadding}`}>
       <Container
-        className={`prose py-24 my-12 ${
+        className={`prose my-12 ${data.cPadding} ${
           data.color === "primary"
             ? `prose-primary`
             : data.color === "orange"
             ? `prose-orange`
             : `dark:prose-dark`
         }`}
-        size="large"
+        size={data.size}
       >
         <div className="grid grid-cols-3 gap-x-4 place-content-between items-center">
           <div className="image-container text-center mt-5">
@@ -172,6 +172,42 @@ export const tabsBlockSchema: TinaTemplate = {
           label: "Alt Text",
           type: "string",
         },
+      ],
+    },
+    {
+      type: "string",
+      label: "Container Size",
+      name: "size",
+      options: [
+        { label: "Small", value: "small" },
+        { label: "Medium", value: "medium" },
+        { label: "Large", value: "large" },
+      ],
+    },
+    {
+      type: "string",
+      label: "Container Padding",
+      name: "cPadding",
+      options: [
+        { label: "py-10", value: "py-10" },
+        { label: "py-14", value: "py-14" },
+        { label: "py-16", value: "py-16" },
+        { label: "py-20", value: "py-20" },
+        { label: "py-24", value: "py-24" },
+        { label: "py-28", value: "py-28" },
+      ],
+    },
+    {
+      type: "string",
+      label: "Section Padding",
+      name: "sPadding",
+      options: [
+        { label: "py-10", value: "py-10" },
+        { label: "py-14", value: "py-14" },
+        { label: "py-16", value: "py-16" },
+        { label: "py-20", value: "py-20" },
+        { label: "py-24", value: "py-24" },
+        { label: "py-28", value: "py-28" },
       ],
     },
     {

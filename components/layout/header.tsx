@@ -82,8 +82,8 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
   }, []);
 
   return (
-    <div className={`relative bg-gradient-to-b ${headerColorCss}`}>
-      <Container size="custom" className="py-0 relative z-10 max-w-8xl">
+    <div className={`relative bg-gradient-to-b ${headerColorCss} ${data.sPadding}`}>
+      <Container  size={data.size} className={`py-0 relative z-10 max-w-8xl ${data.cPadding} `}>
         <div className="flex items-center justify-between gap-6">
           <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
             <Link

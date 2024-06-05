@@ -11,15 +11,17 @@ blocks:
 
       # Accurate, & Insight-Drive
     textColor: white
-    alignment: center
+    alignment: text-center
     color: ''
-    width: large
+    size: large
+    cPadding: py-24
     bgimg:
       src: /uploads/slider-background-1.jpg
       bgOption: container
-      backgroundSize: cover
-      backgroundPosition: center center
-      backgroundRepeat: no-repeat
+      containerRound: rounded-lg
+      backgroundSize: bg-cover
+      backgroundPosition: bg-center
+      backgroundRepeat: bg-no-repeat
     _template: content
   - body: >
       # Start Using Our Dynamic Business Solutions Today
@@ -31,9 +33,9 @@ blocks:
       organizational benefit.
     textColor: black
     hFontSize: text-lg
-    alignment: center
+    alignment: text-center
     color: ''
-    width: large
+    size: large
     _template: content
   - tagline: ''
     headline: Nexus
@@ -66,6 +68,7 @@ blocks:
       alt: Nexus
     layout: ''
     color: tint
+    size: large
     _template: hero
   - tagline: ''
     headline: Zyler
@@ -91,6 +94,7 @@ blocks:
       src: /uploads/zyler.png
     layout: image-left
     color: default
+    size: large
     _template: hero
   - tagline: ''
     headline: Aster
@@ -118,6 +122,7 @@ blocks:
     image:
       src: /uploads/aster.png
     color: tint
+    size: large
     _template: hero
   - tagline: ''
     headline: Buyersflow
@@ -153,6 +158,7 @@ blocks:
       src: /uploads/Personalization.png
     layout: image-left
     color: default
+    size: large
     _template: hero
   - tagline: ''
     headline: ConfluxHR
@@ -184,6 +190,7 @@ blocks:
     image:
       src: /uploads/conflux-hr.png
     color: tint
+    size: large
     _template: hero
   - tabsImage1:
       src: /uploads/download.png
@@ -191,6 +198,7 @@ blocks:
       src: /uploads/download (2).png
     tabsImage3:
       src: /uploads/download (3).png
+    size: large
     _template: tabs
   - tagline: ''
     headline: 'Why 16,93,321 People Trust On DBI360?'
@@ -204,13 +212,15 @@ blocks:
     image:
       src: /uploads/seo-smo.png
     color: tint
+    size: large
     _template: hero
   - body: |
       # Our specialists are waiting to help you
     hFontSize: text-2xl
-    alignment: center
+    alignment: text-center
     color: default
-    width: small
+    size: ''
+    sPadding: py-20
     _template: content
   - body: ''
     color: orange
