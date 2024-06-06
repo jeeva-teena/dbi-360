@@ -13,11 +13,13 @@ blocks:
       src: ''
     layout: image-right
     color: tint
+    size: large
     bgimg:
       src: /uploads/aster-banner-1.png
-      backgroundSize: contain
-      backgroundPosition: right center
-      backgroundRepeat: no-repeat
+      bgOption: section
+      backgroundSize: bg-contain
+      backgroundPosition: bg-right-top
+      backgroundRepeat: bg-no-repeat
     _template: hero
   - body: >
       ![](/uploads/icon2-1.png)
@@ -26,7 +28,7 @@ blocks:
       # Your All-In-One Solution for Easy Documentation
 
 
-      ## ![](/uploads/icone-down-1.png)
+      ![](/uploads/icone-down-1.png)
 
 
       # All in One Services
@@ -43,8 +45,7 @@ blocks:
 
       ![](/uploads/icone-down-1.png)
     hFontSize: text-lg
-    alignment: center
-    width: small
+    alignment: text-center
     _template: content
   - tagline: ''
     headline: Automated Workflows
@@ -61,6 +62,7 @@ blocks:
     image:
       src: /uploads/automated-workflows.png
     layout: image-left
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -83,6 +85,7 @@ blocks:
         link: 'https://asterdocs.com/'
     image:
       src: /uploads/streamlined-communications-1.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -104,6 +107,7 @@ blocks:
     image:
       src: /uploads/fast-approval.png
     layout: image-left
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -125,6 +129,7 @@ blocks:
         link: 'https://asterdocs.com/'
     image:
       src: /uploads/Improved-Clarity.png
+    size: large
     _template: hero
 ---
 

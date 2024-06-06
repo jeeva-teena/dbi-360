@@ -145,7 +145,7 @@ blocks:
     _template: features
   - body: |
       ### Build a Winning Sales Strategy for Your New Business
-    hFontSize: text-2xl
+    hFontSize: text-3xl
     alignment: text-center
     color: orange
     size: large

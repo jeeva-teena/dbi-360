@@ -30,16 +30,33 @@ a {
   display: block;
 }
 
-.prose :where(*):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  margin-bottom: inherit;
+.prose :where(h1):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose :where(h5):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose :where(h6):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin: initial !important;
   color: inherit;
   line-height: inherit;
 }
-.prose :where(h1) {
+
+.prose.inline-items :where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  display: flex;
+  justify-content: center;
+  gap: 0 60px;
+}
+.prose :where(h1), .prose :where(h2), .prose :where(h3) {
   font-weight: 600;
 }
 
-* > img {
+h1,
+h2,
+h3,
+h4,
+h5,
+p > img {
   margin-left: auto;
   margin-right: auto;
 }

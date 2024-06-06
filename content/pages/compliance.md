@@ -4,8 +4,14 @@ blocks:
   - tagline: ''
     headline: CERTIFICATIONS
     text: ''
+    alignment: ''
+    size: large
     bgimg:
       src: /uploads/about.jpg
+      bgOption: section
+      backgroundSize: bg-cover
+      backgroundPosition: bg-center
+      backgroundRepeat: bg-no-repeat
     _template: hero
   - tagline: ''
     headline: ''
@@ -24,7 +30,7 @@ blocks:
     image:
       src: /uploads/Nasscom-logo-svg.svg_.png
     layout: image-left
-    columnWidths: 3-12
+    size: large
     _template: hero
   - tagline: ''
     headline: ''
@@ -39,6 +45,7 @@ blocks:
       titleHeading: ''
       src: /uploads/certificate-img.png
     layout: image-left
+    size: large
     _template: hero
   - tagline: ''
     headline: ''
@@ -51,7 +58,9 @@ blocks:
           https://dbi360.com/wp-content/uploads/2023/08/IN54984F-Dietary-Business-Int.-Updated.pdf
     image:
       src: /uploads/certificate-img.png
+      imgWidth: ''
     layout: image-left
+    size: large
     _template: hero
   - tagline: ''
     headline: ''
@@ -64,6 +73,7 @@ blocks:
     image:
       src: /uploads/certification-3.jpg
     layout: image-left
+    size: large
     _template: hero
 ---
 

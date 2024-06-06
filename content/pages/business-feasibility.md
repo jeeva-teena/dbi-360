@@ -3,14 +3,20 @@ title: Business Feasibility Calculator
 blocks:
   - tagline: ''
     headline: 'Big Startup Idea, Uncertain Future?'
-    text: "Predict Your Startup Success with a Business Feasibility Calculator! What Would You Like to Check For?\n\n* Days to Breakeven\_\n* Total Startup Cost\_\n* Business Operation Cost\n"
+    text: "#### Predict Your Startup Success with a Business Feasibility Calculator! What Would You Like to Check For?\n\n* Days to Breakeven\_\n* Total Startup Cost\_\n* Business Operation Cost\n"
+    inlineItems: inline-items
+    hFontSize: ''
     actions:
       - label: Try For Free
         type: button
         icon: true
         link: /
     image:
-      src: /uploads/banner-img.png
+      src: /uploads/banner-img (2).png
+      imgWidth: ''
+      imgHeight: ''
+      imgSize: ''
+      imgPosition: ''
     size: large
     _template: hero
   - tagline: 'From Vision To Revenue,'
@@ -108,6 +114,7 @@ blocks:
 
       DBI360 offers cutting-edge business intelligence solutions for accessing
       business leads data, ERP needs, document management, and much more.
+    alignment: text-center
     gridColumns: '5'
     size: large
     _template: features

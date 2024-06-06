@@ -12,11 +12,13 @@ blocks:
     image:
       src: ''
     color: tint
+    size: large
     bgimg:
       src: /uploads/erp-banner-1.png
-      backgroundSize: contain
-      backgroundPosition: right center
-      backgroundRepeat: no-repeat
+      bgOption: section
+      backgroundSize: bg-contain
+      backgroundPosition: bg-right-top
+      backgroundRepeat: bg-no-repeat
     _template: hero
   - tagline: Zyler is Born in the Cloud to Make Change Easy!
     headline: Cloud-based Enterprise Software
@@ -37,6 +39,7 @@ blocks:
         link: 'https://zylererp.com/'
     image:
       src: /uploads/cloud-software.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -71,6 +74,7 @@ blocks:
     image:
       src: /uploads/inventory-management.png
     layout: image-left
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -94,6 +98,7 @@ blocks:
         link: 'https://zylererp.com/'
     image:
       src: /uploads/sales.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -118,6 +123,7 @@ blocks:
     image:
       src: /uploads/financial-management.png
     layout: image-left
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -141,6 +147,7 @@ blocks:
         link: 'https://zylererp.com/'
     image:
       src: /uploads/order-management.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -170,6 +177,7 @@ blocks:
     image:
       src: /uploads/why-zyler-erp.png
     layout: image-left
+    size: large
     _template: hero
 ---
 

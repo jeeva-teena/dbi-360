@@ -3,7 +3,18 @@ title: Blog
 blocks:
   - body: ''
     imgSrc:
+      src: ''
+      imgOption: sectionImage
+      imgSize: ''
+      imgPosition: ''
+      imgMargin: mt-0 mb-0
+    size: large
+    bgimg:
       src: /uploads/about.jpg
+      bgOption: section
+      backgroundSize: bg-cover
+      backgroundPosition: bg-center
+      backgroundRepeat: bg-no-repeat
     _template: content
   - items:
       - icon:
@@ -42,6 +53,8 @@ blocks:
           posts/Boost-Collaboration--Efficiency-Your-B2B-SaaS-Partner-for-Cross-Functional-Success
     body: ''
     gridColumns: '3'
+    size: large
+    cPadding: ''
     _template: features
 ---
 

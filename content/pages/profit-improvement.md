@@ -1,10 +1,19 @@
 ---
 title: Profit Improvement Calculator
 blocks:
-  - body: "## Stuck In A\_Profit Plateu?\n\nIdentify Your Hidden\nEarning Potential With Our Free Tool\n====================================\n\n##\n\n#### What would you like to calculate using our profit improvement calculator?\n\n* Increase Net Profit\n* Improve Lead Performance\_\n* Total Turnover\n"
+  - body: "### Stuck In A\_Profit Plateu?\n\n# Identify Your Hidden\n\n# Earning Potential With Our Free Tool\n\nWhat would you like to calculate using our profit improvement calculator?\n\n* Increase Net Profit\n* Improve Lead Performance\_\n* Total Turnover\n"
+    inlineItems: inline-items
     textColor: ''
+    hFontSize: text-xl
     alignment: text-center
-    size: large
+    imgSrc:
+      src: /uploads/ban-img.png
+      imgOption: containerImage
+      imgPosition: mx-auto
+      imgMargin: mt-0 mb-0
+    size: medium
+    cPadding: py-10
+    sPadding: ''
     bgimg:
       src: /uploads/top-bg.png
       bgOption: section
@@ -16,16 +25,6 @@ blocks:
         type: button
         icon: true
         link: /
-    _template: content
-  - body: ''
-    imgSrc:
-      src: /uploads/ban-img.png
-    bgimg:
-      src: ''
-      bgOption: section
-      backgroundSize: contain
-      backgroundPosition: bottom center
-      backgroundRepeat: no-repeat
     _template: content
   - tagline: Discover the Profit Leaks & Plug Them with Our Calculator.
     headline: 'Chart Your Business Growth, One Click At A Time!'
@@ -44,7 +43,7 @@ blocks:
     color: tint
     size: large
     bgimg:
-      src: /uploads/one-click-bg.png
+      src: ''
       bgOption: section
       backgroundSize: bg-contain
       backgroundPosition: bg-top
@@ -156,6 +155,7 @@ blocks:
 
       DBI360 offers cutting-edge business intelligence solutions for accessing
       business leads data, ERP needs, document management, and much more.
+    alignment: text-center
     color: ''
     gridColumns: '5'
     size: large

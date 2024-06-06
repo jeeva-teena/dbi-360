@@ -80,14 +80,14 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
     >
       <Container
         size={data.size}
-        className={`${data.cPadding} ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize}`}
+        className={`${data.cPadding} ${data.inlineItems} ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize}`}
         bgimg={data.bgimg?.bgOption === "container" ? backgroundImageSrc : ""}
       >
         <div className={`prose w-full mx-auto ${data.alignment} ${data.textColor}`}>
           <TinaMarkdown content={body} />
         </div>
         <div
-          className={`grid gap-4 text-left mt-12`}
+          className={`grid md:gap-x-4 md:gap-y-0 gap-4 gap-0 text-left mt-12`}
           style={{ gridTemplateColumns }}
         >
           {items &&
@@ -304,6 +304,12 @@ export const featureBlockSchema = {
     },
     {
       type: "string",
+      label: "List Item Alignment",
+      name: "inlineItems",
+      options: [{ label: "inline", value: "inline-items" }],
+    },
+    {
+      type: "string",
       label: "Text Color",
       name: "textColor",
       options: [
@@ -373,6 +379,8 @@ export const featureBlockSchema = {
       label: "Container Padding",
       name: "cPadding",
       options: [
+        { label: "py-0", value: "pt-0 pb-0" },
+        { label: "py-5", value: "py-5" },
         { label: "py-10", value: "py-10" },
         { label: "py-14", value: "py-14" },
         { label: "py-16", value: "py-16" },
@@ -386,6 +394,8 @@ export const featureBlockSchema = {
       label: "Section Padding",
       name: "sPadding",
       options: [
+        { label: "py-0", value: "pt-0 pb-0" },
+        { label: "py-5", value: "py-5" },
         { label: "py-10", value: "py-10" },
         { label: "py-14", value: "py-14" },
         { label: "py-16", value: "py-16" },

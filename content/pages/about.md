@@ -4,8 +4,14 @@ blocks:
   - tagline: ''
     headline: ABOUT US
     text: ''
+    alignment: ''
+    size: large
     bgimg:
       src: /uploads/about.jpg
+      bgOption: section
+      backgroundSize: bg-cover
+      backgroundPosition: bg-center
+      backgroundRepeat: bg-no-repeat
     _template: hero
   - tagline: ''
     headline: ''
@@ -44,6 +50,7 @@ blocks:
       titleHeading: WHO WE ARE?
       src: /uploads/who-we-are.png
     layout: image-left
+    size: large
     _template: hero
   - tagline: ''
     headline: ''
@@ -67,6 +74,7 @@ blocks:
     image:
       src: /uploads/our-ideology-1.png
     layout: ''
+    size: large
     _template: hero
   - items:
       - icon:
@@ -115,7 +123,9 @@ blocks:
       # Our Proposal
 
       Here is what we offer to meet our business ideologies:
+    alignment: text-center
     gridColumns: '4'
+    size: large
     _template: features
 ---
 

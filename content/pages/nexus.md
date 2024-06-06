@@ -12,11 +12,13 @@ blocks:
     image:
       src: ''
     color: tint
+    size: large
     bgimg:
       src: /uploads/nexus-banner-1.png
-      backgroundSize: contain
-      backgroundPosition: right center
-      backgroundRepeat: no-repeat
+      bgOption: section
+      backgroundSize: bg-contain
+      backgroundPosition: bg-right-top
+      backgroundRepeat: bg-no-repeat
     _template: hero
   - tagline: How NEXUS Works For Human Resource?
     headline: 'NEXUS FOR HUMAN RESOURCE '
@@ -51,6 +53,7 @@ blocks:
     image:
       src: /uploads/sds-human-resource (1).png
     layout: image-left
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -92,6 +95,7 @@ blocks:
         link: 'https://nexus-data.io/'
     image:
       src: /uploads/sds-sales.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -128,6 +132,7 @@ blocks:
     image:
       src: /uploads/sds-human-resource (1).png
     layout: image-left
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -161,6 +166,7 @@ blocks:
         link: 'https://nexus-data.io/'
     image:
       src: /uploads/sds-Logistics-1.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -197,6 +203,7 @@ blocks:
     image:
       src: /uploads/sds-human-resource (1).png
     layout: image-left
+    size: large
     _template: hero
 ---
 

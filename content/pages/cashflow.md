@@ -70,14 +70,18 @@ blocks:
     alignment: ''
     imgSrc:
       src: /uploads/mocup-cash-flow.png
+      imgOption: containerImage
+      imgSize: ''
       imgPosition: mx-auto
+      imgMargin: mt-0 mb-0
     size: large
+    cPadding: pt-0 pb-0
     bgimg:
       src: /uploads/recognize-bg.png
       bgOption: section
-      backgroundSize: contain
-      backgroundPosition: top center
-      backgroundRepeat: repeat
+      backgroundSize: bg-contain
+      backgroundPosition: bg-center
+      backgroundRepeat: bg-repeat
     _template: content
   - tagline: ''
     headline: Data-Driven Tweaks ENDLESS PROFIT
@@ -134,7 +138,9 @@ blocks:
     size: large
     _template: hero
   - body: ''
-    size: small
+    size: ''
+    cPadding: pt-0 pb-0
+    sPadding: ''
     actions:
       - label: Take The First Step Now
         type: button
@@ -214,6 +220,7 @@ blocks:
 
       DBI360 offers cutting-edge business intelligence solutions for accessing
       business leads data, ERP needs, document management, and much more.
+    alignment: text-center
     gridColumns: '5'
     size: large
     _template: features

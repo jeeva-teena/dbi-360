@@ -11,11 +11,13 @@ blocks:
         link: 'https://confluxhr.com/'
     image:
       src: ''
+    size: large
     bgimg:
       src: /uploads/confluxhr.png
-      backgroundSize: contain
-      backgroundPosition: right center
-      backgroundRepeat: no-repeat
+      bgOption: section
+      backgroundSize: bg-contain
+      backgroundPosition: bg-right-top
+      backgroundRepeat: bg-no-repeat
     _template: hero
   - tagline: Human Resource Management
     headline: Manage Your HR Processes All in One Place
@@ -33,6 +35,7 @@ blocks:
         link: 'https://confluxhr.com/'
     image:
       src: /uploads/HR-Processes.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -54,6 +57,7 @@ blocks:
     image:
       src: /uploads/Smart-Solutions.png
     layout: image-left
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -74,6 +78,7 @@ blocks:
         link: 'https://confluxhr.com/'
     image:
       src: /uploads/recruitment.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -94,6 +99,7 @@ blocks:
     image:
       src: /uploads/Payroll-Banner.png
     layout: image-left
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -113,6 +119,7 @@ blocks:
         link: 'https://confluxhr.com/'
     image:
       src: /uploads/attendance.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -135,6 +142,7 @@ blocks:
     image:
       src: /uploads/performance.png
     layout: image-left
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -159,6 +167,7 @@ blocks:
         link: 'https://confluxhr.com/'
     image:
       src: /uploads/training-development.png
+    size: large
     bgimg:
       src: /uploads/shopassistant-sep4.svg
       backgroundSize: contain
@@ -176,6 +185,7 @@ blocks:
     image:
       src: /uploads/self-service.png
     layout: image-left
+    size: large
     _template: hero
 ---
 

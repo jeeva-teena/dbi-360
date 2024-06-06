@@ -21,7 +21,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     yellow: "from-yellow-500 to-yellow-500",
   };
   const isImageLeft = data.layout === "image-left";
-  const containerClass = `grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center ${data.cPadding} ${data.alignment} ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize}`;
+  const containerClass = `grid grid-cols-1 md:grid-cols-5 md:gap-x-14 md:gap-y-0 gap-x-0 gap-y-14 items-center justify-center ${data.cPadding} ${data.alignment} ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize}`;
   const contentClass = isImageLeft
     ? "md:col-start-3"
     : "md:col-start-1 row-start-2 md-row-start-1";
@@ -46,7 +46,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.tagline && (
             <h2
               data-tina-field={tinaField(data, "tagline")}
-              className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20"
+              className="relative inline-block px-3 py-1 mb-3 text-md font-bold tracking-wide title-font z-20"
             >
               {data.tagline}
               <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
@@ -55,7 +55,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.headline && (
             <h3
               data-tina-field={tinaField(data, "headline")}
-              className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
+              className={`w-full relative	mb-5 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
@@ -73,7 +73,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.text && (
             <div
               data-tina-field={tinaField(data, "text")}
-              className={`prose mx-auto md:mx-0 mb-10 ${
+              className={` ${data.inlineItems} ${data.hFontSize} prose mx-auto md:mx-0 mb-10 ${
                 data.color === "primary"
                   ? `prose-primary`
                   : data.color === "orange"
@@ -97,14 +97,16 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             data-tina-field={tinaField(data.image, "src")}
             className={`relative md:col-span-2  ${imageClass}`}
           >
-            <h3
-              data-tina-field={tinaField(data.image, "titleHeading")}
-              className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
-            >
-              <span className={`bg-clip-text text-black `}>
-                {data.image.titleHeading}
-              </span>
-            </h3>
+            {data.image.titleHeading && (
+              <h3
+                data-tina-field={tinaField(data.image, "titleHeading")}
+                className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
+              >
+                <span className={`bg-clip-text text-black `}>
+                  {data.image.titleHeading}
+                </span>
+              </h3>
+            )}
             <div className={`flex justify-center`}>
               <img
                 className={`absolute rounded-lg blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light ${data.image.imgSize} ${data.image.imgWidth} ${data.image.imgHeight} ${data.image.imgPosition}`}
@@ -150,6 +152,27 @@ export const heroBlockSchema: TinaTemplate = {
       label: "Text",
       name: "text",
       type: "rich-text",
+    },
+    {
+      type: "string",
+      label: "List Item Alignment",
+      name: "inlineItems",
+      options: [{ label: "inline", value: "inline-items" }],
+    },
+    {
+      type: "string",
+      label: "Font Size",
+      name: "hFontSize",
+      options: [
+        { label: "Small", value: "text-sm" },
+        { label: "Base", value: "text-base" },
+        { label: "Large", value: "text-lg" },
+        { label: "Extra Large", value: "text-xl" },
+        { label: "2XL", value: "text-2xl" },
+        { label: "3XL", value: "text-3xl" },
+        { label: "4XL", value: "text-4xl" },
+        { label: "5XL", value: "text-5xl" },
+      ],
     },
     {
       type: "string",
@@ -312,6 +335,8 @@ export const heroBlockSchema: TinaTemplate = {
       label: "Container Padding",
       name: "cPadding",
       options: [
+        { label: "py-0", value: "pt-0 pb-0" },
+        { label: "py-5", value: "py-5" },
         { label: "py-10", value: "py-10" },
         { label: "py-14", value: "py-14" },
         { label: "py-16", value: "py-16" },
@@ -325,6 +350,8 @@ export const heroBlockSchema: TinaTemplate = {
       label: "Section Padding",
       name: "sPadding",
       options: [
+        { label: "py-0", value: "pt-0 pb-0" },
+        { label: "py-5", value: "py-5" },
         { label: "py-10", value: "py-10" },
         { label: "py-14", value: "py-14" },
         { label: "py-16", value: "py-16" },

@@ -4,13 +4,20 @@ blocks:
   - body: ''
     imgSrc:
       src: /uploads/Email-Sign-dbi-scaled.jpg
+      imgOption: sectionImage
+      imgWidth: w-screen
+      imgHeight: ''
+      imgSize: ''
+      imgMargin: mt-0 mb-0
     color: default
+    size: large
+    cPadding: pt-0 pb-0
     _template: content
   - body: |
       # The World’s Most Intelligent,
 
       # Accurate, & Insight-Drive
-    textColor: white
+    textColor: text-white
     alignment: text-center
     color: ''
     size: large
@@ -215,12 +222,21 @@ blocks:
     size: large
     _template: hero
   - body: |
-      # Our specialists are waiting to help you
-    hFontSize: text-2xl
+      ![](/uploads/icon2-1.png)
+
+      # Our specialists are waiting to
+
+      # help you
+
+      ![](/uploads/icone-down-1.png)
+    hFontSize: text-lg
     alignment: text-center
+    imgSrc:
+      src: ''
     color: default
     size: ''
-    sPadding: py-20
+    cPadding: ''
+    sPadding: pt-0 pb-0
     _template: content
   - body: ''
     color: orange

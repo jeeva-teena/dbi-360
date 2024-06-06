@@ -10,11 +10,18 @@ import { tinaField } from "tinacms/dist/react";
 export const Content = ({ data }: { data: PageBlocksContent }) => {
   const backgroundImageSrc = data.bgimg?.src || "";
 
-  const containerClass = `prose ${data.cPadding} ${
-    data.bgimg?.backgroundRepeat
-  } ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize} ${
-    data.alignment
-  } text-${data.textColor} ${data.hFontSize} ${data.bgimg?.containerRound}
+  const sectionBackgroundImage =
+    data.bgimg?.bgOption === "section" ? data.bgimg.src || "" : "";
+  const containerBackgroundImage =
+    data.bgimg?.bgOption === "container" ? data.bgimg.src || "" : "";
+
+  const containerClass = `prose ${data.marginTop} ${data.cPadding} ${
+    data.inlineItems
+  } ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${
+    data.bgimg?.backgroundSize
+  } ${data.alignment} ${data.textColor} ${data.hFontSize} ${
+    data.bgimg?.containerRound
+  }
   ${
     data.color === "primary"
       ? `prose-primary`
@@ -23,44 +30,50 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
       : ``
   }`;
 
+  const renderImageDiv = (imgSrc, mbClass) => {
+    if (!imgSrc || !imgSrc.src) return null;
+    return (
+      <div data-tina-field={tinaField(imgSrc, "src")} className={mbClass}>
+        <img
+          src={imgSrc.src}
+          className={`${imgSrc.imgSize || ""} ${imgSrc.imgMargin || ""} ${
+            imgSrc.imgWidth || ""
+          } ${imgSrc.imgHeight || ""} ${imgSrc.imgPosition || ""}`}
+          alt={imgSrc.alt || ""}
+          aria-hidden="true"
+        />
+      </div>
+    );
+  };
+
   return (
     <Section
       color={data.color}
-      bgimg={data.bgimg?.bgOption === "section" ? backgroundImageSrc : ""}
+      bgimg={sectionBackgroundImage}
       className={`${data.bgimg?.backgroundSize} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundRepeat} ${data.sPadding}`}
     >
-      {data.imgSrc && (
-        <div data-tina-field={tinaField(data.imgSrc, "src")} className="mb-16">
-          <img
-            src={data.imgSrc.src}
-            className={`${data.imgSrc.imgSize} ${data.imgSrc.imgWidth} ${data.imgSrc.imgHeight} ${data.imgSrc.imgPosition}`}
-            aria-hidden="true"
-          />
+      {data.imgSrc?.imgOption === "sectionImage" &&
+        renderImageDiv(data.imgSrc, "mb-16")}
+
+      <Container
+        size={data.size}
+        bgimg={containerBackgroundImage}
+        className={containerClass}
+        data-tina-field={tinaField(data, "body")}
+      >
+        <TinaMarkdown content={data.body} />
+        <div>
+          {data.actions && (
+            <Actions
+              className="justify-center py-2 mt-5"
+              parentColor={data.color}
+              actions={data.actions}
+            />
+          )}
         </div>
-      )}
-      {!data.imgSrc && (
-        <>
-          <Container
-            size={data.size}
-            bgimg={
-              data.bgimg?.bgOption === "container" ? backgroundImageSrc : ""
-            }
-            className={containerClass}
-            data-tina-field={tinaField(data, "body")}
-          >
-            <TinaMarkdown content={data.body} />
-            <div>
-              {data.actions && (
-                <Actions
-                  className="justify-center py-2 mt-5"
-                  parentColor={data.color}
-                  actions={data.actions}
-                />
-              )}
-            </div>
-          </Container>
-        </>
-      )}
+        {data.imgSrc?.imgOption === "containerImage" &&
+          renderImageDiv(data.imgSrc, "mb-16")}
+      </Container>
     </Section>
   );
 };
@@ -82,6 +95,12 @@ export const contentBlockSchema: TinaTemplate = {
     },
     {
       type: "string",
+      label: "List Item Alignment",
+      name: "inlineItems",
+      options: [{ label: "inline", value: "inline-items" }],
+    },
+    {
+      type: "string",
       label: "Margin Top",
       name: "marginTop",
       options: [
@@ -95,10 +114,10 @@ export const contentBlockSchema: TinaTemplate = {
       label: "Text Color",
       name: "textColor",
       options: [
-        { label: "Black", value: "black" },
-        { label: "Blue", value: "blue-500" },
-        { label: "Orange", value: "orange-500" },
-        { label: "White", value: "white" },
+        { label: "Black", value: "text-black" },
+        { label: "Blue", value: "text-blue-500" },
+        { label: "Orange", value: "text-orange-500" },
+        { label: "White", value: "text-white" },
       ],
     },
     {
@@ -144,6 +163,15 @@ export const contentBlockSchema: TinaTemplate = {
         },
         {
           type: "string",
+          label: "Image Contain Option",
+          name: "imgOption",
+          options: [
+            { label: "Section", value: "sectionImage" },
+            { label: "Container", value: "containerImage" },
+          ],
+        },
+        {
+          type: "string",
           label: "Image Width",
           name: "imgWidth",
           options: [
@@ -186,12 +214,26 @@ export const contentBlockSchema: TinaTemplate = {
         },
         {
           type: "string",
-          label: "Image position",
+          label: "Image Position",
           name: "imgPosition",
           options: [
             { label: "Center", value: "mx-auto" },
             { label: "Left", value: "ml-0 mr-auto" },
             { label: "Right", value: "mr-0 ml-auto" },
+          ],
+        },
+        {
+          type: "string",
+          label: "Image Margin",
+          name: "imgMargin",
+          options: [
+            { label: "my-0", value: "mt-0 mb-0" },
+            { label: "my-10", value: "my-10" },
+            { label: "my-14", value: "my-14" },
+            { label: "my-16", value: "my-16" },
+            { label: "my-20", value: "my-20" },
+            { label: "my-24", value: "my-24" },
+            { label: "my-28", value: "my-28" },
           ],
         },
       ],
@@ -222,6 +264,8 @@ export const contentBlockSchema: TinaTemplate = {
       label: "Container Padding",
       name: "cPadding",
       options: [
+        { label: "py-0", value: "pt-0 pb-0" },
+        { label: "py-5", value: "py-5" },
         { label: "py-10", value: "py-10" },
         { label: "py-14", value: "py-14" },
         { label: "py-16", value: "py-16" },
@@ -235,6 +279,8 @@ export const contentBlockSchema: TinaTemplate = {
       label: "Section Padding",
       name: "sPadding",
       options: [
+        { label: "py-0", value: "pt-0 pb-0" },
+        { label: "py-5", value: "py-5" },
         { label: "py-10", value: "py-10" },
         { label: "py-14", value: "py-14" },
         { label: "py-16", value: "py-16" },

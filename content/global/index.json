@@ -5,7 +5,8 @@
       "style": "float"
     },
     "logo": {
-      "src": "/uploads/DBI 360_LOGO 2.png"
+      "src": "/uploads/DBI 360_LOGO 2.png",
+      "imageWidth": 530
     },
     "name": "",
     "color": "default",

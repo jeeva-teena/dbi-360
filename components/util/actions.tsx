@@ -68,7 +68,7 @@ export const Actions = ({
   };
 
   return (
-    <div className={`flex flex-wrap items-center gap-y-4 gap-x-6 ${className}`}>
+    <div className={`flex flex-wrap items-center md:gap-y-0 gap-y-4 gap-x-6 ${className}`}>
       {actions &&
         actions.map(function (action, index) {
           let element = null;
