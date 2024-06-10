@@ -87,6 +87,7 @@ blocks:
         text: >-
           In order to ensure finest business productivity, our B2B database
           brings together People, Product, & Company.
+        dFontSize: 'md:text-sm text-xs'
       - icon:
           name: ''
           color: ''
@@ -97,6 +98,7 @@ blocks:
         text: >-
           A robust cloud-based ERP suite that promotes collaboration across
           various departments and streamlines business processes.
+        dFontSize: 'md:text-sm text-xs'
       - icon:
           name: ''
           color: ''
@@ -109,6 +111,7 @@ blocks:
           processes including recruitment, leave & attendance management,
           payroll management, performance management, and learning &
           development.
+        dFontSize: 'md:text-sm text-xs'
       - icon:
           name: ''
           color: ''
@@ -119,6 +122,7 @@ blocks:
         text: >-
           In order to ensure finest business productivity, our B2B database
           brings together People, Product, & Company.
+        dFontSize: 'md:text-sm text-xs'
     marginTop: mt-10
     body: |
       # Our Proposal

@@ -65,7 +65,9 @@ p > img {
 }
 
 @media only screen and (max-width: 1392px) {
-  section {
+  header,
+  section,
+  footer {
     padding-left: 50px;
     padding-right: 50px;
   }

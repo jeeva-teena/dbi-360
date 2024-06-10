@@ -35,7 +35,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
           <>
             <Popover.Button as={"span"}>
               <Button
-                className={`text-sm h-11 px-4 ${InputIcon ? "h-11" : "h-10"}`}
+                className={`md:text-sm text-xs h-11 px-4 ${InputIcon ? "h-11" : "h-10"}`}
                 size="custom"
                 rounded="full"
                 variant={open ? "secondary" : "white"}
@@ -67,7 +67,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                       <div className="bg-gray-50 p-2 border-b border-gray-100 z-10 shadow-sm">
                         <input
                           type="text"
-                          className="bg-white text-sm rounded-sm border border-gray-100 shadow-inner py-1.5 px-2.5 w-full block placeholder-gray-200"
+                          className="bg-white md:text-sm text-xs rounded-sm border border-gray-100 shadow-inner py-1.5 px-2.5 w-full block placeholder-gray-200"
                           onClick={(event: any) => {
                             event.stopPropagation();
                             event.preventDefault();

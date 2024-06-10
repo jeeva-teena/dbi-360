@@ -11,7 +11,7 @@ export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
       <Container size="large">
         <blockquote>
           <div
-            className={`relative z-10 max-w-3xl mx-auto text-4xl lg:text-5xl font-bold tracking-normal text-center title-font ${
+            className={`relative z-10 max-w-3xl mx-auto lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-bold tracking-normal text-center title-font ${
               data.color === "primary"
                 ? `text-white` : data.color ===  "orange" ? `text-white`
                 : `text-gray-700 dark:text-gray-50`
@@ -46,7 +46,7 @@ export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
           <footer className="text-center">
             <p
               data-tina-field={tinaField(data, `author`)}
-              className={`tracking-wide title-font font-bold text-lg ${
+              className={`tracking-wide title-font font-bold md:text-lg text-base ${
                 data.color === "primary"
                   ? `text-blue-200` : data.color ===  "orange" ? `text-blue-200`
                   : `text-blue-500 dark:text-blue-300`

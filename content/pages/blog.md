@@ -30,8 +30,8 @@ blocks:
           The business landscape is a dynamic force, constantly shifting and
           evolving. To stay competitive, simply reacting to trends is no…
 
-        hFontSize: text-lg
-        dFontSize: text-base
+        hFontSize: 'md:text-base text-sm'
+        dFontSize: 'md:text-sm text-xs'
         href: >-
           posts/Future-Proof-Your-Business-Top-7-Business-Intelligence-Trends-to-Watch
       - icon:
@@ -47,8 +47,8 @@ blocks:
           In today’s dynamic business landscape, effective collaboration isn’t a
           perk, it’s a necessity.  Companies that excel at breaking down
           departmental…
-        hFontSize: text-lg
-        dFontSize: text-base
+        hFontSize: 'md:text-base text-sm'
+        dFontSize: 'md:text-sm text-xs'
         href: >-
           posts/Boost-Collaboration--Efficiency-Your-B2B-SaaS-Partner-for-Cross-Functional-Success
     body: ''

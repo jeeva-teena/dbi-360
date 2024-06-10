@@ -135,7 +135,7 @@ export const Footer = ({ data, icon, rawData }) => {
           </div>
 
           <div className="col-start-8 col-span-2">
-            <p className="text-base mb-3 font-bold">Quick Links</p>
+            <p className="md:text-base text-sm mb-3 font-bold">Quick Links</p>
             <ul>
               {data.quickLinks &&
                 data.quickLinks.map((item, i) => {
@@ -154,7 +154,7 @@ export const Footer = ({ data, icon, rawData }) => {
             </ul>
           </div>
           <div className="col-start-10 col-span-3">
-            <p className="text-base mb-3 font-bold">Important Links</p>
+            <p className="md:text-base text-sm mb-3 font-bold">Important Links</p>
             <ul>
               {data.importantLinks &&
                 data.importantLinks.map((item, i) => {

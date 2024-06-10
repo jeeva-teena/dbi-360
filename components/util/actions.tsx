@@ -78,7 +78,7 @@ export const Actions = ({
               <Link key={index} className="no-underline" href={action.link ? action.link : "/"}>
                 <button
                   data-tina-field={tinaField(action)}
-                  className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
+                  className={`z-10 relative flex items-center px-7 py-3 font-semibold md:text-lg text-base transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
                     parentColor === "primary"
                       ? invertedButtonColorClasses[theme.color]
                       : parentColor === "orange"
@@ -102,7 +102,7 @@ export const Actions = ({
                 key={index}
                 href={action.link ? action.link : "/"}
                 data-tina-field={tinaField(action)}
-                className={`group inline-flex items-center font-semibold text-lg transition duration-150 ease-out ${
+                className={`group inline-flex items-center font-semibold md:text-lg text-base transition duration-150 ease-out ${
                   parentColor === "primary"
                     ? `text-white  hover:text-gray-50`
                     : parentColor === "orange"

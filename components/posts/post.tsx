@@ -92,7 +92,7 @@ const components: Components<{
               <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                  className="w-full flex items-center justify-center py-3 px-5 border border-transparent md:text-base text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
                 >
                   {props.buttonText}
                 </button>
@@ -141,7 +141,7 @@ export const Post = (props: PostType) => {
       <Container width="small" className={`flex-1 pb-2`} size="large">
         <h2
           data-tina-field={tinaField(props, "title")}
-          className={`w-full relative	mb-8 text-5xl font-extrabold tracking-normal text-center title-font`}
+          className={`w-full relative	mb-8 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-normal text-center title-font`}
         >
           <span
             className={`bg-clip-text text-transparent bg-gradient-to-r ${
@@ -167,7 +167,7 @@ export const Post = (props: PostType) => {
               </div>
               <p
                 data-tina-field={tinaField(props.author, "name")}
-                className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white"
+                className="md:text-base text-sm font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white"
               >
                 {props.author.name}
               </p>
@@ -178,7 +178,7 @@ export const Post = (props: PostType) => {
           )}
           <p
             data-tina-field={tinaField(props, "date")}
-            className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150"
+            className="md:text-base text-sm text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150"
           >
             {formattedDate}
           </p>

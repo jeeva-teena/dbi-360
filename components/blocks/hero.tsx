@@ -55,7 +55,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.headline && (
             <h3
               data-tina-field={tinaField(data, "headline")}
-              className={`w-full relative	mb-5 text-5xl font-extrabold tracking-normal leading-tight title-font`}
+              className={`w-full relative	mb-5 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
@@ -73,7 +73,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.text && (
             <div
               data-tina-field={tinaField(data, "text")}
-              className={` ${data.inlineItems} ${data.hFontSize} prose mx-auto md:mx-0 mb-10 ${
+              className={` ${data.inlineItems} ${data.hFontSize} prose md:mx-0 mb-10 ${
                 data.color === "primary"
                   ? `prose-primary`
                   : data.color === "orange"
@@ -100,7 +100,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             {data.image.titleHeading && (
               <h3
                 data-tina-field={tinaField(data.image, "titleHeading")}
-                className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
+                className={`w-full relative	mb-10 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-normal leading-tight title-font`}
               >
                 <span className={`bg-clip-text text-black `}>
                   {data.image.titleHeading}
@@ -164,14 +164,14 @@ export const heroBlockSchema: TinaTemplate = {
       label: "Editor Font Size",
       name: "hFontSize",
       options: [
-        { label: "Small", value: "text-sm" },
-        { label: "Base", value: "text-base" },
-        { label: "Large", value: "text-lg" },
-        { label: "Extra Large", value: "text-xl" },
-        { label: "2XL", value: "text-2xl" },
-        { label: "3XL", value: "text-3xl" },
-        { label: "4XL", value: "text-4xl" },
-        { label: "5XL", value: "text-5xl" },
+        { label: "Small", value: "md:text-sm text-xs" },
+        { label: "Base", value: "md:text-base text-sm" },
+        { label: "Large", value: "md:text-lg text-base" },
+        { label: "Extra Large", value: "md:text-xl text-lg" },
+        { label: "2XL", value: "md:text-2xl text-xl" },
+        { label: "3XL", value: "md:text-3xl text-2xl" },
+        { label: "4XL", value: "md:text-4xl text-3xl" },
+        { label: "5XL", value: "md:text-5xl text-4xl" },
       ],
     },
     {

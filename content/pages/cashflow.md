@@ -11,6 +11,7 @@ blocks:
           imgPosition: mx-auto
         title: NET CASH FLOW
         text: ''
+        hFontSize: 'md:text-lg text-base'
         featureTextColor: ''
         itemAlignment: text-center
       - icon:
@@ -22,6 +23,7 @@ blocks:
           imgPosition: mx-auto
         title: BUSINESS CYCLE
         text: ''
+        hFontSize: 'md:text-lg text-base'
         itemAlignment: text-center
       - icon:
           name: ''
@@ -32,6 +34,7 @@ blocks:
           imgPosition: mx-auto
         title: EBIT CASH FLOW
         text: ''
+        hFontSize: 'md:text-lg text-base'
         itemAlignment: text-center
     marginTop: mt-10
     bgColor: bg-white
@@ -154,38 +157,38 @@ blocks:
       - imgSrc:
           src: /uploads/aster-logo.png
         text: AsterDocs revolutionizes supplier/vendor document management.
-        dFontSize: text-sm
+        dFontSize: 'md:text-sm text-xs'
         itemAlignment: text-center
       - imgSrc:
           src: /uploads/nexus-1.png
         text: >-
           Nexus is your gateway to obtain B2B business leads data (People,
           product, and company data). 
-        dFontSize: text-sm
+        dFontSize: 'md:text-sm text-xs'
         itemAlignment: text-center
       - imgSrc:
           src: /uploads/conflux.png
         text: >-
           ConfluxHR is a cutting-edge HR management solution that empowers you
           to streamline your HR processes.
-        dFontSize: text-sm
+        dFontSize: 'md:text-sm text-xs'
         itemAlignment: text-center
       - imgSrc:
           src: /uploads/zyler-1.png
         text: "ZylerERP is a dynamic business management solution designed to revolutionize operations.\n\t\t\t\t\t\t\t\t"
-        dFontSize: text-sm
+        dFontSize: 'md:text-sm text-xs'
         itemAlignment: text-center
       - imgSrc:
           src: /uploads/buyersflow.png
         text: >-
           BuyersFlow is a bulk email sending platform designed for B2B marketers
           and sales professionals. 
-        dFontSize: text-sm
+        dFontSize: 'md:text-sm text-xs'
         itemAlignment: text-center
       - imgSrc:
           src: /uploads/cashflow-Calculator.png
         text: Evaluate your business's cash movements over a specific period.
-        dFontSize: text-sm
+        dFontSize: 'md:text-sm text-xs'
         itemAlignment: text-center
       - icon:
           name: ''
@@ -195,7 +198,7 @@ blocks:
           src: /uploads/Sales-Prospect-Calculator.png
         title: ''
         text: "Analyze lead conversion rates, acquisition costs, etc to forecast revenue from sales prospects.\n\t\t\t\t\t\t\t\t"
-        dFontSize: text-sm
+        dFontSize: 'md:text-sm text-xs'
         itemAlignment: text-center
       - icon:
           name: ''
@@ -205,7 +208,7 @@ blocks:
           src: /uploads/Profit-Improvement-Calculator.png
         title: ''
         text: ' Evaluate cost reduction, pricing adjustments, and efficiency improvements to make informed decisions.'
-        dFontSize: text-sm
+        dFontSize: 'md:text-sm text-xs'
         itemAlignment: text-center
       - icon:
           name: ''
@@ -215,7 +218,7 @@ blocks:
           src: /uploads/Business-Feasibility-Calculator.png
         title: ''
         text: "Consider market demand, projected costs, and revenue forecasts to make data-driven decisions.\n\t\t\t\t\t\t\t\t"
-        dFontSize: text-sm
+        dFontSize: 'md:text-sm text-xs'
         itemAlignment: text-center
     marginTop: mt-10
     body: >
