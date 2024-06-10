@@ -81,6 +81,7 @@ blocks:
           src: /uploads/easy.png
         title: Powerful Email Insights
         text: ''
+    marginTop: mt-10
     body: |
       # Why Choose BuyersFlow?
     gridColumns: '4'
@@ -117,6 +118,7 @@ blocks:
     actions:
       - label: Start for Free
         type: button
+        btnPosition: justify-center
         icon: true
         link: 'https://portal.buyersflow.com/login'
     _template: content

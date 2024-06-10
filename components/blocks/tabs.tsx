@@ -81,7 +81,7 @@ export const Tabs = ({ data }: { data: PageBlocksTabs }) => {
                 Searching & Converting
               </div>
             </div>
-            <div className="content-container">
+            <div className="content-container mt-5">
               <div className={activeTab === 1 ? "active" : ""}>
                 <h3>Extensive Business Research </h3>
                 <p>

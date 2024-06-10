@@ -33,6 +33,7 @@ blocks:
         title: EBIT CASH FLOW
         text: ''
         itemAlignment: text-center
+    marginTop: mt-10
     bgColor: bg-white
     body: "# See How\_1% Change\_In Overheads (OPEX) Can Boost Your Cash Flow\_By $8,000.\n\n## What would you like to check for?\n"
     textColor: text-white
@@ -135,6 +136,7 @@ blocks:
       with dynamic content and AI-powered segmentation.
     image:
       src: /uploads/send-bulk-emails.png
+    color: tint
     size: large
     _template: hero
   - body: ''
@@ -144,6 +146,7 @@ blocks:
     actions:
       - label: Take The First Step Now
         type: button
+        btnPosition: justify-center
         icon: true
         link: /
     _template: content
@@ -214,6 +217,7 @@ blocks:
         text: "Consider market demand, projected costs, and revenue forecasts to make data-driven decisions.\n\t\t\t\t\t\t\t\t"
         dFontSize: text-sm
         itemAlignment: text-center
+    marginTop: mt-10
     body: >
       # Other DBI360 Products
 

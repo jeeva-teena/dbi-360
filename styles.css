@@ -42,12 +42,15 @@ a {
   line-height: inherit;
 }
 
-.prose.inline-items :where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+.prose.inline-items
+  :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   display: flex;
   justify-content: center;
   gap: 0 60px;
 }
-.prose :where(h1), .prose :where(h2), .prose :where(h3) {
+.prose :where(h1),
+.prose :where(h2),
+.prose :where(h3) {
   font-weight: 600;
 }
 
@@ -59,4 +62,11 @@ h5,
 p > img {
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (max-width: 1392px) {
+  section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }

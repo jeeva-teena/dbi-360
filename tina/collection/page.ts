@@ -41,6 +41,12 @@ const Page: Collection = {
       if (document._sys.filename === "blog") {
         return `/blog`;
       }
+      if (document._sys.filename === "career") {
+        return `/career`;
+      }
+      if (document._sys.filename === "job-openings") {
+        return `/job-openings`;
+      }
       return undefined;
     },
   },

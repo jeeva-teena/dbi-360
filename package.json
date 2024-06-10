@@ -31,10 +31,12 @@
     "@tinacms/cli": "^1.5.45",
     "@tinacms/core": "^0.43.0",
     "@tinacms/fields": "^0.43.3",
+    "@tinacms/form-builder": "^0.43.3",
     "@tinacms/react-core": "^0.43.0",
     "@tinacms/react-forms": "^0.43.3",
     "@tinacms/styles": "^0.42.1",
     "date-fns": "^2.23.0",
+    "final-form": "^4.20.10",
     "next": "^13.3.1",
     "react": "^18.2.0",
     "react-color": "^2.19.3",
@@ -42,8 +44,9 @@
     "react-icons": "^4.2.0",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.11",
     "styled-jsx": "^5.1.1",
-    "tinacms": "^1.6.3",
+    "tinacms": "^1.6.4",
     "typescript": "^4.5.2"
   }
 }

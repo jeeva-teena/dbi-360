@@ -134,12 +134,14 @@ blocks:
 
         dFontSize: text-sm
         itemAlignment: text-center
+    marginTop: mt-10
     body: >
       # Other DBI360 Products
 
 
       DBI360 offers cutting-edge business intelligence solutions for accessing
       business leads data, ERP needs, document management, and much more.
+    alignment: text-center
     gridColumns: '5'
     size: large
     _template: features

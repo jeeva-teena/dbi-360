@@ -7,6 +7,7 @@ import type { TinaTemplate } from "tinacms";
 import { PageBlocksContent } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
+
 export const Content = ({ data }: { data: PageBlocksContent }) => {
   const backgroundImageSrc = data.bgimg?.src || "";
 
@@ -62,15 +63,13 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
         data-tina-field={tinaField(data, "body")}
       >
         <TinaMarkdown content={data.body} />
-        <div>
-          {data.actions && (
-            <Actions
-              className="justify-center py-2 mt-5"
-              parentColor={data.color}
-              actions={data.actions}
-            />
-          )}
-        </div>
+        {data.actions && (
+          <Actions
+            className={`${data.actions[0]?.btnPosition || ""} py-2 mt-5`}
+            parentColor={data.color}
+            actions={data.actions}
+          />
+        )}
         {data.imgSrc?.imgOption === "containerImage" &&
           renderImageDiv(data.imgSrc, "mb-16")}
       </Container>
@@ -104,6 +103,9 @@ export const contentBlockSchema: TinaTemplate = {
       label: "Margin Top",
       name: "marginTop",
       options: [
+        { label: "mt-5", value: "mt-5" },
+        { label: "mt-10", value: "mt-10" },
+        { label: "mt-15", value: "mt-15" },
         { label: "mt-24", value: "mt-24" },
         { label: "mt-28", value: "mt-28" },
         { label: "mt-32", value: "mt-32" },
@@ -390,6 +392,16 @@ export const contentBlockSchema: TinaTemplate = {
           options: [
             { label: "Button", value: "button" },
             { label: "Link", value: "link" },
+          ],
+        },
+        {
+          label: "Button Position",
+          name: "btnPosition",
+          type: "string",
+          options: [
+            { label: "Left", value: "justify-start" },
+            { label: "Center", value: "justify-center" },
+            { label: "Right", value: "justify-end" },
           ],
         },
         {

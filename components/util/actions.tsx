@@ -3,9 +3,9 @@ import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useTheme } from "../layout";
 import {
+  PageBlocksHeroActions,
   PageBlocksFeaturesActions,
   PageBlocksContentActions,
-  PageBlocksHeroActions,
 } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
@@ -20,6 +20,7 @@ export const Actions = ({
     | PageBlocksHeroActions[]
     | PageBlocksFeaturesActions[]
     | PageBlocksContentActions[];
+    
 }) => {
   const theme = useTheme();
   const buttonColorClasses = {

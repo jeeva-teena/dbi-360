@@ -83,11 +83,14 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
         className={`${data.cPadding} ${data.inlineItems} ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize}`}
         bgimg={data.bgimg?.bgOption === "container" ? backgroundImageSrc : ""}
       >
-        <div className={`prose w-full mx-auto ${data.alignment} ${data.textColor}`}>
+        <div
+          className={`prose w-full mx-auto ${data.alignment} ${data.textColor}`}
+        >
           <TinaMarkdown content={body} />
         </div>
         <div
-          className={`grid md:gap-x-4 md:gap-y-0 gap-4 gap-0 text-left mt-12`}
+          // className={`grid md:gap-x-4 md:gap-y-0 gap-4 gap-0 text-left mt-12`}
+          className={`grid gap-4 ${data.marginTop} `}
           style={{ gridTemplateColumns }}
         >
           {items &&
@@ -285,6 +288,16 @@ export const featureBlockSchema = {
           label: "Link",
           name: "href",
         },
+      ],
+    },
+    {
+      type: "string",
+      label: "Margin Top",
+      name: "marginTop",
+      options: [
+        { label: "mt-0", value: "mt-0" },
+        { label: "mt-5", value: "mt-5" },
+        { label: "mt-10", value: "mt-10" },
       ],
     },
     {

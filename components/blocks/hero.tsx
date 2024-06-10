@@ -161,7 +161,7 @@ export const heroBlockSchema: TinaTemplate = {
     },
     {
       type: "string",
-      label: "Font Size",
+      label: "Editor Font Size",
       name: "hFontSize",
       options: [
         { label: "Small", value: "text-sm" },

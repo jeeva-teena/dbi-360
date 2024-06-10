@@ -119,6 +119,7 @@ blocks:
         text: >-
           In order to ensure finest business productivity, our B2B database
           brings together People, Product, & Company.
+    marginTop: mt-10
     body: |
       # Our Proposal
 

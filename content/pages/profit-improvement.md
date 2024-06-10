@@ -23,6 +23,7 @@ blocks:
     actions:
       - label: Calculate Now
         type: button
+        btnPosition: justify-center
         icon: true
         link: /
     _template: content
@@ -149,6 +150,7 @@ blocks:
 
         dFontSize: text-sm
         itemAlignment: text-center
+    marginTop: mt-10
     body: >
       # Other DBI360 Products
 

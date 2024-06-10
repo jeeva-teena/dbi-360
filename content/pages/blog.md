@@ -54,7 +54,8 @@ blocks:
     body: ''
     gridColumns: '3'
     size: large
-    cPadding: ''
+    cPadding: py-10
+    sPadding: ''
     _template: features
 ---
 
