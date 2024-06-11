@@ -10,7 +10,7 @@ blocks:
         icon: true
         link: 'https://asterdocs.com/'
     image:
-      src: /uploads/aster-banner-1.png
+      src: ''
       imgWidth: ''
       imgHeight: ''
       imgSize: ''
@@ -19,7 +19,7 @@ blocks:
     color: tint
     size: large
     bgimg:
-      src: ''
+      src: /uploads/aster-banner-1.png
       bgOption: section
       backgroundSize: bg-contain
       backgroundPosition: bg-right-top
