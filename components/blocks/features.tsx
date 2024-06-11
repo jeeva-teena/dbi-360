@@ -47,7 +47,7 @@ export const Feature = ({
         {data.title && (
           <h3
             data-tina-field={tinaField(data, "title")}
-            className={`font-semibold title-font  ${data.featureTextColor} ${data.itemAlignment} ${data.hFontSize}`}
+            className={`font-semibold title-font mb-2  ${data.featureTextColor} ${data.itemAlignment} ${data.hFontSize}`}
           >
             {data.title}
           </h3>
@@ -90,7 +90,7 @@ export const Features = ({ data }: { data: PageBlocksFeatures }) => {
         </div>
         <div
           // className={`grid md:gap-x-4 md:gap-y-0 gap-4 gap-0 text-left mt-12`}
-          className={`grid gap-4 ${data.marginTop} `}
+          className={`features grid gap-4 ${data.marginTop} `}
           style={{ gridTemplateColumns }}
         >
           {items &&

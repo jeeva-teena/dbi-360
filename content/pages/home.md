@@ -73,6 +73,10 @@ blocks:
     image:
       src: /uploads/nexus.png
       alt: Nexus
+      imgWidth: ''
+      imgHeight: ''
+      imgSize: ''
+      imgPosition: ''
     layout: ''
     color: tint
     size: large
@@ -99,6 +103,10 @@ blocks:
         link: 'https://zylererp.com/'
     image:
       src: /uploads/zyler.png
+      imgWidth: ''
+      imgHeight: ''
+      imgSize: ''
+      imgPosition: ''
     layout: image-left
     color: default
     size: large
@@ -128,6 +136,10 @@ blocks:
         link: 'https://asterdocs.com/'
     image:
       src: /uploads/aster.png
+      imgWidth: ''
+      imgHeight: ''
+      imgSize: ''
+      imgPosition: ''
     color: tint
     size: large
     _template: hero
@@ -163,6 +175,10 @@ blocks:
         link: 'https://buyersflow.com/'
     image:
       src: /uploads/Personalization.png
+      imgWidth: ''
+      imgHeight: ''
+      imgSize: ''
+      imgPosition: ''
     layout: image-left
     color: default
     size: large
@@ -229,7 +245,7 @@ blocks:
       # help you
 
       ![](/uploads/icone-down-1.png)
-    hFontSize: text-lg
+    hFontSize: 'md:text-lg text-base'
     alignment: text-center
     imgSrc:
       src: ''

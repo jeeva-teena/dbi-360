@@ -4,6 +4,8 @@
       "color": "orange",
       "style": "float"
     },
+    "cPadding": "pt-0 pb-0",
+    "sPadding": "pt-0 pb-0",
     "logo": {
       "src": "/uploads/DBI 360_LOGO 2.png",
       "imageWidth": 530

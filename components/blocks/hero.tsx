@@ -21,13 +21,13 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     yellow: "from-yellow-500 to-yellow-500",
   };
   const isImageLeft = data.layout === "image-left";
-  const containerClass = `grid grid-cols-1 md:grid-cols-5 md:gap-x-14 md:gap-y-0 gap-x-0 gap-y-14 items-center justify-center ${data.cPadding} ${data.alignment} ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize}`;
+  const containerClass = `grid grid-cols-1 sm:grid-cols-5 sm:gap-x-14 sm:gap-y-0 gap-x-0 gap-y-14 items-center justify-center ${data.cPadding} ${data.alignment} ${data.bgimg?.backgroundRepeat} ${data.bgimg?.backgroundPosition} ${data.bgimg?.backgroundSize}`;
   const contentClass = isImageLeft
-    ? "md:col-start-3"
-    : "md:col-start-1 row-start-2 md-row-start-1";
+    ? "sm:col-start-3"
+    : "sm:col-start-1 row-start-2 xs-row-start-1";
   const imageClass = isImageLeft
-    ? "md:col-start-1 row-start-1"
-    : "md:col-start-4 md:row-start-2 row-start-1";
+    ? "sm:col-start-1 row-start-1"
+    : "sm:col-start-4 sm:row-start-2 row-start-1";
 
   const backgroundImageSrc = data.bgimg?.src || "";
 
@@ -42,7 +42,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         className={containerClass}
         bgimg={data.bgimg?.bgOption === "container" ? backgroundImageSrc : ""}
       >
-        <div className={`md:col-span-3 ${contentClass} `}>
+        <div className={`sm:col-span-3 ${contentClass} `}>
           {data.tagline && (
             <h2
               data-tina-field={tinaField(data, "tagline")}
@@ -73,7 +73,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.text && (
             <div
               data-tina-field={tinaField(data, "text")}
-              className={` ${data.inlineItems} ${data.hFontSize} prose md:mx-0 mb-10 ${
+              className={` ${data.inlineItems} ${data.hFontSize} prose sm:mx-0 mb-10 ${
                 data.color === "primary"
                   ? `prose-primary`
                   : data.color === "orange"
@@ -86,7 +86,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           )}
           {data.actions && (
             <Actions
-              className="justify-center md:justify-start py-2"
+              className="justify-center sm:justify-start py-2"
               parentColor={data.color}
               actions={data.actions}
             />
@@ -95,26 +95,26 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         {data.image && (
           <div
             data-tina-field={tinaField(data.image, "src")}
-            className={`relative md:col-span-2  ${imageClass}`}
+            className={`relative sm:col-span-2  ${imageClass}`}
           >
             {data.image.titleHeading && (
               <h3
                 data-tina-field={tinaField(data.image, "titleHeading")}
-                className={`w-full relative	mb-10 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-normal leading-tight title-font`}
+                className={`w-full text-center relative	mb-10 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-normal leading-tight title-font`}
               >
                 <span className={`bg-clip-text text-black `}>
                   {data.image.titleHeading}
                 </span>
               </h3>
             )}
-            <div className={`flex justify-center`}>
-              <img
+            <div>
+              {/* <img
                 className={`absolute rounded-lg blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light ${data.image.imgSize} ${data.image.imgWidth} ${data.image.imgHeight} ${data.image.imgPosition}`}
                 src={data.image.src}
                 aria-hidden="true"
-              />
+              /> */}
               <img
-                className={`${data.image.imgSize} ${data.image.imgWidth} ${data.image.imgHeight} ${data.image.imgPosition} relative rounded-lg`}
+                className={`${data.image.imgSize} ${data.image.imgWidth} ${data.image.imgHeight} ${data.image.imgPosition}`}
                 alt={data.image.alt}
                 src={data.image.src}
               />

@@ -24,14 +24,14 @@ export const Tabs = ({ data }: { data: PageBlocksTabs }) => {
         }`}
         size={data.size}
       >
-        <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 place-content-between items-center">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 md:gap-y-0 gap-y-4 place-content-between items-center">
           <div className="image-container text-center mt-5">
             {data.tabsImage1 && (
               <div data-tina-field={tinaField(data.tabsImage1, "src")}>
                 <img
                   src={data.tabsImage1.src}
                   aria-hidden="true"
-                  className={activeTab === 1 ? "active mx-auto" : "mx-auto"}
+                  className={activeTab === 1 ? "active mx-auto md:w-full w-96" : "mx-auto md:w-full w-96"}
                 />
               </div>
             )}
@@ -40,7 +40,7 @@ export const Tabs = ({ data }: { data: PageBlocksTabs }) => {
                 <img
                   src={data.tabsImage2.src}
                   aria-hidden="true"
-                  className={activeTab === 2 ? "active" : ""}
+                  className={activeTab === 2 ? "active mx-auto md:w-full w-96" : ""}
                 />
               </div>
             )}
@@ -49,13 +49,13 @@ export const Tabs = ({ data }: { data: PageBlocksTabs }) => {
                 <img
                   src={data.tabsImage3.src}
                   aria-hidden="true"
-                  className={activeTab === 3 ? "active" : ""}
+                  className={activeTab === 3 ? "active mx-auto md:w-full w-96" : ""}
                 />
               </div>
             )}
           </div>
           <div className="lg:ps-24 col-span-2">
-            <div className="bg-gray-200 flex items-center rounded-lg cursor-pointer md:text-sm text-xs text-black text-center">
+            <div className="bg-gray-200 flex items-center rounded-lg cursor-pointer sm:text-sm text-xs text-black text-center">
               <div
                 className={`tab lg:px-5 px-4 py-4 w-1/3 rounded-lg ${
                   activeTab === 1 ? "active" : ""

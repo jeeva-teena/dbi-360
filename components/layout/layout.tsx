@@ -53,7 +53,7 @@ export const Layout = ({
       </Head>
       <Theme data={data?.theme}>
         <div
-          className={`min-h-screen flex flex-col ${
+          className={`min-h-screen flex flex-col justify-start ${
             data.theme.font === "nunito" && "font-nunito"
           } ${data.theme.font === "lato" && "font-lato"}
           ${data.theme.font === "inter" && "font-inter"} ${
@@ -61,7 +61,7 @@ export const Layout = ({
           }`}
         >
           <Header data={data?.header} />
-          <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
+          <div className="body flex-2 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
             {children}
           </div>
           <Footer

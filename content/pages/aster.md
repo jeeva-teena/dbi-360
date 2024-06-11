@@ -10,12 +10,16 @@ blocks:
         icon: true
         link: 'https://asterdocs.com/'
     image:
-      src: ''
+      src: /uploads/aster-banner-1.png
+      imgWidth: ''
+      imgHeight: ''
+      imgSize: ''
+      imgPosition: ''
     layout: image-right
     color: tint
     size: large
     bgimg:
-      src: /uploads/aster-banner-1.png
+      src: ''
       bgOption: section
       backgroundSize: bg-contain
       backgroundPosition: bg-right-top

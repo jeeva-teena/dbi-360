@@ -47,6 +47,8 @@ const Global: Collection = {
           label: "Section Padding",
           name: "sPadding",
           options: [
+            { label: "py-0", value: "pt-0 pb-0" },
+            { label: "py-5", value: "py-5" },
             { label: "py-10", value: "py-10" },
             { label: "py-14", value: "py-14" },
             { label: "py-16", value: "py-16" },

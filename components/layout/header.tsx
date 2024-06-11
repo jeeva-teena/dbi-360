@@ -85,7 +85,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
 
   return (
     <header
-      className={`relative bg-gradient-to-b ${headerColorCss} ${data.sPadding}`}
+      className={`relative bg-gradient-to-b  ${headerColorCss} ${data.sPadding}`}
     >
       <Container
         size={data.size}
@@ -246,8 +246,8 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
           open={mobileMenuOpen}
           onClose={setMobileMenuOpen}
         >
-          <div className="fixed inset-0 z-10" />
-          <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="fixed inset-0 z-10 bg-black opacity-40" />
+          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <h4 className="select-none md:text-lg text-base mx-0 font-bold tracking-tight transition duration-150 ease-out transform">
                 <Link
@@ -323,12 +323,12 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                           {item.submenu.map((submenu) => (
                             <li
                               key={submenu.title}
-                              className="cursor-pointer border-2 border-gray-100 rounded-md my-2 relative hover:bg-gray-100"
+                              className="cursor-pointer border-2 border-gray-100 rounded-md my-2 relative"
                             >
                               {submenu.submenu2 &&
                               submenu.submenu2.length > 0 ? (
                                 <div
-                                  className="py-3 px-4"
+                                  className="py-2 px-4"
                                   onClick={() => toggleSubmenu2(submenu.title)}
                                 >
                                   {submenu.title}
@@ -344,7 +344,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                                 </div>
                               ) : (
                                 <Link
-                                  className="block py-3 px-4"
+                                  className="block py-2 px-4"
                                   data-tina-field={tinaField(submenu, "title")}
                                   href={`/${submenu.link}`}
                                   onClick={() =>
@@ -361,10 +361,10 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                                     {submenu.submenu2.map((submenu2) => (
                                       <li
                                         key={submenu2.title}
-                                        className="cursor-pointer hover:bg-gray-100"
+                                        className="cursor-pointer "
                                       >
                                         <Link
-                                          className="block py-3 px-6"
+                                          className="block py-2 px-6"
                                           data-tina-field={tinaField(
                                             submenu2,
                                             "title"

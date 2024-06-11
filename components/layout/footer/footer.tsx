@@ -52,8 +52,8 @@ export const Footer = ({ data, icon, rawData }) => {
   return (
     <footer className={`bg-gradient-to-br ${data.sPadding} ${footerColorCss}`}>
       <Container size={data.size} className={`${data.cPadding}`}>
-        <div className="grid grid-cols-12 justify-between gap-y-6">
-          <div className="col-start-1 col-span-6">
+        <div className="grid grid-cols-12 justify-between xs:gap-y-6 gap-y-4">
+          <div className="col-start-1 sm:col-span-5 col-span-12 ">
             <Link
               data-tina-field={tinaField(data.footerLogo, "logoSrc")}
               href="/"
@@ -62,7 +62,7 @@ export const Footer = ({ data, icon, rawData }) => {
               <img
                 src={data.footerLogo?.logoSrc}
                 alt={data.footerLogo?.logoAlt}
-                className="w-72"
+                className="md:w-72 w-48"
               />
             </Link>
             <p className="my-5">
@@ -134,8 +134,8 @@ export const Footer = ({ data, icon, rawData }) => {
             </div>
           </div>
 
-          <div className="col-start-8 col-span-2">
-            <p className="md:text-base text-sm mb-3 font-bold">Quick Links</p>
+          <div className="sm:col-start-7 col-start-1 sm:col-span-2 xs:col-span-5 col-span-12">
+            <p className="md:text-base mb-3 font-bold">Quick Links</p>
             <ul>
               {data.quickLinks &&
                 data.quickLinks.map((item, i) => {
@@ -153,8 +153,8 @@ export const Footer = ({ data, icon, rawData }) => {
                 })}
             </ul>
           </div>
-          <div className="col-start-10 col-span-3">
-            <p className="md:text-base text-sm mb-3 font-bold">Important Links</p>
+          <div className="sm:col-start-10 xs:col-start-7 col-start-1 sm:col-span-3 xs:col-span-5 col-span-12">
+            <p className="md:text-base mb-3 font-bold">Important Links</p>
             <ul>
               {data.importantLinks &&
                 data.importantLinks.map((item, i) => {

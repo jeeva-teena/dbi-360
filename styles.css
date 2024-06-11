@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 16px;
+}
+
 a {
   text-decoration: none !important;
 }
@@ -70,5 +74,37 @@ p > img {
   footer {
     padding-left: 50px;
     padding-right: 50px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .py-20 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .my-12 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .features {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media only screen and (max-width: 575px) {
+  html {
+    font-size: 13px;
+  }
+  .body .grid img {
+    width: 24rem;
+  } 
+}
+@media only screen and (max-width: 420px) {
+  header,
+  section,
+  footer {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .features {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
 }
