@@ -3,13 +3,13 @@ import { InferGetStaticPropsType } from "next";
 import { Blocks } from "../components/blocks-renderer";
 import { useTina } from "tinacms/dist/react";
 import { Layout } from "../components/layout";
-import { client } from "../tina/__generated__/client";
+import { client } from "../tina/__generated__/databaseClient";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina(props);
-  console.log('Client ID:', process.env.NEXT_PUBLIC_TINA_CLIENT_ID);
+
   return (
     <Layout rawData={data} data={data.global as any}>
       <Blocks {...data.page} />
