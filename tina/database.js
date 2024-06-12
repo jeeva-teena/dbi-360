@@ -2,6 +2,8 @@
 import { createDatabase, createLocalDatabase } from '@tinacms/datalayer'
 import { GitHubProvider } from 'tinacms-gitprovider-github'
 import { RedisLevel } from 'upstash-redis-level'
+import { LocalAuthProvider } from "tinacms";
+import { UsernamePasswordAuthJSProvider, TinaUserCollection } from "tinacms-authjs/dist/tinacms";
 
 const branch = (process.env.GITHUB_BRANCH ||
   process.env.VERCEL_GIT_COMMIT_REF ||
