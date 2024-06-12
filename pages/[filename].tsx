@@ -9,6 +9,7 @@ export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina(props);
+  console.log('Client ID:', process.env.NEXT_PUBLIC_TINA_CLIENT_ID);
   return (
     <Layout rawData={data} data={data.global as any}>
       <Blocks {...data.page} />
