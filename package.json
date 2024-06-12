@@ -28,7 +28,7 @@
   "dependencies": {
     "@headlessui/react": "1.7.5",
     "@tailwindcss/typography": "^0.5.8",
-    "@tinacms/cli": "^1.5.45",
+    "@tinacms/cli": "^1.5.46",
     "@tinacms/core": "^0.43.0",
     "@tinacms/datalayer": "^1.2.35",
     "@tinacms/fields": "^0.43.3",
