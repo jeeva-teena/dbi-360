@@ -1,11 +1,11 @@
 import { defineConfig } from "tinacms";
+
 import Post from "./collection/post";
 import Global from "./collection/global";
 import Author from "./collection/author";
 import Page from "./collection/page";
 
 const config = defineConfig({
-  contentApiUrlOverride: '/api/tina/gql',
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   branch:
     process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
