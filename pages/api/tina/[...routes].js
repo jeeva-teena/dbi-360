@@ -4,7 +4,7 @@ import {
 } from "@tinacms/datalayer";
 import { AuthJsBackendAuthProvider, TinaAuthJSOptions } from "tinacms-authjs";
 
-import databaseClient from "../../../tina/__generated__/databaseClient";
+import { client } from "../../../tina/__generated__/databaseClient";
 
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true";
 
@@ -13,11 +13,11 @@ const handler = TinaNodeBackend({
     ? LocalBackendAuthProvider()
     : AuthJsBackendAuthProvider({
         authOptions: TinaAuthJSOptions({
-          databaseClient: databaseClient,
+          client : client ,
           secret: process.env.NEXTAUTH_SECRET,
         }),
       }),
-  databaseClient,
+      client ,
 });
 
 export default (req, res) => {
