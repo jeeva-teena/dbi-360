@@ -3,9 +3,11 @@
     {
       "name": "Tina User",
       "email": "user@tina.io",
-      "username": "admin",
-      "password": "admin"
-
+      "username": "tinauser",
+      "password": {
+        "value": "tinarocks",
+        "passwordChangeRequired": true
+      }
     }
   ]
 }

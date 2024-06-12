@@ -7,7 +7,6 @@
     "build": "tinacms build && next build",
     "start": "tinacms build && next start",
     "export": "npm run build && next export",
-    "dev:prod": "TINA_PUBLIC_IS_LOCAL=false tinacms dev -c \"next dev\"",
     "lint": "eslint . --ext .ts,.tsx"
   },
   "devDependencies": {
