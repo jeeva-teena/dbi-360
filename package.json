@@ -21,7 +21,7 @@
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "autoprefixer": "^10.4.19",
-    "esbuild": "^0.18.0",
+    "esbuild": "^0.18.20",
     "eslint": "^8.13.0",
     "postcss": "^8.4.38",
     "postcss-import": "^14.0.2",
