@@ -7,7 +7,7 @@ import layoutData from "../../content/global/index.json";
 import { Global } from "../../tina/__generated__/types";
 
 export const Layout = ({
-  rawData = {},
+  // rawData = {},
   data = layoutData,
   children,
 }: {
@@ -64,11 +64,7 @@ export const Layout = ({
           <div className="body flex-2 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
             {children}
           </div>
-          <Footer
-            rawData={rawData}
-            data={data?.footer}
-            icon={data?.header.icon}
-          />
+          <Footer data={data?.footer} />
         </div>
       </Theme>
     </>

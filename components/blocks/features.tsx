@@ -2,7 +2,7 @@ import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { Icon } from "../util/icon";
 import { Actions } from "../util/actions";
-import Link from "next/link";
+// import Link from "next/link";
 import { iconSchema } from "../util/icon";
 import {
   PageBlocksFeatures,

@@ -1,5 +1,5 @@
 import * as React from "react";
-import  ColorPickerInput  from "../../tina/fields/color";
+import ColorPickerInput from "../../tina/fields/color";
 import { IconPickerInput } from "../../tina/fields/icon";
 import { useTheme } from "../layout";
 import * as BoxIcons from "react-icons/bi";
@@ -82,13 +82,13 @@ export const Icon = ({
   className = "",
   tinaField = "",
 }) => {
-  if (IconOptions[data.name] === null || IconOptions[data.name] === undefined) {
-    return null;
-  }
-
   const { name, color, size = "medium", style = "regular" } = data;
 
-  const theme = useTheme();
+  const theme = useTheme(); // Call the hook unconditionally
+
+  if (!IconOptions[name]) {
+    return null;
+  }
 
   const IconSVG = IconOptions[name];
 
@@ -99,11 +99,11 @@ export const Icon = ({
 
   const iconColor = color
     ? color === "primary"
-      ? theme.color : color === "orange" ? theme.color
+      ? theme.color
       : color
     : theme.color;
 
-  if (style == "circle") {
+  if (style === "circle") {
     return (
       <div
         data-tina-field={tinaField}
@@ -117,7 +117,7 @@ export const Icon = ({
       iconColorClass[
         parentColor === "primary" &&
         (iconColor === theme.color || iconColor === "primary")
-          ? "white" :  parentColor === "orange" && (iconColor === theme.color || iconColor === "orange") ? "white"
+          ? "white"
           : iconColor
       ].regular;
     return (

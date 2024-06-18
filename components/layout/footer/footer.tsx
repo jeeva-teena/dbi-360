@@ -3,16 +3,16 @@ import Link from "next/link";
 import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "../../util/container";
-import { RawRenderer } from "./rawRenderer";
+// import { RawRenderer } from "./rawRenderer";
 import { tinaField } from "tinacms/dist/react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { useTheme } from "..";
-import { Icon } from "../../util/icon";
+// import { Icon } from "../../util/icon";
 
-export const Footer = ({ data, icon, rawData }) => {
+export const Footer = ({ data }) => {
   const theme = useTheme();
-  const router = useRouter();
-  const [isClient, setIsClient] = React.useState(false);
+  // const router = useRouter();
+  const [, setIsClient] = React.useState(false);
   React.useEffect(() => {
     setIsClient(true);
   }, []);

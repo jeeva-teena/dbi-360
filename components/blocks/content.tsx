@@ -9,7 +9,7 @@ import { tinaField } from "tinacms/dist/react";
 
 
 export const Content = ({ data }: { data: PageBlocksContent }) => {
-  const backgroundImageSrc = data.bgimg?.src || "";
+  // const backgroundImageSrc = data.bgimg?.src || "";
 
   const sectionBackgroundImage =
     data.bgimg?.bgOption === "section" ? data.bgimg.src || "" : "";

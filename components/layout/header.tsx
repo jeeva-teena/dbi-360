@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Container } from "../util/container";
 import { useTheme } from ".";
-import { Icon } from "../util/icon";
+// import { Icon } from "../util/icon";
 import { tinaField } from "tinacms/dist/react";
 import { GlobalHeader } from "../../tina/__generated__/types";
 import { Dialog } from "@headlessui/react";
@@ -14,7 +14,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
 
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const [openSubmenu2, setOpenSubmenu2] = useState<string | null>(null);
-  const [activeLink, setActiveLink] = useState<string>("");
+  const [, setActiveLink] = useState<string>("");
 
   const toggleSubmenu = (title: string) => {
     setOpenSubmenu(openSubmenu === title ? null : title);
@@ -67,16 +67,16 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
       "border-b-3 border-yellow-300 text-yellow-700 dark:text-yellow-300 font-medium dark:border-yellow-600",
   };
 
-  const activeBackgroundClasses = {
-    blue: "text-blue-500",
-    teal: "text-teal-500",
-    green: "text-green-500",
-    red: "text-red-500",
-    pink: "text-pink-500",
-    purple: "text-purple-500",
-    orange: "text-orange-500",
-    yellow: "text-yellow-500",
-  };
+  // const activeBackgroundClasses = {
+  //   blue: "text-blue-500",
+  //   teal: "text-teal-500",
+  //   green: "text-green-500",
+  //   red: "text-red-500",
+  //   pink: "text-pink-500",
+  //   purple: "text-purple-500",
+  //   orange: "text-orange-500",
+  //   yellow: "text-yellow-500",
+  // };
   const [isClient, setIsClient] = React.useState(false);
   React.useEffect(() => {
     setIsClient(true);

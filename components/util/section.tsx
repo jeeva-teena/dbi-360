@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from "react";
+import React from "react";
 import { useTheme } from "../layout";
 
 interface SectionProps {

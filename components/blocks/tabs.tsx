@@ -4,7 +4,7 @@ import { Section } from "../util/section";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksTabs } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+// import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const Tabs = ({ data }: { data: PageBlocksTabs }) => {
   const [activeTab, setActiveTab] = useState<number>(1);

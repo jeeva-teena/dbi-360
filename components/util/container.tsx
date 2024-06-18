@@ -3,7 +3,7 @@ import React from "react";
 export const Container = ({
   children,
   size = "large",
-  width = "large",
+  // width = "large",
   bgimg = "",
   className = "",
   ...props
