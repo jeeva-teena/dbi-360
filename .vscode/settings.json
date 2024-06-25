@@ -3,5 +3,8 @@
         "authjs",
         "Cpadding",
         "hfont"
-    ]
+    ],
+    "terminal.integrated.env.linux": {
+    "PATH": "/usr/local/bin:${env:PATH}"
+}
 }
