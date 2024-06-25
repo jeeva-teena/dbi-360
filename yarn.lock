@@ -2595,7 +2595,7 @@
     typescript "^4.6.4"
     zod "^3.14.3"
 
-"@tinacms/cli@^1.5.45":
+"@tinacms/cli@^1.5.46":
   version "1.5.46"
   resolved "https://registry.npmjs.org/@tinacms/cli/-/cli-1.5.46.tgz"
   integrity sha512-iTssMQiW411Z0WMWL6mxVv/sEwaFW0uqf0Oac+agqphTGLDprHsmgAmqg2vU6dAMfWXIBxcuN6teqPN15HklBg==
