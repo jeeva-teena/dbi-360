@@ -1,4 +1,5 @@
 module.exports = {
+  reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
@@ -8,17 +9,16 @@ module.exports = {
 
     return config;
   },
-  output: "export",
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/",
-  //       destination: "/home",
-  //     },
-  //     {
-  //       source: "/admin",
-  //       destination: "/admin/index.html",
-  //     },
-  //   ];
-  // },
+  async rewrites() {
+    return [
+      {
+        source: "/",
+        destination: "/home",
+      },
+      {
+        source: "/admin",
+        destination: "/admin/index.html",
+      },
+    ];
+  },
 };

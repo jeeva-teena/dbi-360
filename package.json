@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
-    "build": "tinacms build && next build",
-    "start": "tinacms build && next start",
+    "build": "next build",
+    "start": "next start",
     "export": "npm run build && next export",
     "dev:prod": "TINA_PUBLIC_IS_LOCAL=false tinacms dev -c \"next dev\"",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "next lint"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.2.4",
@@ -43,6 +43,7 @@
     "@tinacms/react-core": "^0.43.0",
     "@tinacms/react-forms": "^0.43.3",
     "@tinacms/styles": "^0.42.1",
+    "@vercel/kv": "^2.0.0",
     "date-fns": "^2.23.0",
     "final-form": "^4.20.10",
     "next": "^13.3.1",
