@@ -9,6 +9,7 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "env": {
+    "GITHUB_PAGES": true,
     "node": true // Add this line
   }
 }
