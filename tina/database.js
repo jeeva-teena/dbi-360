@@ -21,8 +21,8 @@ export default isLocal
         }),
       databaseAdapter: new RedisLevel({
         redis: {
-          url: process.env.KV_REST_API_URL || 'http://localhost:8079',
-          token: process.env.KV_REST_API_TOKEN || 'example_token',
+          url: process.env.KV_REST_API_URL || '',
+          token: process.env.KV_REST_API_TOKEN || '',
         },
         debug: process.env.DEBUG === 'true' || false,
       }),

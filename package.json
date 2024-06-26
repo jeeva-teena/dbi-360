@@ -33,6 +33,7 @@
   "dependencies": {
     "@headlessui/react": "1.7.5",
     "@tailwindcss/typography": "^0.5.8",
+    "@tinacms/auth": "^1.0.4",
     "@tinacms/cli": "^1.5.46",
     "@tinacms/core": "^0.43.0",
     "@tinacms/datalayer": "^1.2.35",
@@ -45,6 +46,7 @@
     "@vercel/kv": "^2.0.0",
     "date-fns": "^2.23.0",
     "final-form": "^4.20.10",
+    "level": "^8.0.1",
     "next": "^13.3.1",
     "next-auth": "^4.24.7",
     "react": "^18.3.1",

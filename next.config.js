@@ -1,3 +1,5 @@
+const { hostname } = require("os");
+
 module.exports = {
   reactStrictMode: true,
   webpack(config) {
@@ -9,6 +11,14 @@ module.exports = {
 
     return config;
   },
+  // images:{
+  //   remotePatterns:[
+  //     {
+  //       protocol:'https',
+  //       hostname:'assets.vercel.com',
+  //     }
+  //   ]
+  // },
   async rewrites() {
     return [
       {
