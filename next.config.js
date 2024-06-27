@@ -7,9 +7,7 @@ module.exports = {
     branch: process.env.VERCEL_GIT_COMMIT_REF || "",
     clientId: process.env.TINA_CLIENT_ID || "",
     token: process.env.TINA_TOKEN || "",
-    KV_REST_API_URL: "https://unified-possum-54857.upstash.io",
-    KV_REST_API_TOKEN:
-      "AdZJAAIncDE0NTk3NzJiNTJiZmY0MzEwYjc4M2E2ZWEyOTUwOWRlZHAxNTQ4NTc",
+    KV_REST_API_URL : process.env.KV_REST_API_URL || "",
     TINA_PUBLIC_IS_LOCAL: false,
   },
   webpack(config) {
