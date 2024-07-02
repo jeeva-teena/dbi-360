@@ -40,10 +40,10 @@
   "exclude": ["node_modules"],
   "include": [
     "next-env.d.ts",
-    "tina/__generated__", 
+    "tina/__generated__",
     "**/*.ts",
     "**/*.tsx",
-    ".forestry/types.ts",
-    ".forestry/config.ts"
+    "tina/__generated__/types.ts",
+    "tina/config.tsx"
   ]
 }
