@@ -2,8 +2,24 @@ import { Post } from "../../components/posts/post";
 import { client } from "../../tina/__generated__/databaseClient";
 import { useTina } from "tinacms/dist/react";
 import { Layout } from "../../components/layout";
-import { InferGetStaticPropsType } from "next";
+import { GetStaticPaths, InferGetStaticPropsType } from "next";
 import { GetStaticProps } from "next";
+
+const replaceUndefinedWithNull = (obj: any): any => {
+  if (Array.isArray(obj)) {
+    return obj.map(replaceUndefinedWithNull);
+  } else if (obj !== null && typeof obj === 'object') {
+    return Object.entries(obj).reduce((acc, [key, value]) => {
+      acc[key] = value === undefined ? null : replaceUndefinedWithNull(value);
+      return acc;
+    }, {} as any);
+  }
+  return obj;
+};
+
+type Params = {
+  filename: string;
+};
 
 // Use the props returned by get static props
 export default function BlogPostPage(
@@ -30,16 +46,17 @@ export default function BlogPostPage(
 
 export const getStaticProps:GetStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.blogPostQuery({
-    relativePath: `${params.filename}.mdx`,
+    relativePath: `${(params as Params).filename}.mdx`,
   });
+  const sanitizedProps = replaceUndefinedWithNull(tinaProps);
 
-  if (!tinaProps.data.post?._body?.children[6]?.children[0]?.alt === undefined) {
-    tinaProps.data.post._body.children[6].children[0].alt = null; // Set to null if undefined
-  }
+  // if (!tinaProps.data.post?._body?.children[6]?.children[0]?.alt === undefined) {
+  //   tinaProps.data.post._body.children[6].children[0].alt = null; // Set to null if undefined
+  // }
 
   return {
     props: {
-      ...tinaProps,
+      ...sanitizedProps,
     },
   };
 };
@@ -51,7 +68,7 @@ export const getStaticProps:GetStaticProps = async ({ params }) => {
  * So a blog post at "content/posts/hello.md" would
  * be viewable at http://localhost:3000/posts/hello
  */
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const postsListData = await client.queries.postConnection();
   return {
     paths: postsListData.data.postConnection.edges.map((post) => ({
