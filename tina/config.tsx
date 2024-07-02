@@ -7,10 +7,9 @@ import Page from "./collection/page";
 
 const config = defineConfig({
   contentApiUrlOverride: "/api/tina/gql",
-  branch: process.env.VERCEL_GIT_COMMIT_REF || "main",
-  clientId:
-    process.env.TINA_CLIENT_ID || "c65f42f8-3b2b-4cc2-b8ec-3272951b2d98",
-  token: process.env.TINA_TOKEN || "7445b0f6803e320aa0a6b8058f97fea6b73be2a3",
+  branch: process.env.VERCEL_GIT_COMMIT_REF || "",
+  clientId: process.env.TINA_CLIENT_ID || "",
+  token: process.env.TINA_TOKEN || "",
   media: {
     tina: {
       publicFolder: "public",
