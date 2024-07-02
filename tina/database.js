@@ -8,7 +8,7 @@ const branch = (process.env.GITHUB_BRANCH ||
   process.env.HEAD ||
   "main")
 
-const isLocal =  process.env.TINA_PUBLIC_IS_LOCAL === 'true' || false
+const isLocal =  process.env.TINA_PUBLIC_IS_LOCAL === 'true'
 
 export default isLocal
   ? createLocalDatabase()
@@ -21,8 +21,8 @@ export default isLocal
         }),
       databaseAdapter: new RedisLevel({
         redis: {
-          url: process.env.KV_REST_API_URL || '',
-          token: process.env.KV_REST_API_TOKEN || '',
+          url: process.env.KV_REST_API_URL || 'http://localhost:8079',
+          token: process.env.KV_REST_API_TOKEN || 'example_token',
         },
         debug: process.env.DEBUG === 'true' || false,
       }),

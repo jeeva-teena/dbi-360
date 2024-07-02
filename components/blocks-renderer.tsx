@@ -1,4 +1,6 @@
-import { Page, PageBlocks } from "../tina/__generated__/types";
+import React from "react";
+import { Page } from "../tina/__generated__/types";
+import { PageBlocks } from "../tina/__generated__/types";
 import { Content } from "./blocks/content";
 import { Features } from "./blocks/features";
 import { Hero } from "./blocks/hero";
