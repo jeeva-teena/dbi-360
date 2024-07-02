@@ -18,6 +18,7 @@
   "exclude": ["node_modules"],
   "include": [
     "next-env.d.ts",
+    "tina/__generated__",
     "**/*.ts",
     "**/*.tsx",
     ".forestry/types.ts",
